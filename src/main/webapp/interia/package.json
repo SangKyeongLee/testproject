@@ -1,0 +1,22 @@
+{
+  "name": "html5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "header.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0",
+    "bootstrap": "^4.1.1",
+    "bxslider": "^4.2.13",
+    "fontawesome": "^4.7.2",
+    "handlebars": "^4.0.11",
+    "jquery": "^1.12.4",
+    "masonry": "0.0.2",
+    "masonry-layout": "^4.2.2",
+    "popper.js": "^1.14.3"
+  }
+}

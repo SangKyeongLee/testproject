@@ -1,0 +1,81 @@
+h5 {font-weight: bold;}
+
+/**** 제목 ***/
+.ib-mp-titl {
+	padding: 1.5em 1em 1em 1em;
+}
+.ib-mp-pnum {
+	color: #ffc001;
+}
+.mp-nav>ul>li>p {
+    margin: 0;
+}
+
+
+/**** 게시물 전체 ****/
+.ib-mp-pgroup {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+	margin-bottom: 4.375em;
+}
+
+
+/**** 게시물 추가 박스 ****/
+.ib-mp-postadd {
+	color: #757575;
+	font-weight: bold;
+	border: 2px dashed #dcdcdc;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    width: 285px;
+	height: 285px;
+	transition: color .3s ease-out;
+}
+.ib-mp-postadd:hover {
+	text-decoration: underline;
+	color: #343855;
+	font-weight: bold;
+	cursor: pointer;
+}
+.ib-mp-postadd > div {
+	text-align: center;
+}
+.fa-plus-circle {
+	font-size: 1.25em;
+}
+
+
+/**** 올린 게시물 ****/
+.ib-mp-post {
+	position: relative;
+	width: 285px;
+	height: 285px;
+    font-size: 0.875em;
+    overflow: hidden;
+}
+.ib-mp-post img {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.ib-mp-icons {
+	position: absolute;
+	width: 100%; height: 100%;
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity .4s ease;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.ib-mp-icons:hover {
+	opacity: 1;
+}
+.ib-mp-icons i{
+	font-size: 1.3125em;
+}

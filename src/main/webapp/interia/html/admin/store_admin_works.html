@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>공방관리자</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../js/ad_header.js"></script>
+</head>
+
+<body>
+    <div id="ad-header">
+
+    </div>
+    <div class="ad-main-wrapper">
+        <div class="ad-main-content">
+            <!-- ad-breadcrumb -->
+            <ol class="ad-breadcrumb">
+                <li class="ad-breadcrumb-item">
+                    <a href="#">관리자</a>
+                </li>
+                <li class="ad-breadcrumb-item active">
+                    작품관리
+                </li>
+            </ol>
+            <div class="ad-card-default">
+                <div class="ad-card-body">
+                    <div class="ad-status-wrapper">
+                        <div class="ad-product-status">
+                            <div class="ad-status-img ad-status-all"></div>
+                            <div class="ad-status-content">
+                                <p> 전체</p>
+                                <p><span>12 </span><b>건</b></p>
+                            </div>
+                        </div>
+                        <div class="ad-product-status">
+                            <div class="ad-status-img ad-status-sell"></div>
+                            <div class="ad-status-content">
+                                <p> 판매중</p>
+                                <p><span>12 </span><b>건</b></p>
+                            </div>
+                        </div>
+                        <div class="ad-product-status">
+                            <div class="ad-status-img ad-status-wait"></div>
+                            <div class="ad-status-content">
+                                <p> 판매 대기</p>
+                                <p><span>12 </span><b>건</b></p>
+                            </div>
+                        </div>
+                        <div class="ad-product-status">
+                            <div class="ad-status-img ad-status-sold"></div>
+                            <div class="ad-status-content">
+                                <p> 품절</p>
+                                <p><span>12 </span><b>건</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-card-default">
+                <div class="ad-card-header">
+                    <i class="fas fa-search"></i> 작품 검색
+                </div>
+                <div class="ad-card-body">
+                    <form class="ad-searchForm">
+                        <div class="ad-searchInfo">
+                            <div class="ad-searchDist ad-searchText">
+                                <p>검색어&ensp;<b>|</b></p>
+                                <ul>
+                                    <li>상품번호
+                                        <input type="text">
+                                    </li>
+                                    <li>상품명
+                                        <input type="text">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ad-searchDist ad-sellingStatus">
+                                <p>판매상태&ensp;<b>|</b></p>
+                                <ul>
+                                    <li>
+                                        <label class="ad-checkbox">판매중&ensp;
+                                      <input type="checkbox" checked="checked">
+                                      <span class="ad-checkmark"></span>
+                                    </label>
+                                    </li>
+                                    <li>
+                                        <label class="ad-checkbox">판매대기&ensp;
+                                      <input type="checkbox" checked="checked">
+                                      <span class="ad-checkmark"></span>
+                                    </label>
+                                    </li>
+                                    <li>
+                                        <label class="ad-checkbox">품절&ensp;
+                                      <input type="checkbox" checked="checked">
+                                      <span class="ad-checkmark"></span>
+                                    </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ad-searchDist ad-searchTerm">
+                                <p>기간&ensp;<b>|</b></p>
+                                <div class="ad-cat-select">
+                                    <select>
+                                <option value="0">분류기준일</option>
+                                <option value="1">상품등록일</option>
+                                <option value="2">최종수정일</option>
+                              </select>
+                                </div>
+                                <input type="text" class="datepicker"> &ensp;~&ensp; <input type="text" class="datepicker">
+                            </div>
+                        </div>
+                        <div class="ad-cat-search">
+                            <button type="button" class="ad-search-btn btn btn-warning">검색</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="ad-card-default">
+                <div class="ad-card-header">
+                    <i class="fas fa-list"></i> 작품 목록
+                </div>
+                <div class="ad-card-body">
+                    <div class="ad-table-btn">
+                        <button type="button" class="ad-btn ad-btn-color2">선택삭제</button>
+                        <button type="button" class="ad-btn ad-btn-color1" data-toggle="modal" data-target="#worksModal">새작품등록</button>
+                    </div>
+                    <table cellspacing="0" border="1" summary="명단관리  리스트" class="frt_tbl_type" style="min-width:900px;padding-right: 15px;">
+                        <caption>명단관리 리스트</caption>
+                        <colgroup>
+                            <col width="50" />
+                            <col width="130" />
+                            <col width="80" />
+                            <col width="130" />
+                            <col width="80" />
+                            <col width="80" />
+                            <col width="80" />
+                            <col width="130" />
+                            <col width="130" />
+                            <col width="80" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="CtlExecutor.doCheckAll();" /><label for="chk_all">선택</label></th>
+                                <th scope="cols">상품번호</th>
+                                <th scope="cols">상품명</th>
+                                <th scope="cols">상태</th>
+                                <th scope="cols">재고</th>
+                                <th scope="cols">제작의뢰</th>
+                                <th scope="cols">판매가</th>
+                                <th scope="cols">등록일</th>
+                                <th scope="cols">수정일</th>
+                                <th scope="cols">삭제</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div style="max-height:300px; min-width:1010px; overflow-x:hidden; overflow-y:scroll;">
+                        <table cellspacing="0" border="1" summary="명단관리 리스트" class="frt_tbl_type" style="border-top:0px;">
+                            <caption>명단관리 리스트</caption>
+                            <colgroup>
+                                <col width="50" />
+                                <col width="130" />
+                                <col width="80" />
+                                <col width="130" />
+                                <col width="80" />
+                                <col width="80" />
+                                <col width="80" />
+                                <col width="130" />
+                                <col width="130" />
+                                <col width="80" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
+                                    <td class="num"><a href="#">1</a></td>
+                                    <td class="title">홍길동</td>
+                                    <td class="date">참가</td>
+                                    <td class="writer">청구</td>
+                                    <td class="writer">적용</td>
+                                    <td class="writer">미환급</td>
+                                    <td class="writer">N</td>
+                                    <td class="writer">이수</td>
+                                    <td><button class="ad-btn-sm ad-btn-color2">삭제</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- worksModal -->
+            <div class="modal fade" id="worksModal" tabindex="-1" role="dialog" aria-labelledby="worksModalTitle" aria-hidden="true" style="z-index: 10800;">
+                <div class="modal-dialog modal-lg " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="worksModalTitle"><b>작품등록</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="ad-modal-contentgap">
+                                    <b>카테고리</b>
+                                    <input type="text" class="ad-works-modal-inputlg ad-works-modal-content" placeholder="'#'을 이용하여 태그를 추가하세요">
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>상품명</b>
+                                    <input type="text" class="ad-works-modal-inputlg ad-works-modal-content" placeholder="상품명을 입력하세요">
+                                </div>
+                                <div class="ad-modal-content-collapse">
+                                    <div class="ad-modal-contentgap">
+                                        <b>판매가</b>
+                                        <input type="text" class="ad-works-modal-inputsm ad-works-modal-content" placeholder="가격을 입력하세요">
+                                    </div>
+                                    <div class="ad-modal-contentgap">
+                                        <b>재고수량</b>
+                                        <input type="text" class="ad-works-modal-inputsm ad-works-modal-content " placeholder="수량을 입력하세요">
+                                        <select>
+                                                      <option value="volvo">판매상태</option>
+                                                      <option value="saab">판매대기</option>
+                                                      <option value="opel">판매중</option>
+                                                      <option value="audi">품절</option>
+                                                    </select>
+                                    </div>
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>상품이미지</b>
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>제작의뢰 서비스</b>
+                                    <input type="checkbox" class="ad-works-modal-content" onclick="openOption('.ad-works-commission', this)"><span>사용하기</span>
+                                    <div class="ad-works-commission">
+                                        <textarea cols="80" placeholder="제작시 필요한 항목을 작성하세요"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>옵션</b>
+                                    <input type="checkbox" class="ad-works-modal-content" onclick="openOption('.ad-works-options', this)"><span>사용하기</span>
+                                    <div class="ad-works-options">
+                                        <div class="ad-works-opt-wrapper">
+                                            <div class="ad-works-opt">
+                                                <div class="ad-works-opt-name">
+                                                    <p>옵션이름</p>
+                                                    <input type="text" class="ad-works-modal-inputsm ad-works-modal-content">
+                                                </div>
+                                                <div class="ad-works-opt-content">
+                                                    <p>옵션조합</p>
+                                                    <input type="text" class="ad-works-modal-inputsm ad-works-modal-content">
+                                                </div>
+                                            </div>
+                                            <div class="ad-works-opt-add">
+                                                <p><i class="far fa-plus-square"></i>옵션 추가하기</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <b>제품상세</b>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="ad-btn ad-btn-color3">초기화</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                                <button type="button" class="ad-btn ad-btn-color1">등록하기</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ad-main-content-->
+    </div>
+    <!--ad-main-wrapper-->
+    <script>
+        /* modal option*/
+        function openOption(className, obj) {
+            var $input = $(obj);
+            if ($input.prop('checked')) $(className).show();
+            else $(className).hide();
+        }
+
+    </script>
+
+
+</body>
+
+</html>
