@@ -13,67 +13,7 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     
-    <script type="text/javascript">
-       function viewBtn(idx){
-          if(idx == 1){
-             $(".bt-hashtag-euro").css("display","block");
-             $("#key-hashtag-euro").addClass("bt-key-hashtag-click");
-             $(".bt-hashtag-summer").css("display","none");
-             $("#key-hashtag-summer").removeClass("bt-key-hashtag-click");
-             $(".bt-hashtag-modern").css("display","none");
-             $("#key-hashtag-modern").removeClass("bt-key-hashtag-click");
-             $(".bt-hashtag-flowerpot").css("display","none");
-             $("#key-hashtag-flowerpot").removeClass("bt-key-hashtag-click");
-             $(".bt-hashtag-simple").css("display","none");
-             $("#key-hashtag-simple").removeClass("bt-key-hashtag-click");
-             }
-          else if(idx == 2){
-            $(".bt-hashtag-euro").css("display","none");
-            $("#key-hashtag-euro").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-summer").css("display","block");
-            $("#key-hashtag-summer").addClass("bt-key-hashtag-click");
-            $(".bt-hashtag-modern").css("display","none");
-            $("#key-hashtag-modern").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-flowerpot").css("display","none");
-            $("#key-hashtag-flowerpot").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-simple").css("display","none");
-            $("#key-hashtag-simple").removeClass("bt-key-hashtag-click");
-          }else if(idx == 3){
-            $(".bt-hashtag-euro").css("display","none");
-            $("#key-hashtag-euro").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-summer").css("display","none");
-            $("#key-hashtag-summer").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-modern").css("display","block");
-            $("#key-hashtag-modern").addClass("bt-key-hashtag-click");
-            $(".bt-hashtag-flowerpot").css("display","none");
-            $("#key-hashtag-flowerpot").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-simple").css("display","none");
-            $("#key-hashtag-simple").removeClass("bt-key-hashtag-click");
-          }else if(idx == 4){
-            $(".bt-hashtag-euro").css("display","none");
-            $("#key-hashtag-euro").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-summer").css("display","none");
-            $("#key-hashtag-summer").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-modern").css("display","none");
-            $("#key-hashtag-modern").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-flowerpot").css("display","block");
-            $("#key-hashtag-flowerpot").addClass("bt-key-hashtag-click");
-            $(".bt-hashtag-simple").css("display","none");
-            $("#key-hashtag-simple").removeClass("bt-key-hashtag-click");
-          }else if(idx == 5){
-            $(".bt-hashtag-euro").css("display","none");
-            $("#key-hashtag-euro").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-summer").css("display","none");
-            $("#key-hashtag-summer").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-modern").css("display","none");
-            $("#key-hashtag-modern").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-flowerpot").css("display","none");
-            $("#key-hashtag-flowerpot").removeClass("bt-key-hashtag-click");
-            $(".bt-hashtag-simple").css("display","block");
-            $("#key-hashtag-simple").addClass("bt-key-hashtag-click");
-          }
-       }
-    </script>
+    <script type="text/javascript" src="../../js/keyword_hash_tag.js"></script>
 </head>
 
 <body>
@@ -209,50 +149,89 @@
 	<div class="bt-wrap">
     <section class="bt-category bt-content">
       <div class="bt-cir-wrap">
-        <ul class="bt-cir-group">
-          <li>
-            <a class="bt-circle" href="#">
-              <div class="bt-cir01">
-                <img src="../../images/main/category/gagoo.jpg">
+        <a href="#" class="circle crcl_trns">
+          <div class="circle_box crcl_trns crcl_posin">
+
+            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/gagoo.jpg" alt="">
+            </div>
+            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/gagoo.jpg" alt="">
+              <div class="black crcl_trns crcl_rdus crcl_posin">
+                <p class="crcl_trns">보러가기</p>
               </div>
-              <span class="bt-cat-titl bt-title">가구</span>
-            </a>
-          </li>
-          <li>
-            <a class="bt-circle " href="#">
-              <div class="bt-cir01">
-                <img src="../../images/main/category/coo.jpg">
+            </div>
+
+          </div> <!-- circle_box -------------------------------------------->
+          <p class="circle_ctgy_titl">가구</p>
+        </a><!-- circle ------------------------------------------------->
+        <a href="#" class="circle crcl_trns">
+          <div class="circle_box crcl_trns crcl_posin">
+
+            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/coo.jpg" alt="">
+            </div>
+            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/coo.jpg" alt="">
+              <div class="black crcl_trns crcl_rdus crcl_posin">
+                <p class="crcl_trns">보러가기</p>
               </div>
-              <span class="bt-cat-titl bt-title">패브릭</span>
-            </a>
-          </li>
-          <li>
-            <a class="bt-circle" href="#">
-              <div class=" bt-cir01">
-                <img src="../../images/main/category/light.jpg">
+            </div>
+
+          </div> <!-- circle_box -------------------------------------------->
+          <p class="circle_ctgy_titl">패브릭</p>
+        </a><!-- circle ------------------------------------------------->
+        <a href="#" class="circle crcl_trns">
+          <div class="circle_box crcl_trns crcl_posin">
+
+            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/light.jpg" alt="">
+            </div>
+            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/light.jpg" alt="">
+              <div class="black crcl_trns crcl_rdus crcl_posin">
+                <p class="crcl_trns">보러가기</p>
               </div>
-              <span class="bt-cat-titl bt-title">홈데코/조명</span>
-            </a>
-          </li>
-          <li>
-            <a class="bt-circle " href="#">
-              <div class="bt-cir01">
-                <img src="../../images/main/category/life.jpg">
+            </div>
+
+          </div> <!-- circle_box -------------------------------------------->
+          <p class="circle_ctgy_titl">홈데코/조명</p>
+        </a><!-- circle ------------------------------------------------->
+        <a href="#" class="circle crcl_trns">
+          <div class="circle_box crcl_trns crcl_posin">
+
+            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/life.jpg" alt="">
+            </div>
+            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/life.jpg" alt="">
+              <div class="black crcl_trns crcl_rdus crcl_posin">
+                <p class="crcl_trns">보러가기</p>
               </div>
-              <span class="bt-cat-titl bt-title">생활</span>
-            </a>
-          </li>
-          <li>
-            <a class="bt-circle " href="#">
-              <div class="bt-cir01">
-                <img src="../../images/main/category/kitchen.jpg">
+            </div>
+
+          </div> <!-- circle_box -------------------------------------------->
+          <p class="circle_ctgy_titl">생활</p>
+        </a><!-- circle ------------------------------------------------->
+        <a href="#" class="circle crcl_trns">
+          <div class="circle_box crcl_trns crcl_posin">
+
+            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/kitchen.jpg" alt="">
+            </div>
+            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
+              <img src="../../images/main/category/kitchen.jpg" alt="">
+              <div class="black crcl_trns crcl_rdus crcl_posin">
+                <p class="crcl_trns">보러가기</p>
               </div>
-              <span class="bt-cat-titl bt-title">주방</span>
-            </a>
-          </li>
-        </ul>
+            </div>
+
+          </div> <!-- circle_box -------------------------------------------->
+          <p class="circle_ctgy_titl">주방</p>
+        </a><!-- circle ------------------------------------------------->
       </div><!-- bt-cir-wrap -->
     </section><!-- bt-category -->
+    
     <section class="bt-keyword bt-content">
       <span class="bt-title bt-key-titl">HOT KEYWORD</span>
       <span class="bt-subtitle bt-key-sub">이번주에 인기 키워드로 다양한 작품을 알아보세요.</span>
