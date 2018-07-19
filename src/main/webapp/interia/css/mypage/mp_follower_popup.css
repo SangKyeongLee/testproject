@@ -14,11 +14,12 @@
 .mp-follower-popup > p {
 	padding: 0.9375em 0 0.625em 0.9375em;
 	border-bottom: #BDBDBD solid 0.5px;
+	margin: 0;
 }
 .mp-follower-box1 {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	height: 449px;
+	height: 450px;
 }
 .mp-follower-box1 > ul {
 	/*-webkit-padding-start: 0;   크롬,사파리 user agent style sheet 제거*/

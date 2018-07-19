@@ -4,13 +4,7 @@
 }
 
 
-/**** 팔로잉/팔로워 모달 ****/
-#followerModal, #followingModal {
-    margin: 5em auto;
-}
-#postWriteModal {
-    margin: 4em auto;
-}
+/**** 모달 ****/
 .modal {
     z-index: 100001;
 }
@@ -226,40 +220,17 @@
     /*margin-left: 26.5em;*/
 } 
 
-.mp-bar1>ul>li>p>a {
+.mp-bar1>ul>li>a {
     color: #000;
 } 
-
-.mp-bar1>ul>li:hover,
+.mp-bar1>ul>li>a:hover,
 .mp-bar3>ul>li>a:hover {
-    /*border-bottom: 4px solid rgb(230, 126, 34);*/
     color: rgb(230, 126, 34) !important;
     text-decoration: none;
 }
-.mp-bar1>ul {
-    /*width: 1200px;*/
-    /*position: relative;*/
-}
-
 .mp-current1,
 .mp-current2>a {
-    /*border-bottom: 4px solid rgb(230, 126, 34);*/
     color: rgb(230, 126, 34) !important;
-}
-
-/**** 바2 ****/
-/*.mp-bar2 {
-    z-index: 1;
-    border-bottom: solid #D5D5D5 1px;
-}
-.mp-bar2 li:first-child {
-    margin-left: 29.5em;
-}    
-.mp-bar2 li:hover {
-    color: #343855;
-}*/
-.mp-current2 {
-    /*color: #343855;*/
 }
 
 .mp-on {

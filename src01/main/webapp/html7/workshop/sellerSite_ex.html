@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INTERIA</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/workshop_sellerSite.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		function viewBtn(idx){
+			if(idx == 1){
+				$(".sellerSite_ex_grid").css("display","block");
+				$(".sellerSite_ex_List").css("display","none");
+				$("#sellerSite_icon00").css("display","none");
+				$("#sellerSite_icon01").css("display","block");
+				$("#sellerSite_Hovericon00").css("display","block");
+				$("#sellerSite_Hovericon01").css("display","none");
+			}
+			else if(idx == 2){
+				$(".sellerSite_ex_grid").css("display","none");
+				$(".sellerSite_ex_List").css("display","block");	
+				$("#sellerSite_icon00").css("display","block");
+				$("#sellerSite_icon01").css("display","none");
+				$("#sellerSite_Hovericon00").css("display","none");
+				$("#sellerSite_Hovericon01").css("display","block");
+			}
+		}
+	</script>
+</head>
+<body>
+<header>
+	<div class="header_bg">
+		<div class="header_logo">
+			<a href="./index.html"><img src="./images/header/logo.png"></a>
+		</div>
+		<div class="header_nav1">
+			<a href="./login.html">로그인</a>
+			<a href="./form.html">회원가입</a>
+		</div>
+		<div class="header_nav2">
+			<a href="./interia_introduce.html">소개</a>
+			<a href="./product_list.html">판매작품</a>
+			<a href="./workshop_main.html" style="color: #ffc001;">공방</a>
+			<a href="./photo_main.html">자랑하기</a>
+		</div>
+		<div class="header_search">
+			<input type="text" name="searchkeyword" placeholder="검색">
+			<button type="button" onClick="location.href='./search-list-all.html'"><img src="./images/header/header_serach.png"></button>
+		</div>
+	</div>
+</header>
+<section style="height: 1900px;">
+	<div class="workshop_sellerSite_bg">
+		<div class="workshop_sellerSite_sidemenu">
+			<div class="workshop_sellerSite_sidemenu_edit">
+				<button>Edit</button>
+			</div>
+			<div class="workshop_sellerSite_sidemenu_img">
+				<img src="./images/workshop/storeLogo02.png">
+			</div>
+			<div class="workshop_sellerSite_sidemenu_imgtext">
+				<h1>공방명</h1>
+				<p>업체 소개 글입니다.<br>최대 한글 기준 50자 까지 가능합니다.</p>
+			</div>
+			<div class="workshop_sellerSite_sidemenu_snsbtn">
+				<div class="workshop_sellerSite_sidemenu_snsbtn_bg">
+					<a href="#"><img src="./images/workshop/facebook.png"></a>
+					<a href="#"><img src="./images/workshop/instagram.png"></a>
+					<a href="#"><img src="./images/workshop/twitter.png"></a>
+				</div>
+			</div>
+			<div class="workshop_sellerSite_sidemenu_line_bg">
+				<div class="workshop_sellerSite_sidemenu_line"></div>
+			</div>
+			<div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button style="color: #f00;">♥ 스토어 찜하기</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button type="button" onClick="location.href='./sellerSite_IntroduceChange.html'">공방소개</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button  type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button type="button" onClick="location.href='./sellerSite_ex.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방체험</button>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_btn00">
+					<button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
+				</div>
+			</div>
+			<div class="workshop_sellerSite_sidemenu_line_bg">
+				<div class="workshop_sellerSite_sidemenu_line"></div>
+			</div>
+			<div class="workshop_sellerSite_sidemenu_info">
+				<div class="workshop_sellerSite_sidemenu_info_title">
+					<p>활동정보</p>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_info_sub01">
+					<p>좋아하는 사람</p>
+					<p>0명</p>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_info_sub01">
+					<p>판매중인 제품</p>
+					<p>0개</p>
+				</div>
+				<div class="workshop_sellerSite_sidemenu_info_sub01">
+					<p>구매후기</p>
+					<p>0개</p>
+				</div>
+			</div>
+		</div>
+		<div class="workshop_sellerSite_content">
+			<div class="sellerSite_ex_title">
+				<p>공방체험</p>
+				<div class="sellerSite_ex_icon">
+					<a id="sellerSite_icon00" href="javascript:viewBtn(1);"><img src="./images/workshop/sellerSiteGirdIcon.png"></a>
+					<a id="sellerSite_Hovericon00" href="javascript:viewBtn(1);" style="display: none;"><img src="./images/workshop/sellerSiteGirdIcon_hover.png"></a>
+					<a id="sellerSite_icon01" href="javascript:viewBtn(2);"><img src="./images/workshop/sellerSiteListIcon.png"></a>
+					<a id="sellerSite_Hovericon01" href="javascript:viewBtn(2);" style="display: none;"><img src="./images/workshop/sellerSiteListIcon_hover.png"></a>
+				</div>
+			</div>
+			
+<!-- Grid형식!!!!!!!!!!!!!!!! -->
+			<div class="sellerSite_ex_grid">
+				<div class="sellerSite_ex_grid_con00">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="./sellerSite_ex_detail.html"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+				<div class="sellerSite_ex_grid_con01">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="#"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+
+				<div class="sellerSite_ex_grid_con00">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="#"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+				<div class="sellerSite_ex_grid_con01">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="#"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+
+				<div class="sellerSite_ex_grid_con00">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="#"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+				<div class="sellerSite_ex_grid_con01">
+					<div class="sellerSite_ex_grid_con00_img">
+						<a href="#"><img src="./images/workshop/sellerSite_ex_img.png"></a>
+					</div>
+					<div class="sellerSite_ex_grid_con00_text">
+						<p>소품제작</p>
+						<p>나만의 실버주얼리 만들기</p>
+                        <div class="sellerSite_ex_grid_con00_text2">
+                            <h4>최소인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>최대인원</h4>
+                            <h4>0명</h4>
+                            <h4>｜</h4>
+                            <h4>총</h4>
+                            <h4>00</h4>
+                            <h4>분 정도 소요</h4>
+                        </div>
+						<p>왁스카빙을 통하여 다양한 주얼리를 만들어 보며 실버를 재질로 하여 다양한 나만의 주얼리를 만들 수 있어요. 왁스카빙을 통하여 다양한 주얼리를 만들...</p>
+						<p>￦50,000원</p>
+						<p>75,000원</p>
+					</div>
+				</div>
+			</div>
+
+<!-- List형식!!!!!!!!!!!!!!!! -->
+			<div class="sellerSite_ex_List" style="display: none;">
+				<div class="sellerSite_ex">
+					<div class="sellerSite_ex_img">
+						<a href="./sellerSite_ex_detail.html"><img src="./images/workshop/ex_00.png"></a>
+					</div>
+					<div class="sellerSite_ex_text">
+						<div class="sellerSite_ex_text_bg">
+							<p>소품제작</p>
+							<p>나만의 실버주얼리 만들기</p>
+							<p>왁스카빙을 통하여 조형적이고 다양한 주얼리를 만들어 보며 실버를 재질로<br>하여 다양한 나만의 주얼리를 만들 수 있어요.</p>
+                            <div class="sellerSite_ex_text_sub">
+				                <h4>최소인원</h4>
+                                <h4>0명</h4>
+                                <h4>최대인원</h4>
+                                <h4>0명</h4>
+                                <h4>총</h4>
+                                <h4>00분</h4>
+                                <h4>정도 소요</h4>
+                            </div>
+							<div class="sellerSite_ex_text_bg01">
+								<h5>￦50,000원</h5>
+								<h5>80,000원</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sellerSite_ex">
+					<div class="sellerSite_ex_img">
+						<img src="./images/workshop/ex_00.png">
+					</div>
+					<div class="sellerSite_ex_text">
+						<div class="sellerSite_ex_text_bg">
+							<p>소품제작</p>
+							<p>나만의 실버주얼리 만들기</p>
+							<p>왁스카빙을 통하여 조형적이고 다양한 주얼리를 만들어 보며 실버를 재질로<br>하여 다양한 나만의 주얼리를 만들 수 있어요.</p>
+                            <div class="sellerSite_ex_text_sub">
+				                <h4>최소인원</h4>
+                                <h4>0명</h4>
+                                <h4>최대인원</h4>
+                                <h4>0명</h4>
+                                <h4>총</h4>
+                                <h4>00분</h4>
+                                <h4>정도 소요</h4>
+                            </div>
+							<div class="sellerSite_ex_text_bg01">
+								<h5>￦50,000원</h5>
+								<h5>80,000원</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sellerSite_ex">
+					<div class="sellerSite_ex_img">
+						<img src="./images/workshop/ex_00.png">
+					</div>
+					<div class="sellerSite_ex_text">
+						<div class="sellerSite_ex_text_bg">
+							<p>소품제작</p>
+							<p>나만의 실버주얼리 만들기</p>
+							<p>왁스카빙을 통하여 조형적이고 다양한 주얼리를 만들어 보며 실버를 재질로<br>하여 다양한 나만의 주얼리를 만들 수 있어요.</p>
+                            <div class="sellerSite_ex_text_sub">
+				                <h4>최소인원</h4>
+                                <h4>0명</h4>
+                                <h4>최대인원</h4>
+                                <h4>0명</h4>
+                                <h4>총</h4>
+                                <h4>00분</h4>
+                                <h4>정도 소요</h4>
+                            </div>
+							<div class="sellerSite_ex_text_bg01">
+								<h5>￦50,000원</h5>
+								<h5>80,000원</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sellerSite_ex">
+					<div class="sellerSite_ex_img">
+						<img src="./images/workshop/ex_00.png">
+					</div>
+					<div class="sellerSite_ex_text">
+						<div class="sellerSite_ex_text_bg">
+							<p>소품제작</p>
+							<p>나만의 실버주얼리 만들기</p>
+							<p>왁스카빙을 통하여 조형적이고 다양한 주얼리를 만들어 보며 실버를 재질로<br>하여 다양한 나만의 주얼리를 만들 수 있어요.</p>
+                            <div class="sellerSite_ex_text_sub">
+				                <h4>최소인원</h4>
+                                <h4>0명</h4>
+                                <h4>최대인원</h4>
+                                <h4>0명</h4>
+                                <h4>총</h4>
+                                <h4>00분</h4>
+                                <h4>정도 소요</h4>
+                            </div>
+							<div class="sellerSite_ex_text_bg01">
+								<h5>￦50,000원</h5>
+								<h5>80,000원</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+	</div><!--************-->
+</section>
+
+
+<footer>
+	<div class="bt-footer">
+      <div class="bt-ft-content">
+        <p class="bt-ft-service"><a href="#">서비스소개</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">회사소개</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">채용정보</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">개인정보취급방침</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">고객의소리</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">제휴/광고문의</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">판매자신청</a></p>
+        <address class="bt-ft-address">
+          상호명 : (주)인테리아&nbsp;&nbsp;이메일 : contact@interia.com&nbsp;&nbsp;팀원 : 경명수 강동현 이상경 성현동 임현식 박서경&nbsp;&nbsp;사업자등록번호 : 111-11-11111&nbsp;&nbsp;통신판매업신고번호 : 제1111-서울관악-0000호&nbsp;&nbsp;주소 : 비트캠프 서울시 서초구 서초동 1327-15 비트아카데미빌딩비트캠프 서울시 서초구 서초동 1327-15 비트아카데미빌딩&nbsp;&nbsp;<strong>NAVERPAY</strong> 안전거래 서비스 : 고객님의 안전거래를 위해 현금 결제 시, 저희 사이트에서 가입한 구매안전 서비스를 이용할 수 있습니다.
+        </address>
+        <span class="bt-ft-copy">Copyright (c) 2018 INTERIA., Ltd, All Rights Reserved</span>
+      </div>
+    </div>
+</footer>
+</body>
+</html>

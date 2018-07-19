@@ -40,7 +40,7 @@
 .grid-photo-cont {
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 6px;
   background-color: rgba(0, 0, 0, 0.5);
   width: inherit;
   overflow: hidden;

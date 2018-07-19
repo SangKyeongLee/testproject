@@ -26,7 +26,7 @@
 					<label>이름 *</label>
 				</div>
 				<div class="form_mainForm_Id01">
-					<input type="text" placeholder="이름을 입력하세요">
+					<input id="fName" type="text" placeholder="이름을 입력하세요">
 				</div>
 			</div>
 			<div>
@@ -34,24 +34,25 @@
 					<label>전화번호 *</label>
 				</div>
 				<div class="form_mainForm_Id02">
-					<select>
+					<select id="fFirstNumber">
 						<option selected>010</option>
 						<option>000</option>
 						<option>000</option>
 						<option>000</option>
 						<option>000</option>
 					</select>
-					<input type="text" style="width: 100px;">
-					<input type="text" style="width: 100px;">
+					<input type="text" id="fSecondNumber" style="width: 100px;">
+					<input type="text" id="fThirdNumber" style="width: 100px;">
+				</div>
+			</div>
+			
+			<div class="form_mainButton">
+				<div class="form_mainButton01">
+					<button id="searchId" type="button" style="margin-top:3.125em" >아이디 찾기</button>
+					<button type="button" style="margin-top:3.125em" onClick="location.href='./login.html'">취소하기</button>
 				</div>
 			</div>
 		</form>
-	</div>
-	<div class="form_mainButton">
-		<div class="form_mainButton01">
-			<button type="button" onClick="location.href='./idsearchEnd.html'">아이디 찾기</button>
-			<button type="button" onClick="location.href='./usersearch.html'">취소하기</button>
-		</div>
 	</div>
 </section>
 
@@ -60,8 +61,9 @@
 
 <footer id="footer">
 </footer>
-        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../../js/common.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/idsearch.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 </body>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>공방관리자</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="../../js/ad_header.js"></script>
+</head>
+
+<body>
+<div id="ad-header">
+
+</div>
+
+    <div class="ad-main-wrapper">
+        <div class="ad-main-content">
+            <!-- ad-breadcrumb -->
+            <ol class="ad-breadcrumb">
+                <li class="ad-breadcrumb-item">
+                    <a href="#">관리자</a>
+                </li>
+                <li class="ad-breadcrumb-item active">
+                    체험관리
+                </li>
+            </ol>
+            <div class="ad-card-default">
+                <div class="ad-card-header">
+                    <i class="fas fa-chalkboard-teacher"></i> 체험목록
+                </div>
+                <div class="ad-card-body">
+                    <div style="" data-toggle="modal" data-target="#classUpdateModal">
+                        <i class="far fa-plus-square"></i> 체험 등록하기
+                    </div>
+                    <div class="ad-class-wrapper">
+                        <div class="ad-class-card">
+                            <div class="ad-class-card-img">
+                                <img src="../../images/admin/ad_admin_class.jpg">
+                            </div>
+                            <div class="ad-class-card-content">
+                                <p class="ad-class-card-title">일상탈출 카드 지갑 만들기</p>
+                                <p>안녕하세요 이스트허니입니다.</p>
+                            </div>
+                            <div class="ad-border"></div>
+                            <div class="ad-class-card-info">
+                                <p>최대인원 5 명</p>
+                                <p>가격 25000 원</p>
+                                <p>체험일자</p>
+                                <p>2018-06-21(1시간)</p>
+                            </div>
+                            <div class="ad-border"></div>
+                            <div class="ad-class-opt ad-btn-group-collapse">
+                                <button class="ad-btn-sm ad-btn-color1" data-toggle="modal" data-target="#requestUserModal">신청현황</button>
+                                <button class="ad-btn-sm ad-btn-color3" data-toggle="modal" data-target="#classUpdateModal">수정</button>
+                                <button class="ad-btn-sm ad-btn-color2">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- classUpdateModal -->
+            <div class="modal fade" id="classUpdateModal" tabindex="-1" role="dialog" aria-labelledby="classUpdateModalTitle" aria-hidden="true" style="z-index: 10800;">
+                <div class="modal-dialog modal-lg " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="classUpdateModalTitle"><b>체험등록/수정</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="ad-modal-contentgap">
+                                    <b>체험명</b>
+                                    <input type="text" class="ad-works-modal-inputlg ad-works-modal-content" placeholder="체험명을 입력해주세요">
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>모집인원</b>
+                                    <input type="number" class="ad-class-num ad-works-modal-content" name="minnum" min="1" max="20" placeholder="최소인원">
+                                    <input type="number" class="ad-class-num ad-works-modal-content" name="maxnum" min="1" max="20"  placeholder="최대인원">
+                                    
+                                </div>
+                                <div class="ad-modal-content-collapse">
+                                    <div class="ad-modal-contentgap">
+                                        <b>체험일자</b>
+                                        <input type="date" class="ad-works-modal-content">
+                                    </div>
+                                    <div class="ad-modal-contentgap">
+                                        <b>체험시간</b>
+                                    </div>
+                                </div>
+                                <div class="ad-modal-content-collapse">
+                                    <div class="ad-modal-contentgap">
+                                        <b>준비물</b>
+                                        <input type="checkbox">
+                                        <input type="text" class="ad-works-modal-inputsm ad-works-modal-content" placeholder="준비물을 입력하세요">
+                                    </div>
+                                    <div class="ad-modal-contentgap">
+                                        <b>체험료</b>
+                                        <input type="text" class="ad-works-modal-inputsm ad-works-modal-content" placeholder="가격">
+                                    </div>
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>사진첨부</b>
+                                </div>
+                                <div class="ad-modal-contentgap">
+                                    <b>제품상세</b>
+                                </div>
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="reset" class="ad-btn ad-btn-color3">초기화</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                                <button type="submit" class="ad-btn ad-btn-color1">등록하기</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--requestUserModal-->
+            <div class="modal fade" id="requestUserModal" tabindex="-1" role="dialog" aria-labelledby="requestUserModalTitle" aria-hidden="true" style="z-index: 10800;">
+                <div class="modal-dialog modal-dialog-centered " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="requestUserModalTitle"><b>신청현황</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="ad-modal-contentgap">
+                                    <b>체험명</b>
+                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ad-main-content-->
+    </div>
+    <!--ad-main-wrapper-->
+</body>
+</html>

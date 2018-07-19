@@ -1,0 +1,307 @@
+/**** 메인 고정부분 ****/
+.mp-main {
+   padding-top: 7.7em;
+}
+
+
+/**** 팔로잉/팔로워 모달 ****/
+#followerModal, #followingModal {
+    margin: 5em auto;
+}
+#postWriteModal {
+    margin: 4em auto;
+}
+.modal {
+    z-index: 100001;
+}
+.modal-backdrop {
+    z-index: 100000;
+}
+
+
+/**** 커버 ****/
+.mp-banner {
+    background-image: url("../images/banner_img.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: #ffc001;
+    height: 200px;
+    transition: box-shadow 0.5s ease;
+    box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
+}
+.mp-banner:hover {
+   box-shadow: inset 0 0 0 4px #1c2036;
+}
+.mp-banner:hover a {
+   /*width: 170px;*/
+}
+.mp-banner:hover .mp-banner-cbox>a>.fas{
+    font-size: 1.75em;
+    padding: 0.23em 0.4em 0 0;
+}
+.mp-banner:hover .mp-pic-box{
+    opacity: 1;
+    width: 164px;
+}
+.mp-banner>.mp-banner-cbox>a>.fas {
+    position: absolute;
+    font-size: 2.25em;
+    color: white;
+    top: 20px;
+    right: 6px;
+    transition: all .3s ease-out, padding .5s ease;
+}
+.mp-banner > a {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    float: right;
+    right: 19%;
+    top: 10%;
+    width: 50px;
+    transition: width .3s ease-out;
+    overflow: hidden;
+}
+
+.mp-banner-cbox {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mp-pic-text { /*span*/
+   /*-webkit-font-smoothing: antialiased;*/
+    position: relative;
+    padding-right: 0.56em;
+    font-weight: bold;
+    color: white;
+}
+.mp-pic-box { /*div*/ 
+    position: absolute;
+    border: 3px solid white;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0.4em 0.8em;
+    top: 20px;
+    right: 6px;
+    transition: opacity .3s ease-out, width .3s ease-out;
+    white-space: nowrap;
+    width: 34px;
+}
+/*.mp-banner::before { 페이스북
+    border: 1px solid rgba(0, 0, 0, .1);
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ProfileCanopy-header:before { 트위터
+    display: block;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
+    z-index: 1;
+}
+.user-header__cover:after { 오늘의집
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}*/
+
+
+/**** 프로필 ****/
+.mp-profile-setting {
+    background: #ffc001;
+    border-radius: 50%;
+    border: 6px solid white;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    z-index: 3;
+    transition: box-shadow 0.5s ease;
+}
+.mp-profile-setting:hover {
+    box-shadow: inset 0 0 0 4px #1c2036;
+}
+
+.mp-profile-setting > a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* width: 235px; */
+    border-radius: 50%;
+    z-index: 4;
+    text-decoration: none;
+} 
+.mp-profile-div {
+    position: absolute;
+    left: 83px; top: 93px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: bold;
+}
+.mp-profile-div .fas {
+    font-size: 2.25em;
+    color: white;
+    margin-left: 0.4em;
+}
+
+
+/**** 사용자 정보 ****/
+.mp-user-info {
+    position: absolute;
+    color: #343855;
+    top: 48%;
+    left: 30%;
+    font-weight: bold;
+    font-size: 0.8125em;
+    z-index: 3;
+}
+.mp-user-name {
+    font-size: 1.7692307692307692em;
+    margin-bottom: 0.23em;
+}
+.mp-user-follow > a {
+    cursor: pointer;
+}
+
+
+/**** 네비게이션 ****/
+.mp-nav {
+    position: relative;
+    height: 60px;
+    /*text-align: center; */
+}
+.mp-nav>ul {
+    list-style: none;
+    height: 60px;
+    /*width: 1200px;*/
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+.mp-nav>ul>li {
+    width: 100px;
+    height: inherit;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.0625em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mp-nav>ul>li>p {
+	padding-top: .2em;
+}
+
+
+/**** 바1 ****/
+.mp-bar1 {
+    z-index: 2;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+}
+.mp-bar1 li {
+    transition: border-bottom .2s ease;
+}
+.mp-bar1 li:first-child {
+    /*margin-left: 26.5em;*/
+} 
+
+.mp-bar1>ul>li>p>a {
+    color: #000;
+} 
+
+.mp-bar1>ul>li:hover,
+.mp-bar3>ul>li>a:hover {
+    /*border-bottom: 4px solid rgb(230, 126, 34);*/
+    color: rgb(230, 126, 34) !important;
+    text-decoration: none;
+}
+.mp-bar1>ul {
+    /*width: 1200px;*/
+    /*position: relative;*/
+}
+
+.mp-current1,
+.mp-current2>a {
+    /*border-bottom: 4px solid rgb(230, 126, 34);*/
+    color: rgb(230, 126, 34) !important;
+}
+
+/**** 바2 ****/
+/*.mp-bar2 {
+    z-index: 1;
+    border-bottom: solid #D5D5D5 1px;
+}
+.mp-bar2 li:first-child {
+    margin-left: 29.5em;
+}    
+.mp-bar2 li:hover {
+    color: #343855;
+}*/
+.mp-current2 {
+    /*color: #343855;*/
+}
+
+.mp-on {
+    border-bottom: 4px solid rgb(230, 126, 34);
+}
+
+.mp-bar3>ul {
+    height: 60px;
+    width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.mp-bar3>ul>li {
+    width: 150px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.mp-bar3>ul>li>a {
+    color: #000;
+}
+
+#submenus {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+}
+
+#promenus:hover #submenus {
+    display: block;
+}
+
+.ib-conbox {
+    padding-top: 4em;
+}

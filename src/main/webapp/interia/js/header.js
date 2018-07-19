@@ -11,13 +11,11 @@ $.get(serverRoot + "/interia/html/header.html", (data) => {
 function loadLoginUser() {
 	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		
-		document.getElementById("nav-link-1").innerHTML = "글쓰기";
 		$("#nav-link-1").text("글쓰기");
 		$("#nav-link-2").text("장바구니");
 		$("#nav-link-3").text("알림");
 		$("#nav-link-4").text("로그아웃");
-		$("#nav-link-5").text(data.id);
-		
+		$("#nav-link-5").text(data.nickname);
 		// 글쓰기 관련 이벤트 구현
 		$("#nav-link-1").click(e => {
 			e.preventDefault();
@@ -46,6 +44,7 @@ function loadLoginUser() {
 		// 마이페이지 관련 기능 구현
 		$("#nav-link-5").click(e => {
 			e.preventDefault();
+			location.href = serverRoot + "/interia/html/mypage/mp_mypage.html";
 		});
 	})
 	// 이부분의 대해서는 조금 더 연구를 해 볼것이다. 여기서는 로그인 필요한 부분일 경우 수행하는 것인데 아직은 생각할 필요 있음

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="../../css/mypage/mp_mypage.css">
 	<link rel="stylesheet" type="text/css" href="../../css/mypage/mp-qna.css">
+    <link rel="stylesheet" href="../../css/mypage/mp_following_popup.css">
+    <link rel="stylesheet" href="../../css/mypage/mp_follower_popup.css">
 	<script type="text/javascript" src="../../js/mypage.js"></script>
 </head>
 <body>
@@ -27,7 +29,7 @@
 			<nav class="mp-nav mp-bar1">
 				<ul>
 					<li id="promenus">
-						<p>프로필</p>
+						<a href="mp_post.html">프로필</a>
 						<nav class="mp-bar3" id="submenus">
 							<ul>
 								<li><a href="mp_post.html">사진</a></li>
@@ -37,7 +39,7 @@
                         </nav>
                     </li>
                     <li id="promenus">
-                        <p>쇼핑</p>
+                        <a href="mp_delivery_list.html">쇼핑</a>
                         <nav class="mp-bar3" id="submenus">
                             <ul>
                                 <li><a href="mp_delivery_list.html">주문/배송 내용</a></li>
@@ -47,7 +49,7 @@
 						</nav>
 					</li>
 					<li class="mp-on" id="promenus">
-						<p class="mp-current1">나의 활동</p>
+						<a href="mp-myactive.html" class="mp-current1">나의 활동</a>
 						<nav class="mp-bar3" id="submenus">
 							<ul>
 								<li><a href="mp-myactive.html">알림</a></li>
@@ -58,7 +60,7 @@
 						</nav>
 					</li>
 					<li id="promenus">
-						<p>내 정보</p>
+						<a href="mp-myinfo.html">내 정보</a>
 						<nav class="mp-bar3" id="submenus">
 							<ul>
 								<li><a href="mp-myinfo.html">회원 정보 관리</a></li>
@@ -174,6 +176,9 @@
 	
 </footer>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/mp_pfHead.js"></script>

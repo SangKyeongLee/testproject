@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../favicon.ico">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/keyword_hash_tag.js"></script>
 </head>
 
@@ -76,69 +76,194 @@
 	</div>
 	<div class="main_bestStore_images">
 		<div class="main_bestStore_img01">
-			<a href="./workshop_sellerSite.html"><img src="../../images/main/beststore01.png"></a>
+			<a href="./workshop_sellerSite.html">
+			    <img src="../../images/main/store_sample/gb01.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb02.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#"><img src="../../images/main/store_sample/gb03.jpg"></a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb04.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 	</div>
 	<div class="main_bestStore_images">
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb05.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb06.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb07.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/beststore01.png"></a>
+			<a href="#">
+			    <img src="../../images/main/store_sample/gb08.jpg">
+			</a>
 			<p>인테리어 공방</p>
 		</div>
 	</div>
-
-	<div class="main_todayRoom">
-		<h1>오늘의 공간</h1>
-	</div>
-	<div class="main_todayRoomHashTag">
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#가구</p></a>
-		</div>
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#침실</p></a>
-		</div>
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#원룸</p></a>	
-		</div>
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#자취</p></a>
-		</div>
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#탁자</p></a>
-		</div>
-		<div class="main_todayRoomHashTag01">
-			<a href="#"><p>#거울</p></a>
-		</div>
-	</div>
-	<div class="main_todayRoomImg">
-	</div>
-	<div class="main_todayRoomImgText">
-		<a href="#"><p>더 많은 공간 보러가기＞</p></a>
-	</div>
+<!-- 오늘의 공방 ---------------------------------------------------->
+	<form class="modal" id="tdy_modal01">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd01.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">디시디아 행잉플랜트</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal02">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd02.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">인테리어 식물 아레카야자</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal03">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd03.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">원형 러그</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal04">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd04.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">싱글 윈디소파베드</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal05">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd05.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">5mm 북유럽 러그&카페트</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal06">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd06.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">초대형 에스닉 태피스트리</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal07">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd07.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">모던라인 레이스커튼</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="modal" id="tdy_modal08">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="#" class="tdy_prod">
+                      <img src="../../images/main/main_today/product/tdy_prd08.jpg" alt="">
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <span class="tdy-modal-titl">AGEN 라탄 의자</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="tdy_content">
+      <div class="tdy_wrap">
+        <div class="tdy_titl">
+          <span class="tdy_main_titl">오늘의 공간</span>
+          <span class="tdy_sub_titl">당신의 공간을 아름답게 꾸미기 위한 영감을 드립니다</span>
+        </div>
+        <div class="tdy_imgBox">
+          <img src="../../images/main/main_today/today_place01.jpg" alt="">
+          <a href="#tdy_modal01" data-toggle="modal" class="tdy_a_tag tdy_a1"></a>
+          <a href="#tdy_modal02" data-toggle="modal" class="tdy_a_tag tdy_a2"></a>
+          <a href="#tdy_modal03" data-toggle="modal" class="tdy_a_tag tdy_a3"></a>
+          <a href="#tdy_modal04" data-toggle="modal" class="tdy_a_tag tdy_a4"></a>
+          <a href="#tdy_modal05" data-toggle="modal" class="tdy_a_tag tdy_a5"></a>
+          <a href="#tdy_modal06" data-toggle="modal" class="tdy_a_tag tdy_a6"></a>
+          <a href="#tdy_modal07" data-toggle="modal" class="tdy_a_tag tdy_a7"></a>
+          <a href="#tdy_modal08" data-toggle="modal" class="tdy_a_tag tdy_a8"></a>
+        </div>
+      </div>
+    </div>
 
 	<div class="main_storebanner">
 		<h1>온라인에서 만드는 나만의 가게</h1>

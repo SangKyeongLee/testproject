@@ -36,9 +36,9 @@
            #{name}, #{nickname}, #{phoneNumber})
   </insert>
   
-  <!-- 아이디 찾기 -->
+  <!-- 회원정보 관련(아이디&닉네임 표시하게 함) -->
   <select id="selectOne" parameterType="String" resultMap="MemberMap">
-    select memno, id
+    select memno, id, nknm
     from INTR_MEMBER 
     where id=#{id}
   </select>
@@ -59,9 +59,9 @@
   
   <update id="update" parameterType="Member">
     update INTR_MEMBER set 
-        pwd=#{password}, 
+        pwd=password(#{password}), 
         name=#{name},
-        nknm=#{nickName},
+        nknm=#{nickname},
         phno=#{phoneNumber},
         zcode=#{zipCode},
         baddr=#{baseAdd},
@@ -69,9 +69,32 @@
     where memno=#{no}
   </update>
   
+  <!-- 회원 탈퇴용(바로 집어 넣고 보자) -->
   <delete id="delete" parameterType="String">
     delete from INTR_MEMBER where memno=#{value}
   </delete>
+  
+  <!-- 아이디 찾기 검색 -->
+  <select id="selectSearchOne" parameterType="map" resultType="String">
+    select id
+    from INTR_MEMBER 
+    where name=#{name} and phno=#{phoneNumber}
+  </select>
+  
+  <!-- 비밀번호 찾기 (service에서 boolean용으로 쓰이기) -->
+  <select id="selectSearchPassword" parameterType="String" resultType="int">
+    select count(*)
+    from INTR_MEMBER 
+    where id=#{id} 
+  </select>
+  
+  <!-- 비밀번호 변경 관련 문법 -->
+  <update id="updatePassword" parameterType="map">
+    update INTR_MEMBER set 
+        pwd=password(#{password})
+    where id=#{id}
+  </update>
+  
 </mapper>
 
 

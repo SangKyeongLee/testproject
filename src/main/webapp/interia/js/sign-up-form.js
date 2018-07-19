@@ -6,6 +6,6 @@ $("#addBtn").click(() => {
         nickname: $(fNickname).val(),
         phoneNumber: $(fFirstNumber).val() + $(fSecondNumber).val() + $(fThirdNumber).val()
     }, () => {
-        location.href = "../main/index.html";
+        location.href = "./login.html";
     });
 });
