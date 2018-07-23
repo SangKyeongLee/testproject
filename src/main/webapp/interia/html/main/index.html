@@ -2,897 +2,207 @@
 <html>
 
 <head>
-    <title>INTERIA</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../css/header_move.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="shortcut icon" href="../favicon.ico">
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../js/keyword_hash_tag.js"></script>
+<title>INTERIA</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<link rel="stylesheet" type="text/css" href="../../css/header_move.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="shortcut icon" href="../favicon.ico">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/keyword_hash_tag.js"></script>
 </head>
 
 <body>
-    <header id="header">
+	<header id="header"> </header>
+	<section>
+		<div class="main_visual_back">
+			<div class="main_visual0">
+				<div class="main_imgBg"></div>
+			</div>
+		</div>
 
-    </header>
-    <section>
-    <div class="main_visual_back">
-    <div class="main_visual0">
-        <div class="main_imgBg">
-            <div class="main_test01">
-                <div class="main_test01_left">
-                    <img src="../../images/main/test01.png">
-                </div>
-                <div class="main_test01_right">
-                    <img src="../../images/main/test02.png">
-                </div>
-            </div>
-            <div class="main_test01">
-                <div class="main_test01_left">
-                    <img src="../../images/main/test03.png">
-                </div>
-                <div class="main_test01_right">
-                    <img src="../../images/main/test04.png">
-                </div>
-            </div>
-            <div class="main_test01">
-                <div class="main_test01_left">
-                    <img src="../../images/main/test05.png">
-                </div>
-                <div class="main_test01_right">
-                    <img src="../../images/main/test06.png">
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    
-    <script>
-        $('.main_imgBg').bxSlider({
-          minSlides: 1,
-          maxSlides: 3,
-          moveSlides: 1,
-          slideWidth: 1920,
-          slideMargin: 20,
-          auto: true,
-          controls: true,
-          pager: false
-        });
-    </script>
-    
-    
-    
-    
-	<div class="main_bestStore">
-		<h1>인기 스토어</h1>
-	</div>
-	<div class="main_bestStore2">
-		<a href="./workshop_main.html"><p>더보기</p></a>
-	</div>
-	<div class="main_bestStore_images">
-		<div class="main_bestStore_img01">
-			<a href="./workshop_sellerSite.html">
-			    <img src="../../images/main/store_sample/gb01.jpg">
-			</a>
-			<p>인테리어 공방</p>
+		<!-- 인기 스토어 ---------------------------------------------------->
+		<div class="main_bestStore">
+			<h1>인기 스토어</h1>
+			<p>이번주에 가장 인기있는 스토어를 확인해보세요</p>
 		</div>
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb02.jpg">
-			</a>
-			<p>인테리어 공방</p>
+		<div class="main_bestStore2">
+			<a href="./workshop_main.html"><p>더보기</p></a>
 		</div>
-		<div class="main_bestStore_img01">
-			<a href="#"><img src="../../images/main/store_sample/gb03.jpg"></a>
-			<p>인테리어 공방</p>
+		<div class="main_bestStore_wrap">
+			<div class="main_bestStore_images"></div>
 		</div>
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb04.jpg">
-			</a>
-			<p>인테리어 공방</p>
-		</div>
-	</div>
-	<div class="main_bestStore_images">
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb05.jpg">
-			</a>
-			<p>인테리어 공방</p>
-		</div>
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb06.jpg">
-			</a>
-			<p>인테리어 공방</p>
-		</div>
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb07.jpg">
-			</a>
-			<p>인테리어 공방</p>
-		</div>
-		<div class="main_bestStore_img01">
-			<a href="#">
-			    <img src="../../images/main/store_sample/gb08.jpg">
-			</a>
-			<p>인테리어 공방</p>
-		</div>
-	</div>
-<!-- 오늘의 공방 ---------------------------------------------------->
-	<form class="modal" id="tdy_modal01">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd01.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">디시디아 행잉플랜트</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal02">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd02.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">인테리어 식물 아레카야자</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal03">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd03.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">원형 러그</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal04">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd04.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">싱글 윈디소파베드</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal05">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd05.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">5mm 북유럽 러그&카페트</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal06">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd06.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">초대형 에스닉 태피스트리</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal07">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd07.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">모던라인 레이스커튼</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <form class="modal" id="tdy_modal08">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <a href="#" class="tdy_prod">
-                      <img src="../../images/main/main_today/product/tdy_prd08.jpg" alt="">
-                    </a>
-                </div>
-                <div class="modal-footer">
-                    <span class="tdy-modal-titl">AGEN 라탄 의자</span>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <div class="tdy_content">
-      <div class="tdy_wrap">
-        <div class="tdy_titl">
-          <span class="tdy_main_titl">오늘의 공간</span>
-          <span class="tdy_sub_titl">당신의 공간을 아름답게 꾸미기 위한 영감을 드립니다</span>
-        </div>
-        <div class="tdy_imgBox">
-          <img src="../../images/main/main_today/today_place01.jpg" alt="">
-          <a href="#tdy_modal01" data-toggle="modal" class="tdy_a_tag tdy_a1"></a>
-          <a href="#tdy_modal02" data-toggle="modal" class="tdy_a_tag tdy_a2"></a>
-          <a href="#tdy_modal03" data-toggle="modal" class="tdy_a_tag tdy_a3"></a>
-          <a href="#tdy_modal04" data-toggle="modal" class="tdy_a_tag tdy_a4"></a>
-          <a href="#tdy_modal05" data-toggle="modal" class="tdy_a_tag tdy_a5"></a>
-          <a href="#tdy_modal06" data-toggle="modal" class="tdy_a_tag tdy_a6"></a>
-          <a href="#tdy_modal07" data-toggle="modal" class="tdy_a_tag tdy_a7"></a>
-          <a href="#tdy_modal08" data-toggle="modal" class="tdy_a_tag tdy_a8"></a>
-        </div>
-      </div>
-    </div>
 
-	<div class="main_storebanner">
-		<h1>온라인에서 만드는 나만의 가게</h1>
-		<h1>INTERIA 스토어</h1>
-		<button type="button" onClick="location.href='./workshop_request.html'">신청하기</button>
-	</div>
-</section>
+		<!-- 오늘의 공간 ---------------------------------------------------->
+		<div class="tdy_content">
+			<div class="tdy_wrap">
+				<div class="tdy_titl">
+					<span class="tdy_main_titl">오늘의 공간</span> <span
+						class="tdy_sub_titl">당신의 공간을 아름답게 꾸미기 위한 영감을 드립니다</span>
+				</div>
+				<div class="tdy_imgBox">
+					<img src="../../images/main/main_today/today_place01.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div class="main_storebanner">
+			<h1>온라인에서 만드는 나만의 가게</h1>
+			<h1>INTERIA 스토어</h1>
+			<button type="button"
+				onClick="location.href='./workshop_request.html'">신청하기</button>
+		</div>
+
+	</section>
 	<div class="bt-wrap">
-    <section class="bt-category bt-content">
-      <div class="bt-cir-wrap">
-        <a href="#" class="circle crcl_trns">
-          <div class="circle_box crcl_trns crcl_posin">
+		<section class="bt-category bt-content">
+			<div class="bt-cir-wrap">
+				<a href="#" class="circle crcl_trns">
+					<div class="circle_box crcl_trns crcl_posin">
 
-            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/gagoo.jpg" alt="">
-            </div>
-            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/gagoo.jpg" alt="">
-              <div class="black crcl_trns crcl_rdus crcl_posin">
-                <p class="crcl_trns">보러가기</p>
-              </div>
-            </div>
+						<div class="circle_front crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/gagoo.jpg" alt="">
+						</div>
+						<div class="circle_end crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/gagoo.jpg" alt="">
+							<div class="black crcl_trns crcl_rdus crcl_posin">
+								<p class="crcl_trns">보러가기</p>
+							</div>
+						</div>
 
-          </div> <!-- circle_box -------------------------------------------->
-          <p class="circle_ctgy_titl">가구</p>
-        </a><!-- circle ------------------------------------------------->
-        <a href="#" class="circle crcl_trns">
-          <div class="circle_box crcl_trns crcl_posin">
+					</div> <!-- circle_box -------------------------------------------->
+					<p class="circle_ctgy_titl">가구</p>
+				</a>
+				<!-- circle ------------------------------------------------->
+				<a href="#" class="circle crcl_trns">
+					<div class="circle_box crcl_trns crcl_posin">
 
-            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/coo.jpg" alt="">
-            </div>
-            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/coo.jpg" alt="">
-              <div class="black crcl_trns crcl_rdus crcl_posin">
-                <p class="crcl_trns">보러가기</p>
-              </div>
-            </div>
+						<div class="circle_front crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/coo.jpg" alt="">
+						</div>
+						<div class="circle_end crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/coo.jpg" alt="">
+							<div class="black crcl_trns crcl_rdus crcl_posin">
+								<p class="crcl_trns">보러가기</p>
+							</div>
+						</div>
 
-          </div> <!-- circle_box -------------------------------------------->
-          <p class="circle_ctgy_titl">패브릭</p>
-        </a><!-- circle ------------------------------------------------->
-        <a href="#" class="circle crcl_trns">
-          <div class="circle_box crcl_trns crcl_posin">
+					</div> <!-- circle_box -------------------------------------------->
+					<p class="circle_ctgy_titl">패브릭</p>
+				</a>
+				<!-- circle ------------------------------------------------->
+				<a href="#" class="circle crcl_trns">
+					<div class="circle_box crcl_trns crcl_posin">
 
-            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/light.jpg" alt="">
-            </div>
-            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/light.jpg" alt="">
-              <div class="black crcl_trns crcl_rdus crcl_posin">
-                <p class="crcl_trns">보러가기</p>
-              </div>
-            </div>
+						<div class="circle_front crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/light.jpg" alt="">
+						</div>
+						<div class="circle_end crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/light.jpg" alt="">
+							<div class="black crcl_trns crcl_rdus crcl_posin">
+								<p class="crcl_trns">보러가기</p>
+							</div>
+						</div>
 
-          </div> <!-- circle_box -------------------------------------------->
-          <p class="circle_ctgy_titl">홈데코/조명</p>
-        </a><!-- circle ------------------------------------------------->
-        <a href="#" class="circle crcl_trns">
-          <div class="circle_box crcl_trns crcl_posin">
+					</div> <!-- circle_box -------------------------------------------->
+					<p class="circle_ctgy_titl">홈데코/조명</p>
+				</a>
+				<!-- circle ------------------------------------------------->
+				<a href="#" class="circle crcl_trns">
+					<div class="circle_box crcl_trns crcl_posin">
 
-            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/life.jpg" alt="">
-            </div>
-            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/life.jpg" alt="">
-              <div class="black crcl_trns crcl_rdus crcl_posin">
-                <p class="crcl_trns">보러가기</p>
-              </div>
-            </div>
+						<div class="circle_front crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/life.jpg" alt="">
+						</div>
+						<div class="circle_end crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/life.jpg" alt="">
+							<div class="black crcl_trns crcl_rdus crcl_posin">
+								<p class="crcl_trns">보러가기</p>
+							</div>
+						</div>
 
-          </div> <!-- circle_box -------------------------------------------->
-          <p class="circle_ctgy_titl">생활</p>
-        </a><!-- circle ------------------------------------------------->
-        <a href="#" class="circle crcl_trns">
-          <div class="circle_box crcl_trns crcl_posin">
+					</div> <!-- circle_box -------------------------------------------->
+					<p class="circle_ctgy_titl">생활</p>
+				</a>
+				<!-- circle ------------------------------------------------->
+				<a href="#" class="circle crcl_trns">
+					<div class="circle_box crcl_trns crcl_posin">
 
-            <div class="circle_front crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/kitchen.jpg" alt="">
-            </div>
-            <div class="circle_end crcl_trns crcl_rdus crcl_posin">
-              <img src="../../images/main/category/kitchen.jpg" alt="">
-              <div class="black crcl_trns crcl_rdus crcl_posin">
-                <p class="crcl_trns">보러가기</p>
-              </div>
-            </div>
+						<div class="circle_front crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/kitchen.jpg" alt="">
+						</div>
+						<div class="circle_end crcl_trns crcl_rdus crcl_posin">
+							<img src="../../images/main/category/kitchen.jpg" alt="">
+							<div class="black crcl_trns crcl_rdus crcl_posin">
+								<p class="crcl_trns">보러가기</p>
+							</div>
+						</div>
 
-          </div> <!-- circle_box -------------------------------------------->
-          <p class="circle_ctgy_titl">주방</p>
-        </a><!-- circle ------------------------------------------------->
-      </div><!-- bt-cir-wrap -->
-    </section><!-- bt-category -->
-    
-    <section class="bt-keyword bt-content">
-      <span class="bt-title bt-key-titl">HOT KEYWORD</span>
-      <span class="bt-subtitle bt-key-sub">이번주에 인기 키워드로 다양한 작품을 알아보세요.</span>
-      <ul class="bt-key-hashtag">
-        <li>
-          <a id="key-hashtag-euro" class="bt-key-hashtag-click" href="javascript:viewBtn(1);">#북유럽</a>
+					</div> <!-- circle_box -------------------------------------------->
+					<p class="circle_ctgy_titl">주방</p>
+				</a>
+				<!-- circle ------------------------------------------------->
+			</div>
+			<!-- bt-cir-wrap -->
+		</section>
+		<!-- bt-category -->
 
-        </li>
-        <li>
-          <a id="key-hashtag-summer" href="javascript:viewBtn(2);">#여름침구</a>
+		<section class="bt-keyword bt-content">
+			<span class="bt-title bt-key-titl">HOT KEYWORD</span> <span
+				class="bt-subtitle bt-key-sub">이번주에 인기 키워드로 다양한 작품을 알아보세요.</span>
+			<ul class="bt-key-hashtag">
+				<li><a id="key-hashtag-euro" class="bt-key-hashtag-click" href="javascript:viewBtn(1);">#북유럽</a></li>
+				<li><a id="key-hashtag-summer" href="javascript:viewBtn(2);">#여름침구</a></li>
+				<li><a id="key-hashtag-modern" href="javascript:viewBtn(3);">#모던한</a></li>
+				<li><a id="key-hashtag-flowerpot" href="javascript:viewBtn(4);">#화분</a></li>
+				<li><a id="key-hashtag-simple" href="javascript:viewBtn(5);">#심플한</a></li>
+			</ul>
+			<div class="bt-tag-prod">
+				<ul class="bt-tag-prod-group bt-hashtag-euro"></ul>
+				<ul class="bt-tag-prod-group bt-hashtag-summer" style="display: none;"></ul>
+				<ul class="bt-tag-prod-group bt-hashtag-modern" style="display: none;"></ul>
+				<ul class="bt-tag-prod-group bt-hashtag-flowerpot" style="display: none;"></ul>
+				<ul class="bt-tag-prod-group bt-hashtag-simple" style="display: none;"></ul>
+			</div>
+		</section>
+		<!-- bt-keyword -->
 
-        </li>
-        <li>
-          <a id="key-hashtag-modern" href="javascript:viewBtn(3);" href="#">#모던한</a>
-        </li>
-        <li>
-          <a id="key-hashtag-flowerpot" href="javascript:viewBtn(4);" href="#">#화분</a>
-        </li>
-        <li>
-          <a id="key-hashtag-simple" href="javascript:viewBtn(5);" href="#">#심플한</a>
-        </li>
-      </ul>
-      <div class="bt-tag-prod">
-        <ul class="bt-tag-prod-group bt-hashtag-euro">
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro01.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro02.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro03.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro04.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro05.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro06.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro07.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/euro/euro08.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="bt-tag-prod-group bt-hashtag-summer" style="display:none;">
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer01.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer02.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer03.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer04.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer05.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer06.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer07.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/summer/summer08.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="bt-tag-prod-group bt-hashtag-modern" style="display:none;">
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern01.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern02.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern03.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern04.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern05.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern06.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern07.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/modern/modern08.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="bt-tag-prod-group bt-hashtag-flowerpot" style="display:none;">
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot01.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot02.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot03.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot04.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot05.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot06.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot07.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/pot/pot08.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="bt-tag-prod-group bt-hashtag-simple" style="display:none;">
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple01.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple02.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple03.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple04.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple05.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple06.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple07.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="bt-tag-prod-box" href="#">
-              <img src="../../images/main/keyword/simple/simple08.jpg">
-              <div class="bt-tag-prod-black bt-over">
-                <span>상세 보기 +</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section><!-- bt-keyword -->
-    
-    <script>
-      $(document).ready(function(){
-        $('.bt-sns-slider').bxSlider({
-          auto: true,
-          pager:false,
-          minSlides: 5,
-          maxSlides: 5,
-          slideWidth: 240,
-          slideMargin: 20,
-          moveSlides: 1
-        });
-      });
-    </script>
-
-    <section class="bt-photo-sns">
-      <span class="bt-title bt-key-titl">오늘의 자랑하기</span>
-      <div class="bt-photo-slider-wrap">
+		<section class="bt-photo-sns">
+			<span class="bt-title bt-key-titl">오늘의 자랑하기</span>
+			<div class="bt-photo-slider-wrap">
 
 
-      <div class="bt-photo-sns-box">
-        <div class="bt-sns-slider">
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot01.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/gg.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">임현식이</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot02.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile01.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">성현동</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot03.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile02.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">서경</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot04.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile03.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">경명수</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot05.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/salah.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">이상경</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot06.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile05.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">어쿠스틱 콜라보</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot07.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile04.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">악동뮤지션</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          <div class="bt-sns-slider-piece">
-            <a class="sns-img-piece" href="#">
-              <img src="../../images/main/keyword/pot/pot08.jpg" alt="">
-            </a>
-            <div class="sns-cont-piece">
-              <div class="sns-cont-profile">
-                <div class="sns-cont-profile-img">
-                  <img src="../../images/main/profile06.jpg" alt="">
-                </div>
-                <a href="#"><span class="bt-sns-userId">연애의발견</span></a>
-              </div>
-              <span class="bt-sns-text">안녕하세요! 이번에 집 구조를 바꾸어 보았어요!
-              새로이 저의 집을 소개합니다.</span>
-            </div>
-          </div><!--bt-sns-slider-piece-->
-          
-        </div>
-      </div><!--bt-photo-sns-box-->
-    </div><!-- slider wrap -->
-    </section><!-- bt-photo-sns -->
-    </div><!-- bt-wrap -->
-        
-    
-    
-        <a id="MOVE_TOP_BTN" href="#"><img src="../../images/main/arrow.png"></a>
-        
-        <script>
-            $(function() {
-                $(window).scroll(function() {
-                    if ($(this).scrollTop() > 500) {
-                        $('#MOVE_TOP_BTN').fadeIn();
-                    } else {
-                        $('#MOVE_TOP_BTN').fadeOut();
-                    }
-                });
+				<div class="bt-photo-sns-box">
+					<div class="bt-sns-slider"></div>
+				</div>
+				<!--bt-photo-sns-box-->
+			</div>
+			<!-- slider wrap -->
+		</section>
+		<!-- bt-photo-sns -->
+	</div>
+	<!-- bt-wrap -->
 
-                $("#MOVE_TOP_BTN").click(function() {
-                    $('html, body').animate({
-                        scrollTop : 0
-                    }, 400);
-                    return false;
-                });
-            });
-        </script>
+	<a id="MOVE_TOP_BTN" href="#"><img src="../../images/main/arrow.png"></a>
 
-
-
-    <footer id="footer">
-
-    </footer>
-    <script src="../../js/common.js"></script>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/footer.js"></script>
-
+	<footer id="footer"></footer>
+	
+	<script src="../../js/common.js"></script>
+	<script src="../../js/header.js"></script>
+	<script src="../../js/footer.js"></script>
+    <script src="../../js/main_imgBg_slider.js"></script>
+	<script src="../../js/popular_store.js"></script>
+	<script src="../../js/today_place.js"></script>
+	<script src="../../js/hotkeyword.js"></script>
+	<script src="../../js/bt-sns-slider.js"></script>
+	<script src="../../js/topbtn.js"></script>
 </body>
 
 </html>

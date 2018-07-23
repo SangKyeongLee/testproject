@@ -4,12 +4,16 @@ var i = 1;
 
 $("#linkadd img").on("click", clickHandler);
 
-function clickHandler() {
-  x = event.layerX;
-  y = event.layerY;
-  // alert('x좌표:' + x + ', y좌표:' + y);
-  $("#linkadd").append("<div class='link_input"+ i +" link_zindex'>"+
-    "<div class='link_input_box link_input_wrap"+ i +"'>" +
+function clickHandler(event) {
+	
+  console.log(event);
+  console.log(event.clientX, event.clientY);
+  console.log(event.offsetX, event.offsetY);
+  x = event.offsetX;
+  y = event.offsetY;
+   /*alert('x좌표:' + x + ', y좌표:' + y + ', cy좌표: ' + cy + ', py좌표: ' + py + ', sy좌표: ' + sy);*/
+  $("#linkadd").append("<div class='link_input"+ i +"'>"+
+    "<div class='link_input_box link_input_wrap"+ i +"  link_zindex'>" +
       "<div class='link_input_tag'>" +
         "<input type='text' name='prdnm' id='prdnm"+ i +"' class='lk_ip' placeholder='상품명을 입력해주세요.'/>" +
         "<input type='text' name='addr' id='addr"+ i +"' class='lk_ip' placeholder='상품URL을 입력해주세요'/>" +
