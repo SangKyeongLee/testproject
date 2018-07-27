@@ -1,11 +1,15 @@
-h5 {font-weight: bold;}
 .mp-nav>ul>li>p {
     margin: 0;
 }
 
 /**** 제목 ***/
 .ib-mp-titl {
-	padding: 1.5em 1em 1em 1em;
+	padding: 0 1em 1em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.ib-mp-titl> p {
+    margin-bottom: 0;
 }
 .ib-mp-pnum {
 	color: #ffc001;
@@ -16,15 +20,15 @@ h5 {font-weight: bold;}
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 20px;
+	grid-gap: 16px;
 	margin-bottom: 4.375em;
 }
 
 /**** 좋아요한 게시물 ****/
 .ib-mp-post {
 	position: relative;
-	width: 285px;
-	height: 285px;
+	width: 247px;
+	height: 247px;
     font-size: 0.875em;
     overflow: hidden;
 }
@@ -50,11 +54,4 @@ h5 {font-weight: bold;}
 }
 .ib-mp-icons i{
 	font-size: 1.3125em;
-}
-
-
-/**** 빈 게시물 ****/
-.ib-mp-empty {
-	width: 285px;
-	height: 285px;
 }

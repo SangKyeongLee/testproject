@@ -1,0 +1,337 @@
+section {height: 2400px;margin: 0 auto;}
+h1,h2,h3,h4,h5,h6,p {margin: 0;padding: 0;}
+a {color:#333;text-decoration:none}
+a:active, a:hover {text-decoration:none;}
+.main_visual0 {
+	width: 100%;
+	height: 650px;
+	margin: 0 auto;
+	margin-top: 7.5em;
+	background-color: #ccc;
+}
+.fc_category_grid {
+	width: 1200px;
+	height: 120px;
+	margin: 0 auto;
+	margin-top: 5em;
+	background-color: #f00;
+}
+.fc_category_grid00 {
+	width: 100%;
+	height: 60px;
+	background-color: #978654;
+}
+.fc_category_article1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 300px;
+	height: 60px;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+.fc_category_article1 p{
+	color: #333;
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+.fc_category_article1:nth-child(1){
+	background-color: #666;
+}
+.fc_category_storeList {
+	width: 1200px;
+	height: 850px;
+	margin: 0 auto;
+	margin-top: 3em;
+}
+.fc_category_storeList00 {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 400px;
+}
+.fc_category_storeList00_1 {
+	position: relative;
+	width: 285px;
+	height: 100%;
+}
+.fc_category_storeList00_1 p:nth-child(1) {
+	font-size: 1.125rem;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+.fc_category_storeList00_1 p:nth-child(3) {
+	font-size: 1.75rem;
+}
+.fc_category_storeList00_1_line {
+	width: 100px;
+	height: 5px;
+	background-color: #ffc001;
+	margin-bottom: 0.5em;
+}
+.fc_category_storeList00_2 {
+	width: 100%;
+	height: 200px;
+	background: url('../../images/workshop/storeListBanner.png') no-repeat 50% 50%;
+}
+.fc_category_storeList00_2_circle {
+	position: absolute;
+	top: 9em;
+	left: 6.3em;
+	width: 80px;
+	height: 80px;
+	background-color: #fff;
+	border-radius: 40px;
+}
+.fc_category_storeList00_2_title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+	height: 160px;
+}
+.fc_category_storeList00_2_title h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.fc_category_storeList00_2_title p:nth-child(2) {
+	margin-top: 0.25em;
+}
+.fc_category_storeList00_2_title p:nth-child(3) {
+	font-size: 0.8rem;
+	text-align: center;
+	margin-top: 1.125em;
+	margin-bottom: 1em;
+}
+.fc_category_storeList00_2_btn {
+	width: 100%;
+	height: 40px;
+}
+.fc_category_storeList00_2_btn01 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 40px;
+	float: left;
+	font-size: 1.25rem;
+	border: 1px solid #666;
+	box-sizing: border-box;
+}
+.fc_category_storeList00_2_btn02 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 205px;
+	height: 40px;
+	float: left;
+	font-size: 1.125rem;
+	background-color: #333;
+}
+.fc_category_storeList00_2_btn02 a{
+	color: #fff;
+}
+.fc_category_storeList01 {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 400px;
+	margin-top: 1em;
+}
+.fc_category_storeList01_1 {
+	position: relative;
+	width: 285px;
+	height: 100%;
+}
+.fc_category_storeList_view {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1200px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 2em;
+	font-size: 1.125rem;
+	font-weight: bold;
+	background-color: #888; 
+}
+.fc_category_storeList_view a{
+	color: #fff;
+}
+.fc_storeSubmit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 1200px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 5em;
+	background: url('../../images/workshop/storeSubmit.png') no-repeat 50% 50%;
+}
+.fc_storeSubmit h1 {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.75rem;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+.fc_storeSubmit button {
+	border: 0;
+	padding: 0;
+	width: 200px;
+	height: 50px;
+	color: #000;
+	font-weight: bold;
+	margin-top: 1em;
+	background-color: #ffc001;
+}
+
+
+/*workshop_request css*/
+.workshop_request_visual {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 650px;
+	margin: 0 auto;
+	margin-top: 7.5em;
+	background: url('../../images/workshop/storeRequestBanner.png') no-repeat 50% 50%;
+}
+.workshop_request_visual h1 {
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+.workshop_request_visual button {
+	border: 0;
+	padding: 0;
+	width: 200px;
+	height: 50px;
+	color: #000;
+	font-weight: bold;
+	margin-top: 2em;
+	background-color: #ffc001;
+}
+.workshop_request_storyTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 4em;
+}
+.workshop_request_storyTitle h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.workshop_request_storyTitle_line {
+	width: 100px;
+	height: 5px;
+	margin: 0 auto;
+	margin-top: 0.75em;
+	background-color: #ffc001;
+}
+.workshop_request_storyTitle p {
+	font-size: 0.825rem;
+	margin-top: 1em;
+}
+.workshop_request_storyImg {
+	width: 2000px;
+	height: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #456789;
+}
+.workshop_request_storyImg00 {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	width: 400px;
+	height: 500px;
+	float: left;
+	background: url('../../images/workshop/storeRequestStory.png') no-repeat 50% 50%;
+}
+.workshop_request_storyImg00_text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100px;
+	background-color: #000;
+	opacity: 0.7;
+}
+.workshop_request_storyImg00_text p{
+	color: #fff;
+	font-size: 1.125rem;
+	opacity: 1;
+	line-height: 2em;
+}
+.workshop_request_storyImg00_text p:nth-child(2){
+	font-weight: bold;
+}
+.workshop_request_start_bg {
+	width: 1920px;
+	height: 950px;
+	margin: 0 auto;
+	margin-top: 5em;
+	background-color: #d8d8d8;
+}
+.workshop_request_start {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5em;
+	background-color: #d8d8d8;
+}
+.workshop_request_start h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 1.5em;
+}
+.workshop_request_storyTitle_line {
+	width: 100px;
+	height: 5px;
+	margin: 0 auto;
+	margin-top: 0.75em;
+	background-color: #ffc001;
+}
+.workshop_request_start p {
+	font-size: 0.825rem;
+	margin-top: 1em;
+	text-align: center;
+}
+.workshop_request_start_Mac {
+	width: 680px;
+	height: 555px;
+	margin-top: 2em;
+	background: url('../../images/workshop/storeRequestStart.png') no-repeat 50% 50%;
+}
+.workshop_request_start_deps {
+	display: flex;
+	justify-content: space-around;
+	width: 900px;
+	height: 140px;
+	margin: 0 auto;
+	margin-top: 3em;
+}
+.workshop_request_start_deps01 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 120px;
+	height: 140px;
+}
+.workshop_request_start_deps01 p{
+	text-align: center;
+	font-size: 0.8rem;
+}

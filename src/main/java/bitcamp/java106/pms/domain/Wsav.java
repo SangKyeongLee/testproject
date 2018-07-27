@@ -12,7 +12,8 @@ public class Wsav implements Serializable {
     private int minPerson;
     private int maxPerson;
     private Date experDate;
-    private Date requiredTime;
+    private String startTime;
+    private String endTime;
     
     private boolean prepareYn;
     private String prepareCont;
@@ -20,14 +21,26 @@ public class Wsav implements Serializable {
     private String content;
     private String addr;
     
-    
     @Override
     public String toString() {
         return "Wsav [no=" + no + ", title=" + title + ", minPerson=" + minPerson + ", maxPerson=" + maxPerson
-                + ", experDate=" + experDate + ", requiredTime=" + requiredTime + ", prepareYn=" + prepareYn
-                + ", prepareCont=" + prepareCont + ", price=" + price + ", content=" + content + ", addr=" + addr + "]";
+                + ", experDate=" + experDate + ", startTime=" + startTime + ", endTime=" + endTime + ", prepareYn="
+                + prepareYn + ", prepareCont=" + prepareCont + ", price=" + price + ", content=" + content + ", addr="
+                + addr + "]";
     }
     
+    public String getStartTime() {
+        return startTime;
+    }
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+    public String getEndTime() {
+        return endTime;
+    }
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
     public int getNo() {
         return no;
     }
@@ -57,12 +70,6 @@ public class Wsav implements Serializable {
     }
     public void setExperDate(Date experDate) {
         this.experDate = experDate;
-    }
-    public Date getRequiredTime() {
-        return requiredTime;
-    }
-    public void setRequiredTime(Date requiredTime) {
-        this.requiredTime = requiredTime;
     }
     public boolean isPrepareYn() {
         return prepareYn;

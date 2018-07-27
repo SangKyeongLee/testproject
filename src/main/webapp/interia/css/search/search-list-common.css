@@ -36,9 +36,11 @@ a:hover {
 }
 
 .sl-bucket {
-    width: 250px;
-    margin-left: 2.5em;
+    width: 200px;
+    height: 450px;
+    margin-left: 2em;
     margin-bottom: 1.25em;
+    overflow:hidden;
     flex: none;
     flex-flow : column wrap;
 }
@@ -67,9 +69,9 @@ a:hover {
 }
 
 .sl-btn-common-category {
-    width:295px;
+    width:297px;
     border-radius: 0;
-    height:70px;
+    height:50px;
     vertical-align: middle;
     font-size:1.125em;
     font-weight: bold;
@@ -96,7 +98,24 @@ a:hover {
     margin-left:0.22em;
 }
 
+.sl-price-margin-bottom {
+    margin-bottom:1rem;
+}
+
 .sl-price {
     font-size:0.875rem; 
     text-align:right;
+}
+
+.sl-form-style {
+    border:3px solid #e6e6e6;
+    margin-bottom:5.5em;
+}
+
+.card-text {
+    font-size:0.8em;
+}
+
+.card-body {
+    height:160px;
 }

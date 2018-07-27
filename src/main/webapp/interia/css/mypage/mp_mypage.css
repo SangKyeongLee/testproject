@@ -2,6 +2,9 @@
 .mp-main {
    padding-top: 7.7em;
 }
+a:hover {
+   text-decoration: none;
+}
 
 
 /**** 모달 ****/
@@ -20,73 +23,62 @@
     background-position: center;
     background-size: cover;
     background: #ffc001;
-    height: 200px;
+    height: 150px;
     transition: box-shadow 0.5s ease;
     box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
 }
 .mp-banner:hover {
    box-shadow: inset 0 0 0 4px #1c2036;
 }
-.mp-banner:hover a {
-   /*width: 170px;*/
-}
-.mp-banner:hover .mp-banner-cbox>a>.fas{
-    font-size: 1.75em;
+.mp-banner:hover .mp-banner-cbox>.fas{
+    font-size: 1.5em;
     padding: 0.23em 0.4em 0 0;
 }
 .mp-banner:hover .mp-pic-box{
     opacity: 1;
-    width: 164px;
+    width: 145px;
 }
-.mp-banner>.mp-banner-cbox>a>.fas {
+.mp-banner>.mp-banner-cbox>.fas {
     position: absolute;
-    font-size: 2.25em;
+    font-size: 2.1em;
     color: white;
-    top: 20px;
-    right: 6px;
-    transition: all .3s ease-out, padding .5s ease;
+    top: 8%;
+    right: .5%;
+    transition: all .2s ease-out, padding .2s ease;
 }
-.mp-banner > a {
-    position: relative;
-    cursor: pointer;
-    display: block;
-    float: right;
-    right: 19%;
-    top: 10%;
-    width: 50px;
-    transition: width .3s ease-out;
-    overflow: hidden;
-}
-
 .mp-banner-cbox {
     width: 1200px;
     height: 100%;
     margin: 0 auto;
     position: relative;
 }
-
+.mp-pic-focus {
+    position: absolute;
+    top: 8%;
+    right: .5%; 
+    height: 35px; 
+    width: 145px; 
+}
 .mp-pic-text { /*span*/
    /*-webkit-font-smoothing: antialiased;*/
     position: relative;
-    padding-right: 0.56em;
     font-weight: bold;
     color: white;
+    font-size: .9em;
 }
 .mp-pic-box { /*div*/ 
     position: absolute;
-    border: 3px solid white;
+    border: 2px solid white; margin: 0;
     border-radius: 2px;
     box-sizing: border-box;
     color: white;
     display: inline-block;
     opacity: 0;
     overflow: hidden;
-    padding: 0.4em 0.8em;
-    top: 20px;
-    right: 6px;
-    transition: opacity .3s ease-out, width .3s ease-out;
+    padding: 0.2em 0.5em;
+    transition: opacity .2s ease-out, width .2s ease-out;
     white-space: nowrap;
-    width: 34px;
+    width: 145px;
 }
 /*.mp-banner::before { 페이스북
     border: 1px solid rgba(0, 0, 0, .1);
@@ -120,8 +112,8 @@
     background: #ffc001;
     border-radius: 50%;
     border: 6px solid white;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     position: absolute;
     top: 4%;
     left: 5%;
@@ -134,26 +126,27 @@
 
 .mp-profile-setting > a {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    /* width: 235px; */
     border-radius: 50%;
     z-index: 4;
     text-decoration: none;
 } 
 .mp-profile-div {
     position: absolute;
-    left: 83px; top: 93px;
+    left: 59px; top: 70px;
     color: #fff;
-    font-size: 1.125em;
+    font-size: 1.1em;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mp-profile-div p {
+    white-space: nowrap;
 }
 .mp-profile-div .fas {
-    font-size: 2.25em;
+    font-size: 2em;
     color: white;
-    margin-left: 0.4em;
 }
 
 
@@ -161,30 +154,45 @@
 .mp-user-info {
     position: absolute;
     color: #343855;
-    top: 48%;
-    left: 30%;
+    top: 35%;
+    left: 24%;
     font-weight: bold;
     font-size: 0.8125em;
     z-index: 3;
 }
+.mp-user-info > p {
+    margin-bottom: 0;
+}
+.mp-user-follow {
+    font-size: .9em;
+}
 .mp-user-name {
-    font-size: 1.7692307692307692em;
+    font-size: 1.5em;
     margin-bottom: 0.23em;
 }
 .mp-user-follow > a {
     cursor: pointer;
 }
-
+.mp-user-info > .btn-outline-light {
+   border-width: 2px; 
+   margin-top: 0.6em;
+   padding: .1em .4em;
+   font-weight: normal;
+   color: white;
+}
+.mp-user-info > .btn-outline-light:hover {
+    color: #212529;
+}
 
 /**** 네비게이션 ****/
 .mp-nav {
     position: relative;
-    height: 60px;
+    height: 50px;
     /*text-align: center; */
 }
 .mp-nav>ul {
     list-style: none;
-    height: 60px;
+    height: 50px;
     /*width: 1200px;*/
     display: inline-block;
     display: flex;
@@ -198,13 +206,12 @@
     height: inherit;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.0625em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .mp-nav>ul>li>p {
-	padding-top: .2em;
+   padding-top: .2em;
 }
 
 
@@ -238,7 +245,7 @@
 }
 
 .mp-bar3>ul {
-    height: 60px;
+    height: 50px;
     width: 1200px;
     margin: 0 auto;
     list-style: none;
@@ -263,7 +270,7 @@
 #submenus {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     width: 100%;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
@@ -274,5 +281,122 @@
 }
 
 .ib-conbox {
+    /*margin: 0 auto;*/
+    float: right;
+    width: 1040px !important;
+
+}
+
+.mp_side {
     padding-top: 4em;
+    position: relative;
+}
+
+.mp_side:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+
+
+
+/* scrollerbar_underMenu */
+#mp_underBar {
+    display: none;
+    width: 150px;
+    padding: 0 1em 1em 1em;
+    background: #fff;
+    border: 1px solid #cccc;
+    border-radius: 5px;
+    z-index: 11;
+    position: sticky;
+    top: 12%;
+    margin-bottom: 1em; 
+}
+
+.mp_position1 {
+    position: sticky;
+    top: 12%;
+    margin-bottom: 1em; 
+}
+
+#mp_underBar p {
+    margin: 0;
+}
+
+.ib_mp_conBar {
+    /*width: 1200px;
+    margin: 0 auto;*/
+}
+
+.mp_underLine {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+}
+
+.mp_under_title {
+    display: flex;
+    /*justify-content: space-between;*/
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.mp_under_title>p {
+    padding-left: 0.7em;
+}
+
+.mp_under_subTitle p {
+    font-size: 0.75rem;
+    padding: 0.3em 0 0.3em 0.5em;
+}
+
+.mp_under_subTitle p a:hover {
+    color: rgb(230, 126, 34);
+    font-weight: bold;
+}
+
+
+/**** 커버사진 올리기 ****/
+.mp-cover-popup {    
+    display: inline-block;
+    float: right;
+    margin-top: 3.1em;
+    font-size: .8em;
+    display: none;
+    z-index: 100;
+}
+.mp-inner-ul {
+    white-space: nowrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding: .3em 0;
+    background: white;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 1px 1px #D5D5D5;
+}
+.mp-triangle { 
+    margin-left: 5.7em;
+    width: 8px; height: 8px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+}
+.mp-popup-list {
+    padding: .35em 3.8em;
+    cursor: pointer;
+}
+.mp-popup-list:hover > a{
+    color: white;
+}
+.mp-popup-list:hover {
+    background: #343855;
+    color: white;
+}
+.mp-popup-list:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }

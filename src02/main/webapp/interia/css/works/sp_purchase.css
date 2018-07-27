@@ -1,0 +1,143 @@
+
+.sp-form-botton {
+    padding-bottom:6.25em;
+    padding-top:1.25em;
+}
+
+    /* 나머지 부분 */
+.sp-table-pay-infomation {
+    height:40px;
+}
+
+.sp-table-pay-information-th {
+    width:150px;
+    text-align:right;
+    background:#e6e6e6;
+    border-right:1px solid #e6e6e6;
+} 
+
+.sp-title {
+    padding-bottom:0.125em;
+}
+
+.sp-title-sub {
+    border-bottom:2px solid #e6e6e6; 
+    padding-bottom:20px;
+}
+
+.sp-table-sub {
+    border-top: 2px solid #333;
+}
+
+.sp-table-left {
+    border-right:1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.sp-table-right {
+    border-bottom: 1px solid #222;
+}
+
+.sp-table-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 임의의 태그를 작성 */
+.sp-product-image {
+    position: relative;
+    vertical-align:middle;
+    padding:0.625em 0.625em 0.625em 0.625em
+}
+
+.sp-product-store {
+    position: relative;
+    left: 6.25em;
+    /* flex로 가운데 정렬*/
+    display: flex;
+    align-items:center;
+}
+
+.sp-price-store {
+    position: relative;
+    left: 18.75em;
+    right: 25em;
+    /* flex로 가운데 정렬*/
+    display: flex;
+    align-items:center;
+    
+}
+
+.sp-privacy {
+    color:gray;
+    font-size: 0.562rem;
+    text-align:center;
+}
+.sp-sms-agree {
+    color:gray;
+    font-size:0.562rem;
+}
+
+.sp-sb-header2 {
+    width: 1200px;
+    display:flex;
+    margin: 0 auto;
+    padding-bottom: 0px;
+    height: 90px;
+}
+
+.sp-sb-h-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sp-sb-h-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 50%;
+    font-size: 0.8rem;
+    text-align:right;
+    color:#212529
+}
+
+.sp-btn {
+    background:#ffc001;
+    color:#FFFFFF;
+    margin-top:-0.313em;
+    width: 120px;
+}
+
+.sp-submit-button {
+    background:#ffc001;
+    color:#FFFFFF;
+    width:200px;
+    height:50px;
+    margin-bottom:1.125em;
+    margin-top:-1.725em;
+}
+
+.sp-input-height {
+    height:40px;
+}
+
+.sp-input-phone {
+    width:120px;
+    text-align:center;
+}
+
+label {
+    margin:-1.563em;
+}
+
+.sp-input-email {
+    width:150px;
+}
+
+.sp-margin-top {
+    margin-top:-80px;
+}

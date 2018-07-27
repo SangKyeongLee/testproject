@@ -56,9 +56,8 @@ public class AuthController {
         response.addCookie(cookie);
         
         HashMap<String, Object> result = new HashMap<>();
-        
         if (memberService.isExist(id, password)) { // 로그인 성공!
-            session.setAttribute("loginUser", memberService.get(id));
+            session.setAttribute("loginUser", memberService.get(memberService.memberNumber(id)));
             result.put("state", "success");
 
         } else { // 로그인 실패!
@@ -111,22 +110,23 @@ public class AuthController {
     }
     
     @RequestMapping("/searchPassword")
-    public String searchPassword(
-            @RequestParam("id") String id) {
-        String result = null;
-        if (memberService.isSearchPassword(id)) {
-            result = "success";
-        }
-        return result;
+    public int searchPassword(
+            @RequestParam("id") String id) throws Exception {
+        // 아이디가 일치하면?
+        if (memberService.isSearchPassword(id))
+            return memberService.memberNumber(id);
+        
+        // 아이디가 일치하지 않으면?
+        return -1;
     }
     
     @RequestMapping("/searchPasswordChange")
     @ResponseStatus(HttpStatus.OK)
     public void changePassword(
-            @RequestParam("id") String id,
+            @RequestParam("no") int no,
             @RequestParam("password") String password) {
         
-        memberService.changePassword(id, password);
+        memberService.changePassword(no, password);
     }
     
 }

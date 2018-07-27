@@ -35,10 +35,16 @@ li {
     list-style: none;
 }
 
-input {
-    border-radius: 5px;
-
+input[type="text"] {
+	border-radius:5px;
+	box-shadow:  none ;
 }
+input[type="date"] {
+    -webkit-appearance: menulist !important;
+    border-radius:5px;
+    box-shadow:  none ;
+    height:30px;
+}  
 
 /************Header***************/
 
@@ -53,7 +59,7 @@ input {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 7000;
     height: 3.5em;
     display: flex;
     flex-flow: row nowrap;
@@ -282,7 +288,9 @@ input {
     display: flex;
     justify-content: flex-start;
 }
-
+.modal-backdrop {
+	z-index: 8500;
+}
 /***** modal End *****/
 
 /***** 공통 *****/
@@ -751,6 +759,56 @@ th label {
     background-color: #1c2036;
 }
 
+/* //fileUpload */
+
+#fileupload {
+    display: none;
+}
+#ad-images-div {
+    margin-top:15px;
+    margin-bottom:15px;
+    padding: 10px;
+    min-height: 200px;
+    max-height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+}
+
+
+.ad-adImgs-wrapper {
+position: relative;
+
+}
+.ad-adImgs-content {
+	width: 150px;
+	height: 150px;
+	margin: 5px;
+	border-radius: 5px;
+	
+}
+.ad-adImgs-cover {
+	position: absolute;
+	left:0;
+	top:0;
+	width:150px;
+	height: 150px;
+	margin: 5px;
+	background : black url("../../images/admin/Grey_close_x.png");
+ 	background-size: 100px;
+ 	background-position: center center;
+ 	background-repeat:no-repeat; 
+	border-radius: 5px;
+	opacity: 0.7;
+	display: none;
+}
+.ad-adImgs {
+	width: 150px;
+}
+.ad-adImgs-wrapper:hover .ad-adImgs-cover {
+	display: block;
+}
+
 /***** 공통 End*****/
 
 /***** 관리자 메인 *****/
@@ -918,12 +976,10 @@ th label {
 
 .ad-works-modal-inputlg {
     width: 600px;
-    border-radius: 5px;
 }
 
 .ad-works-modal-inputsm {
     width: 200px;
-    border-radius: 5px;
 }
 
 .ad-works-options {
@@ -1070,6 +1126,38 @@ textarea {
 
 .ad-class-num {
     width: 100px;
+}
+.ad-apList-wrapper {
+	width:100%;
+	margin-top: 20px;
+	display : table;
+	text-align: center;
+	
+}
+.ad-apList-header {
+	width: 100%;
+	display: table-row;
+	font-weight: bold;
+	background-color: #ffc001;
+	color: #1c2036;
+}
+.ad-apList-row {
+	width: 100%;
+	display: table-row;
+}
+.ad-apList-left {
+	display: table-cell;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.ad-apList-right {
+	display: table-cell;
+	border-bottom: 1px solid black;
+}
+
+.ad-class-enroll{
+    display: inline-block;
+    cursor: pointer;
 }
 
 /***** 체험관리 End *****/

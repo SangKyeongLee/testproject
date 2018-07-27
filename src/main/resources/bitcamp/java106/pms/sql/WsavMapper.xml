@@ -17,7 +17,6 @@
     <result column="minno" property="minPerson"/>
     <result column="maxno" property="maxPerson"/>
     <result column="actdt" property="experDate"/>
-    <result column="esmt" property="requiredTime"/>
     <result column="mtcse" property="prepareYn"/>
     <result column="mtrls" property="prepareCont"/>
     <result column="apric" property="price"/>
@@ -34,10 +33,13 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-select wv.wsano, ws.wsnm, acnm, actdt, esmt, acplc, apric, path
-from INTR_WSAV wv 
-inner join INTR_WRKSHP ws on wv.memno = ws.memno
-inner join INTR_WKACP wkp on wv.wsano = wkp.wsano 
+select wsnm, actt.wsano, acnm, actdt, avst, avet, acplc, apric, path, name, acpt
+from INTR_MEMBER mem
+inner join INTR_ACRGTT actt on mem.memno = actt.memno
+inner join INTR_WSAV wsa on actt.wsano = wsa.wsano
+inner join INTR_WRKSHP ws on wsa.memno = ws.memno
+inner join INTR_WKACP wkp on wsa.memno = wkp.wsano
+WHERE mem.MEMNO = #{value}
   </select>
   
   <insert id="insert" parameterType="Wsav"
@@ -63,8 +65,8 @@ inner join INTR_WKACP wkp on wv.wsano = wkp.wsano
     where bno=#{no} -->
   </update>
   
-  <delete id="delete" parameterType="int">
-<!--     delete from pms2_board where bno=#{value} -->
+  <delete id="delete" parameterType="map">
+    delete from INTR_ACRGTT WHERE memno=#{memno} and wsano=#{wsano}
   </delete>
 </mapper>
 

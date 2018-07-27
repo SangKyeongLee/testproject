@@ -1,185 +1,80 @@
-			<div class="mp-banner-cbox">
-				<a href="#">
+	<div class="mp-banner-cbox">
+		<i class="fas fa-camera"></i>
+        <a href="#" class="mp-pic-focus">
+            <div class="mp-pic-box">
+                <span class="mp-pic-text">커버 사진 추가</span>
+            </div>
+        </a>
+        <div class="mp-cover-popup">
+          <div class="mp-triangle"></div>
+          <ul class="mp-inner-ul">
+              <li class="mp-popup-list"><a href="">사진 올리기</a></li>
+              <li class="mp-popup-list"><a href="">삭제</a></li>
+              <li class="mp-popup-list mp-popup-hidden">취소</li>
+          </ul>
+        </div>
+		<div class="mp-user-info">
+			<p class="mp-user-name">user03@test.com</p>
+			<p class="mp-user-follow">
+			   <a data-toggle="modal" data-target="#followingModal">팔로잉 0</a> 
+			   &nbsp;|&nbsp;
+			   <a data-toggle="modal" data-target="#followerModal">팔로워 0</a>
+			</p>
+			<button type="button" class="btn btn-outline-light btn-sm">+ 팔로잉</button>
+		</div>
+		<div class="mp-profile-setting">
+			<a href="#">
+				<!-- <img src="" class="mp-profile-img"> -->
+				<div class="mp-profile-div">
 					<i class="fas fa-camera"></i>
-					<div class="mp-pic-box">
-						<span class="mp-pic-text">커버 사진 추가</span>
-					</div>
-				</a>
-				<div class="mp-user-info">
-					<p class="mp-user-name">username@bit.com</p>
-					<p class="mp-user-follow">
-					   <a data-toggle="modal" data-target="#followingModal">팔로잉 0</a> 
-					   &nbsp;|&nbsp;
-					   <a data-toggle="modal" data-target="#followerModal">팔로워 0</a>
-					</p>
+					<p>사진 추가</p>
 				</div>
-				<div class="mp-profile-setting">
-					<a href="#">
-						<!-- <img src="" class="mp-profile-img"> -->
-						<div class="mp-profile-div">
-							<i class="fas fa-camera"></i>
-							<p>사진 추가</p>
-						</div>
-					</a>
-					
-				</div><!--프로필 사진-->
-			</div>
+			</a>
 			
-			
-			
-			<!-- following modal -->
-		    <div class="modal fade" id="followingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		        <div class="modal-dialog modal-dialog-centered" role="document">
-		            <div class="mp-following-popup">
-		                <p>팔로잉</p>
-		                <div class="mp-following-box1">
-		                    <ul>
-		                        <div>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-following-list">
-		                                <div>
-		                                    <div class="mp-following-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-following-name"><a>sobbi947</a></div>
-		                                    <div class="mp-following-btn"><button type="button" class="btn btn-primary btn-sm">팔로잉</button></div>
-		                                </div>
-		                            </li>
-		                        </div>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div><!-- following modal -->
-		    
-		
-		    <!-- follower modal -->
-		    <div class="modal fade" id="followerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		        <div class="modal-dialog modal-dialog-centered" role="document">
-		            <div class="mp-follower-popup">
-		                <p>팔로우</p>
-		                <div class="mp-follower-box1">
-		                    <ul>
-		                        <div>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                            <li class="mp-follower-list">
-		                                <div>
-		                                    <div class="mp-follower-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
-		                                    <div class="mp-follower-name"><a>sobbi947</a></div>
-		                                    <div class="mp-follower-btn"><button type="button" class="btn btn-outline-dark btn-sm">팔로우</button></div>
-		                                </div>
-		                            </li>
-		                        </div>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div><!-- follower modal -->
+		</div><!--프로필 사진-->
+	</div>
+	
+	<!-- following modal -->
+    <div class="modal fade" id="followingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="mp-follow-popup">
+                <p>팔로잉</p>
+                <div class="mp-follow-box1">
+                    <ul>
+                        <div>
+                            <li class="mp-follow-list">
+                                <div>
+                                    <div class="mp-follow-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
+                                    <div class="mp-follow-name"><a>sobbi947</a></div>
+                                    <div class="mp-follow-btn"><button type="button" id="follow-btn" class="btn btn-primary btn-sm">팔로잉</button></div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- following modal -->
+    
+
+    <!-- follower modal -->
+    <div class="modal fade" id="followerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="mp-follow-popup">
+                <p>팔로우</p>
+                <div class="mp-follow-box1">
+                    <ul>
+                        <div>
+                            <li class="mp-follow-list">
+                                <div>
+                                    <div class="mp-follow-img"><a><img src="../../images/mypage/follow_img1.jpg"></a></div>
+                                    <div class="mp-follow-name"><a>sobbi947</a></div>
+                                    <div class="mp-follow-btn"><button type="button" id="follow" class="btn btn-outline-dark btn-sm">팔로우</button></div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- follower modal -->

@@ -174,12 +174,16 @@ body {
     display:inline-block;
     width: 350px;
     margin-right: 10px;
+    position:relative;
 }
 
 .sp-sb-order {
     background-color: white;
-    position: fixed;
+    position: sticky;
+    top:30%;
+    margin-bottom:62px;
 }
+
 
 .sp-sb-tpname {
     height: 50px;

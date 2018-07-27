@@ -37,10 +37,9 @@
   </insert>
   
   <!-- 회원정보 관련(아이디&닉네임 표시하게 함) -->
-  <select id="selectOne" parameterType="String" resultMap="MemberMap">
-    select memno, id, nknm
-    from INTR_MEMBER 
-    where id=#{id}
+  <select id="selectOne" parameterType="int" resultMap="MemberMap">
+    select * from INTR_MEMBER 
+    where memno=#{no}
   </select>
   
   <!-- 아이디와 비밀번호 둘다 일치하면 로그인! -->
@@ -92,8 +91,13 @@
   <update id="updatePassword" parameterType="map">
     update INTR_MEMBER set 
         pwd=password(#{password})
-    where id=#{id}
+    where memno=#{no}
   </update>
+  
+  <!-- 아이디를 통해 해당 회원번호값 추출 -->
+  <select id="selectOneNumber" parameterType="String" resultType="int">
+    select memno from INTR_MEMBER where id=#{id}
+  </select>
   
 </mapper>
 

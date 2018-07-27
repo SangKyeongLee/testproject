@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,8 +20,8 @@ public class WsavServiceImpl implements WsavService {
     }
     
     @Override
-    public List<Wsav> list() {
-        return wsavDao.selectList();
+    public List<Wsav> list(int no) {
+        return wsavDao.selectList(no);
     }
     
     @Override
@@ -39,8 +40,11 @@ public class WsavServiceImpl implements WsavService {
     }
     
     @Override
-    public int delete(int no) {
-        return wsavDao.delete(no);
+    public int delete(int no, int wsano) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("memno", no);
+        params.put("wsano", wsano);
+        return wsavDao.delete(params);
     }
 }
 

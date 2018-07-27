@@ -29,8 +29,8 @@ public class MemberServiceImpl implements MemberService {
     }
     
     @Override
-    public Member get(String id) {
-        return memberDao.selectOne(id);
+    public Member get(int no) {
+        return memberDao.selectOne(no);
     }
     
     @Override
@@ -72,14 +72,18 @@ public class MemberServiceImpl implements MemberService {
     }
     
     @Override
-    public int changePassword(String id, String password) {
+    public int changePassword(int no, String password) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put("id", id);
+        params.put("no", no);
         params.put("password", password);
         
         return memberDao.updatePassword(params);
     }
     
+    @Override
+    public int memberNumber(String id) {
+        return memberDao.selectOneNumber(id);
+    }
 }
 
 

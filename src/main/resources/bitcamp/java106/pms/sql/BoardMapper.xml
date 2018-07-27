@@ -13,9 +13,13 @@
 
   <resultMap type="Board" id="BoardMap">
     <id column="bno" property="no"/>
-    <result column="titl" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="cdt" property="createdDate"/>
+    <result column="memno" property="memno"/>
+    <result column="path" property="path"/>
+    <result column="boctt" property="content"/>
+    <result column="brtdt" property="createDate"/>
+    <result column="cnt" property="count"/>
+    <result column="nknm" property="nickname"/>
+    <result column="tname" property="hashtag"/>
   </resultMap>
   
   <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
@@ -25,40 +29,27 @@
        그 메서드를 자동생성할 때 사용할 수 있다.
   -->
   <select id="selectList" 
-          resultMap="BoardMap" 
+          resultMap="BoardMap"
           parameterType="map">
-    select bno, titl, cdt 
-    from pms2_board
+    SELECT b.BNO, b.PATH, COUNT(l.bno) AS cnt 
+    FROM INTR_BOARD b 
+    LEFT OUTER JOIN INTR_LKMB l 
+    ON b.BNO = l.BNO 
+    GROUP BY BNO 
     order by bno desc
-    limit #{startRowNo}, #{pageSize}
   </select>
   
-  <insert id="insert" parameterType="Board"
-          useGeneratedKeys="true" keyColumn="bno" keyProperty="no">
-    insert into pms2_board(titl,cont,cdt) 
-    values(#{title},#{content},now())
-  </insert>
-  
-  <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
-       값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
-  -->
   <select id="selectOne" parameterType="int" resultMap="BoardMap">
-    select bno,titl,cont,cdt 
-    from pms2_board 
-    where bno=#{value}
+    SELECT b.BNO, mem.NKNM, b.PATH, b.BOCTT, COUNT(l.bno) AS cnt, b.BRTDT 
+    FROM INTR_BOARD b 
+    LEFT OUTER JOIN INTR_MEMBER mem 
+    ON b.MEMNO = mem.MEMNO 
+    LEFT OUTER JOIN INTR_LKMB l 
+    ON b.BNO = l.BNO 
+    LEFT OUTER JOIN INTR_BTMACH hm 
+    ON b.BNO = hm.BNO 
+    WHERE b.BNO = ${value}
   </select>
-  
-  <update id="update" parameterType="Board">
-    update pms2_board set 
-        titl=#{title}, 
-        cont=#{content}, 
-        cdt=now()
-    where bno=#{no}
-  </update>
-  
-  <delete id="delete" parameterType="int">
-    delete from pms2_board where bno=#{value}
-  </delete>
 </mapper>
 
 

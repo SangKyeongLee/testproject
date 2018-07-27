@@ -2,6 +2,7 @@ h1,h2,h3,h4,h5,h6,p {margin: 0;padding: 0;}
 a {color:#333;text-decoration:none}
 a:active, a:hover {text-decoration:none;}
 
+
 option {
     color: black;
 }
@@ -11,7 +12,7 @@ option {
 
 .sp-banner {
     width:100%;
-    height: 450px;
+    height: 300px;
     background: url('../../images/works/works_list/product_list_banner.jpg') no-repeat 50% 50%;
     background-size: cover;
     margin-top: 7.5rem;
@@ -25,7 +26,6 @@ option {
     border-bottom-color: transparent;
     border-top-color: transparent;
     border-left-color: transparent;
-    height: 3em;
     color: aliceblue;
 }
 
@@ -78,8 +78,8 @@ option {
     display: flex;
     overflow: hidden;
     justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
 }
 
 .sp-mc-name {
@@ -88,7 +88,7 @@ option {
     align-items: flex-end;
     width: 50%;
     float: left;
-    font-size: 2.625rem;
+    font-size: 1.75rem;
     font-weight: bold;
 }   
 
@@ -96,8 +96,8 @@ option {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
-    font-size: 1.25rem;
-    font-weight: 900;
+    font-size: 0.875rem;
+    font-weight: bold;
     width: 50%;
     float: left;
 }
@@ -105,20 +105,20 @@ option {
 .sp-mc-product {
     display: grid;
     margin-top:0.682em;
-    grid-template-columns: 292px 292px 292px 292px;
-    grid-template-rows: 430px;
-    grid-column-gap: 11px;
+    grid-template-columns: 230px 230px 230px 230px 230px;
+    grid-template-rows: 350px;
+    grid-column-gap: 12px;
 
 }
 
 .card {
-    border-radius: 0px;
-    margin-bottom: 0.9375em;
+    border-radius: 5px;
+    margin-bottom: 0.75em;
 }
 
 .sp-card-img {
-    width: auto;
-    height: 280px;
+    width: 228px;
+    height: 228px;
 }
 
 .sp-card-content {
@@ -127,16 +127,16 @@ option {
     }
 
 .sp-cc1 p{
-    font-size: 0.875rem;
+    font-size: 0.75rem;
 }
 
 .sp-cc2 p {
     font-weight: bold;
-    font-size: 1.312rem;
+    font-size: 1rem;
 }
 
 .sp-cc3 p {
-    font-size: 1.5rem;
+    font-size: 0.875rem;
 }
 
 .sp-seemore {

@@ -56,7 +56,7 @@ a:active, a:hover {text-decoration:none;}
 .form_mainForm_Id00{
 	display: flex;
 	align-items: center;
-	width: 190px;
+	width: 200px;
 	height: 60px;
 	float: left;
 	background-color: #e0e0e0;
@@ -69,7 +69,7 @@ a:active, a:hover {text-decoration:none;}
 	padding-left: 1.25em;
 }
 .form_mainForm_Id01{
-	width: 1010px;
+	width: 1000px;
 	height: 60px;
 	float: left;
 	background-color: #fff;
@@ -78,7 +78,7 @@ a:active, a:hover {text-decoration:none;}
 	box-sizing: border-box;
 }
 .form_mainForm_Id02{
-	width: 1010px;
+	width: 1000px;
 	height: 60px;
 	float: left;
 	background-color: #fff;
@@ -86,8 +86,9 @@ a:active, a:hover {text-decoration:none;}
 	border-bottom: 1px solid #ccc;
 	box-sizing: border-box;
 }
-.form_mainForm div > input[type="text"], input[type="password"], input[type="date"]{
-	float: left;
+
+.form_mainForm div > input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
+ 	float: left;
 	width:200px;
 	height:30px;
 	padding: 0.625em;
@@ -359,6 +360,17 @@ a:active, a:hover {text-decoration:none;}
 	margin-left: 1.5em;
 	margin-right: 1em;
 }
+/* .workshop_form_mainForm_Id01 input[type="email"]{
+    float: left;
+    width:200px;
+    height:30px;
+    padding: 0.625em;
+    margin: 1.125em 0;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    margin-left: 1.5em;
+    margin-right: 1em;
+} */
 .workshop_form_mainForm_Id01_textarea textarea{
 	float: left;
 	width:200px;

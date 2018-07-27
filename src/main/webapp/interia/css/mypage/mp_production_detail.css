@@ -1,4 +1,4 @@
-h3 {font-weight: bold;}
+h4 {font-weight: bold;}
 .ib-mp-pnum {
 	color: #ffc001;
 	font-weight: bold;
@@ -15,7 +15,8 @@ h3 {font-weight: bold;}
 	font-weight: bold;
 }
 .ib-mp-dbox {
-	margin-bottom: 3.125em;
+    margin-bottom: 2em;
+    font-size: .9em;
 }
 .ib-mp-red {
 	color: red;
@@ -33,7 +34,7 @@ h3 {font-weight: bold;}
 
 /**** 제목 ***/
 .ib-mp-titl {
-	padding: 2em 1em 1em 1em;
+	padding: 0 1em .5em 1em;
 }
 
 
@@ -47,10 +48,9 @@ h3 {font-weight: bold;}
 .ib-mp-dsubtitl {
 	padding-bottom: 0.3125em;
 	border-bottom: 2px solid #000;
-	font-weight: bold;
 }
-.ib-mp-dsubtitl > span {
-	font-weight: normal;
+.ib-mp-dsubtitl > p {
+	margin-bottom: 0;
 }
 .ib-mp-warning {
 	text-align: right;	
@@ -63,7 +63,7 @@ h3 {font-weight: bold;}
 	border-top: #D5D5D5 solid 1px;
 }
 .ib-mp-dimg {
-	width: 170px; height: 170px;
+	width: 130px; height: 130px;
 	margin-right: 2.5em;
 	overflow: hidden;
 }
@@ -77,6 +77,7 @@ h3 {font-weight: bold;}
 }
 .ib-mp-dpdt > p {
 	margin-bottom: 3px;
+    font-size: .9em;
 }
 .ib-mp-dpdt > p:nth-child(2) {
 	margin-bottom: 0.625em;
@@ -84,6 +85,10 @@ h3 {font-weight: bold;}
 .ib-mp-cancel {
 	flex: 1;
 	padding-left: 3.125em;
+}
+.btn-outline-dark {
+    font-size: 1em;
+    padding: .35em .45em;
 }
 .btn-outline-dark:hover {
 	background: #fff;
@@ -120,11 +125,11 @@ h3 {font-weight: bold;}
 	margin: 0.3125em 0;
 }
 .ib-mp-div1 {
-	width: 180px;
+	width: 150px;
 	text-align: center;
 }
 .ib-mp-div2 {
-	width: 380px;
+	width: 320px;
 }
 .ib-mp-div3 {
 	text-align: right;

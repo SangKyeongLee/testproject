@@ -1,8 +1,11 @@
-h5 {font-weight: bold;}
-
 /**** 제목 ***/
 .ib-mp-titl {
-	padding: 1.5em 1em 1em 1em;
+	padding: 0 1em 1em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.ib-mp-titl> p {
+    margin-bottom: 0;
 }
 .ib-mp-pnum {
 	color: #ffc001;
@@ -12,6 +15,7 @@ h5 {font-weight: bold;}
  	margin-bottom: 5.625em;
  }
  .ib-mp-margin:last-child {
+    padding-top: 1.5em;
  	border-top: 3px solid #000;
  }
 .mp-nav>ul>li>p {
@@ -25,15 +29,14 @@ h5 {font-weight: bold;}
 	margin-bottom: 1.875em;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-column-gap: 20px;
+	grid-column-gap: 16px;
 	grid-row-gap: 30px;
 }
 
 /**** 제품 ****/
 .ib-mp-pscrap {
 	position: relative;
-	width: 285px;
-	height: 370px;
+	width: 247px;
     overflow: hidden;
 }
 .ib-mp-pscrap:hover .ib-mp-small {
@@ -46,8 +49,8 @@ h5 {font-weight: bold;}
 	color: black;
 }
 .ib-mp-pimg {
-	width:285px; 
-	height:285px; 
+	width:247px; 
+	height:247px; 
 	overflow: hidden;
 	margin-bottom: 0.625em;
 }
@@ -90,10 +93,10 @@ h5 {font-weight: bold;}
 /**** 공방 ****/
 .ib-mp-wscrap {
 	position: relative;
-	width: 285px;
-	height: 410px;
+	width: 247px;
+	height: 350px;
     overflow: hidden;
-    border-radius: 0.3125em;
+    border-radius: 0.2em;
     transition: box-shadow 0.4s ease;
 }
 .ib-mp-wscrap:hover {
@@ -101,7 +104,7 @@ h5 {font-weight: bold;}
 }
 .ib-mp-wbanner {
 	position: absolute;
-	width: 285px; 
+	width: 255px; 
 	height: 150px; 
 	overflow: hidden;
 }
@@ -113,10 +116,10 @@ h5 {font-weight: bold;}
 	position: absolute;
 	border: 2px solid #fff;
 	border-radius: 50%;
-	width: 100px; height: 100px;
+	width: 85px; height: 85px;
 	z-index: 1;
-	left: 32%;
-	top: 25%;
+	left: 33%;
+	top: 26%;
 	overflow: hidden;
 }
 .ib-mp-wprofile img {
@@ -127,7 +130,7 @@ h5 {font-weight: bold;}
 .ib-mp-wbottom {
 	position: absolute;
 	width: 100%;
-	height: 180px;
+	height: 160px;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
@@ -138,15 +141,17 @@ h5 {font-weight: bold;}
 	font-weight: bold;
 	text-align: center;
 	cursor: pointer;
+	margin-bottom: .5em;
 }
 .ib-mp-wintro {
 	color: #474747;
 	text-align: center;
+	margin-bottom: 0;
 }
 .ib-mp-wbtns {
 	position: absolute;
 	width: 100%;
-	bottom: 0.5px;
+	bottom: 0.3px;
 	display: flex;
 }
 .ib-mp-wbtns button:first-child {
@@ -160,7 +165,7 @@ h5 {font-weight: bold;}
 	outline: none;
 }
 .ib-mp-wbtns button:last-child {
-	padding: 0.6em 0.9375em;
+	padding: 0.4em 0.9375em;
 	flex: 3;
 	color: white;
 	background: #343855;

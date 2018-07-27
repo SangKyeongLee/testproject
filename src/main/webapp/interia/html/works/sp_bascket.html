@@ -2,222 +2,417 @@
 <html>
 
 <head>
-    <title>장바구니</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/header_move.css">
-    <link rel="stylesheet" type="text/css" href="../../css/works/sp_bascket.css">
-    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="shortcut icon" href="../favicon.ico">
+<title>장바구니</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/header_move.css">
+<link rel="stylesheet" type="text/css"
+	href="../../css/works/sp_bascket.css">
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="shortcut icon" href="../favicon.ico">
 </head>
 
 <body>
-    <header id="header">
+	<header id="header"> </header>
+	<div class="sp-sb-header1">
+		<div class="sp-sb-header2">
+			<div class="sp-sb-h-name">
+				<p>장바구니</p>
+			</div>
+			<div class="sp-sb-h-nav">
+				<p>
+					<b>장바구니</b>&ensp;>&ensp;주문결제&ensp;>&ensp;주문완료
+				</p>
+			</div>
+		</div>
+		<!-- sp-sb-header2 -->
+	</div>
+	<!-- sp-sb-header1 -->
+	<div class="sp-sb-option1">
+		<div class="sp-sb-option2">
+			<a href="#">전체 선택</a> &ensp;|&ensp; <a href="#">선택 삭제</a>
+		</div>
+	</div>
 
-    </header>
-    <div class="sp-sb-header1">
-        <div class="sp-sb-header2">
-            <div class="sp-sb-h-name">
-                <p>장바구니</p>
-            </div>
-            <div class="sp-sb-h-nav">
-                <p><b>장바구니</b>&ensp;>&ensp;주문결제&ensp;>&ensp;주문완료</p>
-            </div>
-        </div>
-        <!-- sp-sb-header2 -->
-    </div>
-    <!-- sp-sb-header1 -->
-    <div class="sp-sb-option1">
-        <div class="sp-sb-option2">
-            <a href="#">전체 선택</a> &ensp;|&ensp; <a href="#">선택 삭제</a>
-        </div>
-    </div>
+	<div class="ib-container">
+		<div class="sp-sb-list">
+			<div class="sp-sb-list-store">
+				<div class="sp-sb-sname">
+					<p>가게명</p>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sprice">
+					<p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-plus-circle"></i>
+					<p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-equals"></i>
+					<p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
+				</div>
+			</div>
+			<div class="sp-sb-list-store">
+				<div class="sp-sb-sname">
+					<p>가게명</p>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sprice">
+					<p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-plus-circle"></i>
+					<p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-equals"></i>
+					<p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
+				</div>
+			</div>
+			<div class="sp-sb-list-store">
+				<div class="sp-sb-sname">
+					<p>가게명</p>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sprice">
+					<p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-plus-circle"></i>
+					<p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-equals"></i>
+					<p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
+				</div>
+			</div>
+			<div class="sp-sb-list-store">
+				<div class="sp-sb-sname">
+					<p>가게명</p>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sproduct">
+					<div class="sp-sb-check">
+						<input type="checkbox" style="width: 20px; height: 20px;">
+					</div>
+					<div class="sp-sb-img">
+						<div class="sp-sb-putimg">
+							<img src="../../images/works/shopping_basket/sample_product.jpg" />
+						</div>
+					</div>
+					<div class="sp-sb-info">
+						<div class="sp-sb-info-name">
+							<p>비트공방</p>
+						</div>
+						<div class="sp-sb-info-product">
+							<p>Flence side Table_2color</p>
+						</div>
+						<div class="sp-sb-info-option">
+							<p>블랙</p>
+						</div>
+						<div class="sp-sb-info-delivery">
+							<p>무료배송&ensp;|&ensp;일반택배배송</p>
+						</div>
+					</div>
+					<div class="sp-sb-qty">
+						<div class="sp-sb-qty-wrap">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-minus">
+									<i class="far fa-minus-square"></i>
+								</button>
+							</div>
+							<input class="item_qty_count" type="text" maxlength="3" value="1">
+							<div class="sp-sb-qty-btn-wrap">
+								<button class="sp-sb-qty-plus">
+									<i class="far fa-plus-square"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="sp-sb-productprice">
+						<p>15,900 원</p>
+					</div>
+				</div>
+				<div class="sp-sb-sprice">
+					<p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-plus-circle"></i>
+					<p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
+					<i class="fas fa-equals"></i>
+					<p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
+				</div>
+			</div>
+		</div>
+		<div class="sp-sb-totalprice">
+			<div id="sp-sb-order" class="sp-sb-order">
+				<div class="sp-sb-tpname">
+					<p>전체합계</p>
+				</div>
+				<div class="sp-sb-tptotal">
+					<p>전체 상품 금액</p>
+					<p>47,000 원</p>
+				</div>
+				<div class="sp-sb-tpdelivery">
+					<p>전체 배송비</p>
+					<p>0 원</p>
+				</div>
+				<div class="sp-sb-tpfinal">
+					<p>결제금액</p>
+					<p>47,000 원</p>
+				</div>
+				<div class="sp-sb-payment"
+					onclick="location.href='sp_purchase.html'">
+					<p>결제하기</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="ib-container">
-        <div class="sp-sb-list">
-            <div class="sp-sb-list-store">
-                <div class="sp-sb-sname">
-                    <p>가게명</p>
-                </div>
-                <div class="sp-sb-sproduct">
-                    <div class="sp-sb-check">
-                        <input type="checkbox" style="width: 20px; height:20px;">
-                    </div>
-                    <div class="sp-sb-img">
-                        <div class="sp-sb-putimg">
-                            <img src="../../images/works/shopping_basket/sample_product.jpg" />
-                        </div>
-                    </div>
-                    <div class="sp-sb-info">
-                        <div class="sp-sb-info-name">
-                            <p>비트공방</p>
-                        </div>
-                        <div class="sp-sb-info-product">
-                            <p>Flence side Table_2color</p>
-                        </div>
-                        <div class="sp-sb-info-option">
-                            <p>블랙</p>
-                        </div>
-                        <div class="sp-sb-info-delivery">
-                            <p>무료배송&ensp;|&ensp;일반택배배송</p>
-                        </div>
-                    </div>
-                    <div class="sp-sb-qty">
-                        <div class="sp-sb-qty-wrap">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-minus">
-                            <i class="far fa-minus-square"></i>
-                        </button>
-                            </div>
-                            <input class="item_qty_count" type="text" maxlength="3" value="1">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-plus">
-                            <i class="far fa-plus-square"></i>
-                        </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sp-sb-productprice">
-                        <p>15,900 원</p>
-                    </div>
-                </div>
-                <div class="sp-sb-sproduct">
-                    <div class="sp-sb-check">
-                        <input type="checkbox" style="width: 20px; height:20px;">
-                    </div>
-                    <div class="sp-sb-img">
-                        <div class="sp-sb-putimg">
-                            <img src="../../images/works/shopping_basket/sample_product.jpg" />
-                        </div>
-                    </div>
-                    <div class="sp-sb-info">
-                        <div class="sp-sb-info-name">
-                            <p>비트공방</p>
-                        </div>
-                        <div class="sp-sb-info-product">
-                            <p>Flence side Table_2color</p>
-                        </div>
-                        <div class="sp-sb-info-option">
-                            <p>블랙</p>
-                        </div>
-                        <div class="sp-sb-info-delivery">
-                            <p>무료배송&ensp;|&ensp;일반택배배송</p>
-                        </div>
-                    </div>
-                    <div class="sp-sb-qty">
-                        <div class="sp-sb-qty-wrap">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-minus">
-                            <i class="far fa-minus-square"></i>
-                        </button>
-                            </div>
-                            <input class="item_qty_count" type="text" maxlength="3" value="1">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-plus">
-                            <i class="far fa-plus-square"></i>
-                        </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sp-sb-productprice">
-                        <p>15,900 원</p>
-                    </div>
-                </div>
-                <div class="sp-sb-sprice">
-                    <p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
-                    <i class="fas fa-plus-circle"></i>
-                    <p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
-                    <i class="fas fa-equals"></i>
-                    <p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
-                </div>
-            </div>
-            <div class="sp-sb-list-store">
-                <div class="sp-sb-sname">
-                    <p>가게명</p>
-                </div>
-                <div class="sp-sb-sproduct">
-                    <div class="sp-sb-check">
-                        <input type="checkbox" style="width: 20px; height:20px;">
-                    </div>
-                    <div class="sp-sb-img">
-                        <div class="sp-sb-putimg">
-                            <img src="../../images/works/shopping_basket/sample_product.jpg" />
-                        </div>
-                    </div>
-                    <div class="sp-sb-info">
-                        <div class="sp-sb-info-name">
-                            <p>비트공방</p>
-                        </div>
-                        <div class="sp-sb-info-product">
-                            <p>Flence side Table_2color</p>
-                        </div>
-                        <div class="sp-sb-info-option">
-                            <p>블랙</p>
-                        </div>
-                        <div class="sp-sb-info-delivery">
-                            <p>무료배송&ensp;|&ensp;일반택배배송</p>
-                        </div>
-                    </div>
-                    <div class="sp-sb-qty">
-                        <div class="sp-sb-qty-wrap">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-minus">
-                            <i class="far fa-minus-square"></i>
-                        </button>
-                            </div>
-                            <input class="item_qty_count" type="text" maxlength="3" value="1">
-                            <div class="sp-sb-qty-btn-wrap">
-                                <button class="sp-sb-qty-plus">
-                            <i class="far fa-plus-square"></i>
-                        </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sp-sb-productprice">
-                        <p>15,900 원</p>
-                    </div>
-                </div>
-                <div class="sp-sb-sprice">
-                    <p>총 상품 가격 318,000 원&ensp;&ensp;&ensp;</p>
-                    <i class="fas fa-plus-circle"></i>
-                    <p>&ensp;&ensp;&ensp;배송비 0 원&ensp;&ensp;&ensp;</p>
-                    <i class="fas fa-equals"></i>
-                    <p>&ensp;&ensp;&ensp;총 주문 금액 318,000 원</p>
-                </div>
-            </div>
-        </div>
-        <div class="sp-sb-totalprice">
-            <div class="sp-sb-order">
-                <div class="sp-sb-tpname">
-                    <p>전체합계</p>
-                </div>
-                <div class="sp-sb-tptotal">
-                    <p>전체 상품 금액</p>
-                    <p>47,000 원</p>
-                </div>
-                <div class="sp-sb-tpdelivery">
-                    <p>전체 배송비</p>
-                    <p>0 원</p>
-                </div>
-                <div class="sp-sb-tpfinal">
-                    <p>결제금액</p>
-                    <p>47,000 원</p>
-                </div>
-                <div class="sp-sb-payment" onclick="location.href='sp_purchase.html'">
-                    <p>결제하기</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <footer id="footer">
-
-    </footer>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../js/common.js"></script>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/footer.js"></script>
+	<footer id="footer"> </footer>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/header.js"></script>
+	<script src="../../js/footer.js"></script>
 </body>
 
 </html>
