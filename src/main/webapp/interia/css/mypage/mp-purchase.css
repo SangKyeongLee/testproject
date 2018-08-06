@@ -37,6 +37,8 @@ a,a:hover {color: #000; text-decoration: none}
 
 .ib-mp-pur-imgbox {
 	flex-basis: 160px;
+	height: 160px;
+    overflow: hidden;
 }
 
 .ib-mp-pur-imgbox img {
@@ -129,4 +131,17 @@ a,a:hover {color: #000; text-decoration: none}
 	background: rgb(52, 56, 85);
 	color: #fff;
 	width: 140px;
+}
+
+.sp-rev-imgBox {
+	width: 115px;
+	height: 115px;
+}
+
+.sp-rev-imgBox>img {
+	width: 100%;
+}
+
+.texResize {
+	resize: none;
 }

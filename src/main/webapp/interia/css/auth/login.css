@@ -1,4 +1,4 @@
-section {height: 1350px;margin: 0 auto;}
+section {margin: 0 auto;}
 h1,h2,h3,h4,h5,h6,p {margin: 0;padding: 0;}
 a {color:#333;text-decoration:none}
 a:active, a:hover {text-decoration:none;}
@@ -7,7 +7,7 @@ a:active, a:hover {text-decoration:none;}
 	height: 650px;
 	margin: 0 auto;
 	margin-top: 7.5rem;
-	background-color: #ccc;
+    background: url('../../images/login_bg.png') no-repeat 50% 50%;
 }
 .form_mainText {
 	display: flex;
@@ -24,7 +24,6 @@ a:active, a:hover {text-decoration:none;}
 }
 .form_mainText h1:nth-child(2) {
 	font-size: 1rem;
-	font-weight: bold;
 	margin-top: 0.75em;
 	color: #999;
 }
@@ -52,6 +51,8 @@ a:active, a:hover {text-decoration:none;}
 .login_Inputbox_id input {
 	width: 230px;
 	height: 30px;
+	font-size: 0.75rem;
+	padding-left:0.5em;
 }
 .login_Inputbox_pwd {
 	display: flex;
@@ -66,6 +67,8 @@ a:active, a:hover {text-decoration:none;}
 .login_Inputbox_pwd input {
 	width: 230px;
 	height: 30px;
+	font-size: 0.75rem;
+	padding-left:0.5em;
 }
 .login_Submitbox {
 	display: flex;
@@ -104,20 +107,32 @@ a:active, a:hover {text-decoration:none;}
 }
 .login_sns_login {
 	width: 300px;
-	height: 190px;
+	height: 150px;
 	margin: 0 auto;
+	margin-top:1em;
 }
-.login_sns_login button {
+.login_sns_login div {
 	width: 300px;
 	height: 50px;
 	margin: 0 auto;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 	border: 0;
-	background-color: #ffc001;
 }
+
+/* 여기서는 버튼 이미지 구현하기 위한 css 적용론 */
+/* 카카오 톡 */
+#btn-kakao-login {
+}
+
+/* 구글 */
+#btn-google-login {
+}
+
+/* 버튼 이미지 구현 끝 */
+
 .login_submenu {
 	width: 500px;
-	height: 300px;
+	height: 150px;
 	margin:0 auto;
 	border-top:1px solid #000;
 }

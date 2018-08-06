@@ -1,13 +1,15 @@
 package bitcamp.java106.pms.web.json;
 
+import java.util.HashMap;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import bitcamp.java106.pms.domain.WorkOption;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.service.WorksService;
 
@@ -33,6 +35,7 @@ public class WorksController {
         worksService.delete(no);
     }
     
+    // 여기는 제품 리스틀 간단히 보여주는걸 의미
     @RequestMapping("list")
     public Object list() {       
         return worksService.list();
@@ -44,14 +47,22 @@ public class WorksController {
         worksService.update(works);
     }
     
+    // 여기는 상세 보기용
     @RequestMapping("{no}")
     public Works view(@PathVariable int no) throws Exception {
         return worksService.get(no);
     }
+    
+    // 옵션보기
+    @RequestMapping("option/{no}")
+    public WorkOption viewOption(
+            @PathVariable int no) {
+        System.out.println("worksControllor() 정상처리");
+        return worksService.OptionValue(no);
+    }
 
 }
 
-//ver 55 - JSON 데이터를 출력하는 페이지 컨트롤러 생성
 
 
 

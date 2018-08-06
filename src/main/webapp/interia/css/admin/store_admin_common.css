@@ -35,14 +35,12 @@ li {
     list-style: none;
 }
 
-input[type="text"] {
-	border-radius:5px;
-	box-shadow:  none ;
-}
 input[type="date"] {
     -webkit-appearance: menulist !important;
-    border-radius:5px;
-    box-shadow:  none ;
+    height:30px;
+}  
+input[type="time"] {
+    -webkit-appearance: menulist !important;
     height:30px;
 }  
 
@@ -768,13 +766,25 @@ th label {
     margin-top:15px;
     margin-bottom:15px;
     padding: 10px;
-    min-height: 200px;
-    max-height: 300px;
+    height: 300px;
     border: 1px solid gray;
     border-radius: 5px;
+    width: 100%;
     display: flex;
 }
-
+.ad-image-notice {
+	display:table-cell; 
+	text-align:center; 
+	vertical-align:middle;
+	color: gray;
+}
+.ad-class-discrpt {
+	width:100%;
+	border:1; 
+	border-radius: 5px; 
+	overflow:visible;
+	text-overflow:ellipsis;
+}
 
 .ad-adImgs-wrapper {
 position: relative;
@@ -1159,6 +1169,7 @@ textarea {
     display: inline-block;
     cursor: pointer;
 }
+
 
 /***** 체험관리 End *****/
 

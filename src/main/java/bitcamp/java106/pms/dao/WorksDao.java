@@ -2,6 +2,7 @@ package bitcamp.java106.pms.dao;
 
 import java.util.List;
 
+import bitcamp.java106.pms.domain.WorkOption;
 import bitcamp.java106.pms.domain.Works;
 
 public interface WorksDao {
@@ -10,6 +11,7 @@ public interface WorksDao {
     int insert(Works works);
     int update(Works works);
     Works selectOne(int no);
+    WorkOption optionName(int no);
 }
 
 //ver 52 - 페이지 단위로 데이터 가져오기

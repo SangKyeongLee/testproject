@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>공방관리자</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="../../css/admin/store_admin_common.css">
+<link rel="stylesheet"
+	href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet"
+	href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+<link rel="stylesheet"
+	href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
+<link rel="shortcut icon" href="../favicon.ico">
+
+
+</head>
+
+<body>
+	<div id="ad-header"></div>
+
+	<div class="ad-main-wrapper">
+		<div class="ad-main-content">
+			<!-- ad-breadcrumb -->
+			<ol class="ad-breadcrumb">
+				<li class="ad-breadcrumb-item"><a href="#">관리자</a></li>
+				<li class="ad-breadcrumb-item active">체험관리</li>
+			</ol>
+			<div class="ad-card-default">
+				<div class="ad-card-header">
+					<i class="fas fa-chalkboard-teacher"></i> 체험목록
+				</div>
+				<div class="ad-card-body">
+					<div class="ad-class-enroll" data-toggle="modal"
+						data-target="#classUpdateModal">
+						<i class="far fa-plus-square"></i> 체험 등록하기
+					</div>
+					<div class="ad-class-data">
+					<div class="ad-class-wrapper">
+						<div class="ad-class-card">
+							<div class="ad-class-card-img">
+								<img src="../../images/admin/ad_admin_class.jpg">
+							</div>
+							<div class="ad-class-card-content">
+								<p class="ad-class-card-title">일상탈출 카드 지갑 만들기</p>
+								<p>안녕하세요 이스트허니입니다.</p>
+							</div>
+							<div class="ad-class-card-info">
+								<p>최대인원 5 명</p>
+								<p>가격 25000 원</p>
+								<p>체험일자</p>
+								<p>2018-06-21(1시간)</p>
+							</div>
+							<div class="ad-class-opt ad-btn-group-collapse">
+								<button class="ad-btn-sm ad-btn-color1" data-toggle="modal"
+									data-target="#requestUserModal">신청현황</button>
+								<button class="ad-btn-sm ad-btn-color3" data-toggle="modal"
+									data-target="#classUpdateModal">수정</button>
+								<button class="ad-btn-sm ad-btn-color2">삭제</button>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- classUpdateModal -->
+			<div class="modal fade" id="classUpdateModal" tabindex="-1"
+				role="dialog" aria-labelledby="classUpdateModalTitle"
+				aria-hidden="true" style="z-index: 10800;">
+				<div class="modal-dialog modal-lg " role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="classUpdateModalTitle">
+								<b>체험등록/수정</b>
+							</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<form method="post">
+							<div class="modal-body">
+								<div class="ad-modal-contentgap">
+									<b>체험명</b> <input type="text" id="acnm"
+										class="ad-works-modal-inputlg ad-works-modal-content"
+										placeholder="체험명을 입력해주세요">
+								</div>
+								<div class="ad-modal-contentgap">
+									<b>모집인원</b> <input type="number" id="minno"
+										class="ad-class-num ad-works-modal-content" min="1" max="20"
+										placeholder="최소인원"> <input type="number" id="maxno"
+										class="ad-class-num ad-works-modal-content" min="1" max="20"
+										placeholder="최대인원">
+								</div>
+								<div class="ad-modal-content-collapse">
+									<div class="ad-modal-contentgap">
+										<b>체험일자</b> <input type="date" id="actdt"
+											class="ad-works-modal-content">
+									</div>
+									<div class="ad-modal-contentgap">
+										<b>체험시간</b> <input type="time" id="avst" class="">
+										&ensp; ~ &ensp; <input type="time" id="avet" class="">
+									</div>
+								</div>
+								<div class="ad-modal-content-collapse">
+									<div class="ad-modal-contentgap">
+										<b>준비물</b> <input type="checkbox" id="mtcse"
+											onclick="writable('#mtrls', this)"> <input
+											type="text" id="mtrls"
+											class="ad-works-modal-inputsm ad-works-modal-content"
+											placeholder="준비물을 입력하세요" readonly>
+									</div>
+									<div class="ad-modal-contentgap">
+										<b>체험료</b> <input type="text" id="apric"
+											class="ad-works-modal-inputsm ad-works-modal-content"
+											placeholder="가격">
+									</div>
+								</div>
+								<div class="ad-modal-contentgap">
+									<b>사진첨부</b> <input id="fileupload" type="file" name="files"
+										multiple>
+									<div id="ad-images-div"></div>
+									<button class="ad-btn ad-btn-color3" id='imgUpload'
+										type='button'>파일첨부</button>
+									<!-- <button class="ad-btn ad-btn-color1" id='upload-btn' type='button'>등록</button> -->
+								</div>
+								<div class="ad-modal-contentgap">
+									<b>체험상세</b> <br />
+									<textarea name="content" id="accnt" rows='10' cols='87'></textarea>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="reset" class="ad-btn ad-btn-color3">초기화</button>
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">닫기</button>
+								<button type="button" id='addBtn' class="ad-btn ad-btn-color1">등록하기</button>
+								<button type="button" id='updBtn' class="ad-btn ad-btn-color1">수정하기</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+			<!--requestUserModal-->
+			<div class="modal fade" id="requestUserModal" tabindex="-1"
+				role="dialog" aria-labelledby="requestUserModalTitle"
+				aria-hidden="true" style="z-index: 10800;">
+				<div class="modal-dialog modal-dialog-centered " role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="requestUserModalTitle">
+								<b>신청현황</b>
+							</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<form>
+							<div class="modal-body">
+								<div class="ad-modal-contentgap">
+									<b>체험명</b>
+									<div class="ad-apList-wrapper">
+										<div class="ad-apList-header">
+											<div class="ad-apList-left">신청자 닉네임</div>
+											<div class="ad-apList-right">신청 인원</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">닫기</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ad-main-content-->
+	</div>
+	<!--ad-main-wrapper-->
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script
+		src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script
+		src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+	<script
+		src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script
+		src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script
+		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script
+		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+	<script
+		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+	<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script
+		src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+	<script
+		src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/translations/ko.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/ad_header.js"></script>
+	<script src="../../js/ad_admin.js"></script>
+	<!-- <script src="../../js/ad_editor.js"></script>
+	<script src="../../js/upload.js"></script> -->
+
+	<script>
+		"use strict"
+		var userNo;
+
+		$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+			//공방번호(사용자번호(PK))
+			userNo = data.no;
+			
+			/* list */
+			$.getJSON(serverRoot + "/json/wsav/adminList",{"no":userNo}, (data) => {
+				console.log(userNo);
+				console.log(data);
+				for(var i = 0; i < data.length; i ++) {
+					var actdt = data[i].actdt;
+					var date = new Date(actdt);
+					var year = date.getFullYear();
+					var month = date.getMonth() + 1;
+					var date = date.getDate();
+					var time = new Date(data[i].time).getHours();
+					console.log(time);
+					
+					$("<div class='ad-class-wrapper'>" +
+						"<div class='ad-class-card'>"+
+							"<div class='ad-class-card-img'>" +
+								"<img src='../../../files/" + data[i].path + "_150x150.jpg'>" + 
+						"</div>"+
+						"<div class='ad-class-card-content'>"+
+							"<p class='ad-class-card-title'>" + data[i].acnm + "</p>" +
+							"<p>" + data[i].accnt + "</p>" +
+						"</div>" +
+						"<div class='ad-class-card-info'>" + 
+							"<p>최대인원 " + data[i].maxno + "명</p>" +
+							"<p>가격 " + data[i].apric +" 원</p>" +
+							"<p>체험일자</p>" +
+							"<p>" + year + "-"+ month + "-" + date + "(" + time + "시간)</p>" +
+						"</div>"+
+						"<div class='ad-class-opt ad-btn-group-collapse'>" +
+							"<button class='ad-btn-sm ad-btn-color1' data-toggle='modal' data-target='#requestUserModal'>신청현황</button>" +
+							"<button class='ad-btn-sm ad-btn-color3' data-toggle='modal' data-target=''#classUpdateModal'>수정</button>" +
+							"<button class='ad-btn-sm ad-btn-color2'>삭제</button>"+
+						"</div>" +
+					"</div>" +
+				"</div>").appendTo('.ad-class-data');
+				}
+			});
+		});
+		//button 클릭시 파일 첨부	
+		$(function () {
+			$('#imgUpload').click(function (e) {
+				e.preventDefault();
+				$('#fileupload').click();
+			});
+		});
+		
+		/*// fileUpload & add*/
+		var imgFiles;
+		$('#fileupload').fileupload({
+			url: '../../../json/wsav/add',
+			dataType: 'json',
+			sequentialUploads: true,
+			singleFileUploads: false,
+			autoUpload: false,
+			disableImageResize: /Android(?!.*Chrome)|Opera/
+				.test(window.navigator && navigator.userAgent), // 안드로이드와 오페라 브라우저는 크기 조정 비활성 시키기
+			previewMaxWidth: 80,   // 미리보기 이미지 너비
+			previewMaxHeight: 80,  // 미리보기 이미지 높이 
+			previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+			processalways: function (e, data) {
+				console.log('fileuploadprocessalways()...');
+				console.log(data.files);
+				imgFiles = data.files;
+				var imagesDiv = $('#ad-images-div');
+				imagesDiv.html("");
+				for (var i = 0; i < data.files.length; i++) {
+					try {
+						if (data.files[i].preview.toDataURL) {
+							var imgWrapper = $('<div>')
+								.attr("data-file-index", i)
+								.addClass('ad-adImgs-wrapper')
+								.click(delImg)
+								.appendTo(imagesDiv);
+							var imgContent = $('<div>')
+								.addClass('ad-adImgs-content')
+								.appendTo(imgWrapper);
+							var imgCover = $('<div>')
+								.addClass('ad-adImgs-cover')
+								.appendTo(imgWrapper);
+							$("<img/>").attr('src', data.files[i].preview.toDataURL()).appendTo(imgContent).addClass('ad-adImgs');
+						}
+					} catch (err) { }
+				}
+				$('#addBtn').unbind("click");
+				$('#addBtn').click(function () {
+					data.formData = {
+						workshopNo: userNo,
+						title: $(acnm).val(),
+						minPerson: $(minno).val(),
+						maxPerson: $(maxno).val(),
+						experDate: $(actdt).val(),
+						startTime: $(avst).val() + ":00",
+						endTime: $(avet).val() + ":00",
+						prepareYn: $(mtcse).val(),
+						prepareCont: $(mtrls).val(),
+						price: $(apric).val(),
+						content: $(accnt).val()
+					};
+					data.submit();
+				});
+			},
+			done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+				console.log('done()...');
+				console.log(data.result);
+				console.log($(avet).val())
+			}
+		});
+		function delImg(event) {
+
+			var wrapperDiv = $(event.currentTarget);
+			wrapperDiv.remove();
+			var fileIndex = wrapperDiv.attr('data-file-index');
+			imgFiles.splice(fileIndex, 1);
+		}
+		console.log(userNo);	
+		
+		
+		/* delete */
+
+		
+		/* update */
+	</script>
+</body>
+
+</html>

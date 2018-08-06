@@ -7,7 +7,7 @@ a:active, a:hover {text-decoration:none;}
 	height: 650px;
 	margin: 0 auto;
 	margin-top: 7.5rem;
-	background-color: #ccc;
+    background: url('../../images/login_bg.png') no-repeat 50% 50%;
 }
 .form_mainText {
 	display: flex;
@@ -24,9 +24,8 @@ a:active, a:hover {text-decoration:none;}
 }
 .form_mainText h1:nth-child(2) {
 	font-size: 1rem;
-	font-weight: bold;
-	margin-top: 0.75rem;
-	color: #999;
+    margin-top: 0.75em;
+    color: #999;
 }
 .form_subText {
 	display: flex;

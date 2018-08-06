@@ -12,45 +12,69 @@
 <mapper namespace="bitcamp.java106.pms.dao.WorksDao">
 
   <resultMap type="Works" id="WorksMap">
-    <id column="wno" property="no"/>
-    <result column="wsnm" property=""/>
-    <result column="wtitl" property="title"/>
-    <result column="price" property="price"/>
-    <result column="wrtdt" property="registeredDate"/>
+    <id column="wno" property="no"/> <!-- 작품번호 -->
+    <result column="memno" property="wno"/> <!-- 공방번호 -->
+    <result column="wtitl" property="title"/> <!-- 작품명 -->
+    <result column="price" property="price"/> <!-- 가격 -->
+    <result column="wrtdt" property="registeredDate"/> <!-- 등록날짜 -->
+    <result column="alstk" property="capacity" /> <!-- 재고수량 -->
+    <result column="slst" property="salesStatus" /> <!-- 판매 상태 -->
+    <result column="pddt" property="productDetail" /> <!-- 제품 상세 -->
+    <result column="spcs" property="deliveryPrice" /> <!-- 배송비 여부 -->
+    <result column="pdrd" property="requestDetail" /> <!-- 의뢰내용 -->
+    
+    <!-- 제품 사진  => 작품번호는 어차피 작품DB의 있는 작품번호로 이용하여 대입할 것이다. -->
+    <association property="photo" javaType="WorksPhoto"> 
+      <id column="wpno" property="pno"/>
+      <result column="mipt" property="mainPhoto"/>
+      <result column="path" property="path"/> 
+    </association>
+    
+     <!-- 제품 옵션 => 정의 사항 -->
+    <collection property="option" javaType="java.util.ArrayList" ofType="WorkOption"> 
+      <id column="opno" property="opno"/> <!-- 옵션번호 -->
+      <result column="optyn" property="optionYn"/> <!-- 옵션여부 -->
+      <result column="abvl" property="attributeValue" /> <!-- 속성 값 -->
+      <result column="abnm" property="attributeName" /> <!-- 속성 명-->
+    </collection>
   </resultMap>
   
-  <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
-       유지보수할 때 알아보기 쉽다. 
-       알아보기 쉬울 뿐만 아니라
-       스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 
-       그 메서드를 자동생성할 때 사용할 수 있다.
-  -->
+  <!-- 제품 리스트별로 출력하는 내용들  -->
   <select id="selectList" 
           resultType="map" 
           parameterType="map">
-    select w.wno, ws.wsnm, wtitl, price, path
+    select w.wno, ws.wsnm, wtitl, price, wp.path
     from INTR_WORKS w 
     inner join INTR_WPHO wp on w.wno = wp.wno 
     inner join INTR_WRKSHP ws on w.memno = ws.memno
     
+    where wp.mipt = "y" <!-- 메인 사진일 경우 -->
     order by w.WNO desc
   </select>
   
+  <!-- 제품 등록 -->
   <insert id="insert" parameterType="Works"
           useGeneratedKeys="true" keyColumn="wno" keyProperty="no">
 <!--     insert into pms2_board(titl,cont,cdt) 
     values(#{title},#{content},now()) -->
   </insert>
   
-  <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
-       값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
-  -->
+  
+  <!-- 제품 상세 보기 -->
   <select id="selectOne" parameterType="int" resultMap="WorksMap">
-<!--     select bno,titl,cont,cdt 
-    from pms2_board 
-    where bno=#{value} -->
+    select * from INTR_WORKS w 
+    inner join INTR_WPHO wp on w.wno = wp.wno 
+    inner join INTR_WRKSHP ws on w.memno = ws.memno
+        
+    where w.wno = #{no}
   </select>
   
+  <!-- 옵션 내용 보기 -->
+  <select id="optionName" parameterType="int" resultMap="WorksMap">
+    select * from INTR_WKOT where wno = #{no} 
+  </select>
+  
+  <!-- 관리자용 : 작품 수정 -->
   <update id="update" parameterType="Works">
 <!--     update pms2_board set 
         titl=#{title}, 
@@ -59,6 +83,8 @@
     where bno=#{no} -->
   </update>
   
+  
+  <!-- 제품 삭제 -->
   <delete id="delete" parameterType="int">
 <!--     delete from pms2_board where bno=#{value} -->
   </delete>

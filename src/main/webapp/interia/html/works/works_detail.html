@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../css/works/sp_review_detail.css">
     <link rel="stylesheet" href="../../css/works/sp_inquire.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
@@ -33,14 +34,16 @@
         <!-- 타이틀 시작 -->
         <p>가구 > 테이블 > #사이드 테이블</p>
         <div class="ib-pd-title">
-            <h2>FLENCE 460 사이드 테이블_2colors</h2>
+            <h2 id="fTitle">제품 제목을 입력하세요</h2>
             <i class="fa fa-share-alt" style="font-size:30px"></i>
         </div>
         <!-- 타이틀 끝 -->
 
         <!-- 이미지 그리드 시작 -->
+        
+        <!-- 조금 있다가 핸들바로 처리 예정 -->
         <div class="ib-pd-img">
-            <img src="../../images/works/works_detail/product.jpg" width="100%">
+            <img id="main-image" src="" width="100%">
             <div class="ib-pd-img-c1">
                 <img src="../../images/works/works_detail/product.jpg" width="100%">
                 <img src="../../images/works/works_detail/product.jpg" width="100%">
@@ -64,11 +67,11 @@
             <div>
                 <div class="ib-pd-cont-rows">
                     <p>판매가</p>
-                    <p class="ib-pd-cont-fy">15,900 원</p>
+                    <p class="ib-pd-cont-fy"><span id="fPrice">판매 가격</span> 원</p>
                 </div>
                 <div class="ib-pd-cont-rows">
                     <p>배송비</p>
-                    <p>무료</p>
+                    <p><span id="fDeliveryPrice"></span> 원</p>
                 </div>
                 <div class="ib-pd-cont-rows">
                     <p>기타사항</p>
@@ -78,15 +81,17 @@
             <div>
                 <div class="ib-pd-cont-rows">
                     <p>상품 옵션 선택</p>
-                    <select class="form-control" id="sel1">
-                    <option>1</option>
+                    <!-- 속성 값 -->
+                    <select class="form-control" id="fAttributeValue">
+                    <!-- <option>1</option>
                     <option>2</option>
-                    <option>3</option>
+                    <option>3</option> -->
                 </select>
                 </div>
                 <div class="ib-pd-cont-rows">
                     <p></p>
-                    <select class="form-control" id="sel1">
+                    <!-- 속성명 -->
+                    <select class="form-control" id="fAttributeName">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -94,28 +99,40 @@
                 </div>
             </div>
         </div>
+        
+        <!-- 속성값 -->
+         
+        <script id="tr-template" type="text/x-handlebars-template">
+        {{#each select}}
+        <option>{{data.abvl}}</option>
+        {{/each}}
+        </script>
+        
+        
+       
         <!-- ib-pd-cont -->
 
         <div class="ib-pd-option">
-            <p>FLENCE 460 사이드 테이블_2colors</p>
+            <p id="fTitle2">제품 제목을 입력하세요</p>
             <div class="ib-pd-option-count">
-                <i class="fa fa-plus" style="font-size:24px; color:#999"></i>
-                <p>1</p>
-                <i class="fa fa-minus" style="font-size:24px; color:#999"></i>
+                <!-- 수량 증감 연산하기 -->
+                <i id="plus-value" class="fa fa-plus" style="font-size:24px; color:#999"></i>
+                <p id="seller-value"></p>
+                <i id="minus-value" class="fa fa-minus" style="font-size:24px; color:#999"></i>
             </div>
-            <p class="ib-pd-option-price">15,900 원</p>
+            <p class="ib-pd-option-price"><span id="price-value">판매가격</span> 원</p>
             <i class="fa fa-close ib-pd-option-close" style="font-size:24px; color:#999"></i>
         </div>
         <!-- ib-pd-option -->
 
-        <p class="ib-pd-tprice">총 상품 금액 <span>15,900</span> 원</p>
+        <p class="ib-pd-tprice">총 상품 금액 <span id="All-Price">총 판매가격</span> 원</p>
         <!-- ib-pd-tprice -->
 
         <div class="ib-pd-btbox">
             <div class="ib-pd-btlist">
                 <div class="btn ib-pd-btn-sdark"><i class="fa fa-heart" style="font-size:24px; line-height: inherit;"></i></div>
                 <a href="sp_bascket.html"><div class="btn ib-pd-btn ib-pd-btn-dark">장바구니 담기</div></a>
-                <a href="sp_commissioned.html"><div class="btn ib-pd-btn ib-pd-btn-gary">제작 의뢰 하기</div></a>
+                <!-- <a href="sp_commissioned.html"><div class="btn ib-pd-btn ib-pd-btn-gary">제작 의뢰 하기</div></a> -->
                 <a href="sp_purchase.html"><div class="btn ib-pd-btn ib-pd-btn-yellow">구매하기</div></a>
             </div>
         </div>
@@ -745,12 +762,14 @@
     <div class="ib-pd-foot">
         <div class="ib-container ib-ft-right">
             <a class="btn ib-ft-btn" href="shopping_bascket.html">장바구니 담기</a>
-            <a class="btn ib-ft-btn ft-btn-gray" href="sp_commissioned.html">제작 의뢰 하기</a>
+            <!-- <a class="btn ib-ft-btn ft-btn-gray" href="sp_commissioned.html">제작 의뢰 하기</a> -->
             <a class="btn ib-ft-btn ft-btn-yellow" href="sp_purchase.html">구매하기</a>
         </div>
     </div>
     <!-- 하단 고정 바 -->
+    
     <script src="../../js/common.js"></script>
+    <script src="../../js/works_detail.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 </body>
