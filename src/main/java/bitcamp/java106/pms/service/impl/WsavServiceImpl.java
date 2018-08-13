@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import bitcamp.java106.pms.dao.WkacpDao;
 import bitcamp.java106.pms.dao.WsavDao;
 import bitcamp.java106.pms.domain.Wkacp;
+import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.domain.Wsav;
 import bitcamp.java106.pms.service.WsavService;
 
@@ -27,6 +28,11 @@ public class WsavServiceImpl implements WsavService {
     @Override
     public List<Wsav> list(int no) {
         return wsavDao.selectList(no);
+    }
+    
+    @Override
+    public List<Wsav> sellerSiteList() {
+        return wsavDao.selectSellerSiteList();
     }
     
     @Override
@@ -62,8 +68,7 @@ public class WsavServiceImpl implements WsavService {
     
     @Override
     public int update(Wsav wsav, ArrayList<Wkacp> activityphotos) {
-       
-        int workshopActivityNo =  wsav.getNo();
+       int workshopActivityNo =  wsav.getNo();
         wkacpDao.delete(workshopActivityNo);
         for(int i = 0; i < activityphotos.size(); i++) {
             Wkacp wkacp = activityphotos.get(i);

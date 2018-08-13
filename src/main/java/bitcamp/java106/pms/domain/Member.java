@@ -14,8 +14,23 @@ public class Member implements Serializable {
     private String zipCode;
     private String baseAdd;
     private String detailAdd;
+    private String profilePhoto;
+    private String bannerPhoto;
     
     
+    
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
+    }
+    public String getBannerPhoto() {
+        return bannerPhoto;
+    }
+    public void setBannerPhoto(String bannerPhoto) {
+        this.bannerPhoto = bannerPhoto;
+    }
     public int getNo() {
         return no;
     }

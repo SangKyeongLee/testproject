@@ -11,5 +11,5 @@ public interface RvphoService {
     Rvpho get(int no);
     int add(Rvpho rvpho);
     int update(Rvpho rvpho);
-    int delete(int no, int wsano);
+    int delete(int no);
 }

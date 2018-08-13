@@ -76,7 +76,16 @@
 	                    <label>종목 *</label>
 	                </div>
 	                <div class="form_mainForm_Id01">
-	                    <input id="fItems" type="text">
+	                    <select id="selectOption" onChange="setValuse();">
+	                        <option>가구</option>
+	                        <option>패브릭</option>
+	                        <option>데코/조명</option>
+	                        <option>가전</option>
+	                        <option>생활</option>
+	                        <option>주방</option>
+	                        <option>욕실</option>
+	                    </select>
+	                    <input id="fItems" type="hidden">
 	                </div>
 	            </div>
 	            <div>
@@ -155,7 +164,13 @@
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/workshop_sellerRequest.js"></script>
-
+    <script>
+    function setValuse() {
+    	var sh = document.getElementById("selectOption");
+    	var tt = document.getElementById("fItems");
+    	tt.value = sh.options[sh.selectedIndex].text;
+    }
+    </script>
 </body>
 
 </html>

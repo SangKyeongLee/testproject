@@ -14,7 +14,8 @@ $(document).ready(function(){
 /*모달 초기화*/
 $(document).ready(function(){
 	$('.modal').on('hidden.bs.modal', function (e) { 
-		$(this).find('form')[0].reset() 
+		$(this).find('form')[0].reset();
+		$('#tname').tagEditor('destroy');
 		/*첨부파일 및 체크박스 옵션, 에디터 초기화 코드 삽입하기*/
 	});
 });

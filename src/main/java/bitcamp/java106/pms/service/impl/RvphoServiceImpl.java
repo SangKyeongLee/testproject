@@ -40,10 +40,7 @@ public class RvphoServiceImpl implements RvphoService {
     }
     
     @Override
-    public int delete(int no, int wsano) {
-        HashMap<String,Object> params = new HashMap<>();
-        params.put("memno", no);
-        params.put("wsano", wsano);
-        return rvphoDao.delete(params);
+    public int delete(int no) {
+        return rvphoDao.delete(no);
     }
 }

@@ -77,7 +77,7 @@ function loadLoginUser() {
 		// 마이페이지 드롭바 설정 및 개인정보 기능
 		$("#setting-myprofile").click(e => {
 			e.preventDefault();
-			location.href = serverRoot + "/interia/html/mypage/mp_mypage.html";
+			location.href = serverRoot + "/interia/html/mypage/mp-myinfo.html";
 		});
 		
 		// 마이페이지 드롭바 로그아웃 기능

@@ -9,8 +9,11 @@
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header_move.css">
     <link rel="stylesheet" type="text/css" href="../../css/workshop/workshop_sellerSite.css">
+    <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
+
 
 <body>
     <header id="header">
@@ -19,34 +22,35 @@
 	    <div class="workshop_sellerSite_bg" style="height: 1300px;">
 	        <div class="workshop_sellerSite_sidemenu">
 	            <div class="workshop_sellerSite_sidemenu_edit">
-	                <button>Edit</button>
+	                <button type="button" onClick="location.href='./workshop_profileChange.html'">Edit</button>
+	                <button type="button" onClick="location.href='./workshop_profileChange.html'">Key</button>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_img">
-	                <img src="../../images/workshop/storeLogo02.png">
+
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_imgtext">
-	                <h1>공방명</h1>
-	                <p>업체 소개 글입니다.<br>최대 한글 기준 50자 까지 가능합니다.</p>
+
+
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_snsbtn">
 	                <div class="workshop_sellerSite_sidemenu_snsbtn_bg">
-	                    <a href="#"><img src="../../images/workshop/facebook.png"></a>
-	                    <a href="#"><img src="../../images/workshop/instagram.png"></a>
-	                    <a href="#"><img src="../../images/workshop/twitter.png"></a>
+
+
+
 	                </div>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
 	            <div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
+	                <!-- <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button style="color: #e67e22;">♥ 스토어 찜하기</button>
-	                </div>
+	                </div> -->
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button  type="button" onClick="location.href='./sellerSite_IntroduceChange.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방소개</button>
+	                    <button type="button" onClick="location.href='./sellerSite_Introduce.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방소개</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
@@ -61,7 +65,7 @@
 	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
 	                </div>
 	            </div>
-	            <div class="workshop_sellerSite_sidemenu_line_bg">
+	            <!-- <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_info">
@@ -80,26 +84,26 @@
 	                    <p>구매후기</p>
 	                    <p>0개</p>
 	                </div>
-	            </div>
+	            </div> -->
 	        </div>
 	        <div class="workshop_sellerSite_content">
 	            <div class="sellerSite_intro_title">
 	                <p>공방소개 수정</p>
 	            </div>
 	            <div class="sellerSite_intro_Change">
-	                <div class="sellerSite_intro_Change_box1">
-	                    <label for="ex_file">첨부파일</label> 
-	                    <input type="file" id="ex_file">
+	                <div id="sellerSite_intro_Change_box1">
+	                    <input id="fileupload00" type="file" name="files" multiple>
+                        <input id="fileupload00_hidden" type="hidden">
 	                </div>
 	                <div class="sellerSite_intro_Change_box2">
 	                    <form name="insertFrm"> 
-	                        <textarea name="test" onkeyup="len_chk()" style="resize: none;"></textarea>
+	                        <textarea id="introduce_text" name="test" onkeyup="len_chk()" style="resize: none;"></textarea>
 	                    </form>
 	                </div>
 	            </div>
 	            <div class="sellerSite_intro_btn">
-	                <button>취소하기</button>
-	                <button>적용하기</button>
+	                <button type="button" onClick="location.href='./sellerSite_Introduce.html'">취소하기</button>
+	                <button type="button" id="introduce_btn">적용하기</button>
 	            </div>
 	        </div>
 	    </div><!--************-->
@@ -108,16 +112,69 @@
 	    
 	</section>
 
-
     <footer id="footer">
     </footer>
-
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+    <script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/sellerSite_IntroduceChange.js"></script>
+    <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
+    <script>
+    $('#fileupload00').fileupload({
+        url: '../../../json/workshop/addfile',        // 서버에 요청할 URL
+        dataType: 'json',
+        autoUpload: true,
+        done: function (e, data) { 
+          console.log('done()...');
+          console.log(data.result); // 서버가 보낸 JSON 객체는 data.result 에 보관되어 있다.
+          $('#fileupload00_hidden').val(data.result.filename);
+        }
+    });
+	
+    $("#introduce_btn").click(() => {
+    	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+    		console.log(data.no);
+	        $.post(serverRoot + "/json/workshop/updateIntro", {
+	        	wno : data.no,
+                wsContent : $("#introduce_text").val()
+	        });
+	        $.post(serverRoot + "/json/workshop/addIntro", {
+	            wno : data.no,
+	            filenametwo : $("#fileupload00_hidden").val()
+	        }, () => {
+                location.href = "sellerSite_Introduce.html";
+            });
+    	});
+    });
     
+    
+    /* $("#introduce_btn").click(() => {
+        $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+            console.log(data.no);
+            $.post(serverRoot + "/json/workshop/update", {
+                wno : data.no,
+                studioName : $("#profile_input").val(),
+                introduction : $("#profile_textarea").val()
+            });
+            $.post(serverRoot + "/json/workshop/addwspho", {
+                wno : data.no,
+                filename : $("#fileupload00_hidden").val(),
+                filenametwo : $("#fileupload01_hidden").val()
+            }, () => {
+                location.href = "workshop_sellerSite.html";
+            });
+        });
+    }); */
+    </script>
 </body>
 
 </html>

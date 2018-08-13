@@ -21,7 +21,19 @@ public class Workshop implements Serializable {
     private String twitter; // 트위터
     private String instagram; // 인스타그램
     
+    private String filename;
+    private String filenametwo;
     
+    
+    
+    @Override
+    public String toString() {
+        return "Workshop [wno=" + wno + ", bno=" + bno + ", mutual=" + mutual + ", rpstName=" + rpstName + ", industry="
+                + industry + ", items=" + items + ", zcode=" + zcode + ", baddr=" + baddr + ", daddr=" + daddr
+                + ", studioName=" + studioName + ", introduction=" + introduction + ", wsContent=" + wsContent
+                + ", facebook=" + facebook + ", twitter=" + twitter + ", instagram=" + instagram + ", filename="
+                + filename + ", filenametwo=" + filenametwo + "]";
+    }
     public int getWno() {
         return wno;
     }
@@ -112,5 +124,19 @@ public class Workshop implements Serializable {
     public void setInstagram(String instagram) {
         this.instagram = instagram;
     }
+    public String getFilename() {
+        return filename;
+    }
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+    public String getFilenametwo() {
+        return filenametwo;
+    }
+    public void setFilenametwo(String filenametwo) {
+        this.filenametwo = filenametwo;
+    }
+    
+    
     
 }

@@ -18,34 +18,35 @@
 	    <div class="workshop_sellerSite_bg" style="height: 1300px;">
 	        <div class="workshop_sellerSite_sidemenu">
 	            <div class="workshop_sellerSite_sidemenu_edit">
-	                <button>Edit</button>
+	                <button type="button" onClick="location.href='./workshop_profileChange.html'">Edit</button>
+	                <button type="button" onClick="location.href='./workshop_profileChange.html'">Key</button>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_img">
-	                <img src="../../images/workshop/storeLogo02.png">
+
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_imgtext">
-	                <h1>공방명</h1>
-	                <p>업체 소개 글입니다.<br>최대 한글 기준 50자 까지 가능합니다.</p>
+
+
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_snsbtn">
 	                <div class="workshop_sellerSite_sidemenu_snsbtn_bg">
-	                    <a href="#"><img src="../../images/workshop/facebook.png"></a>
-	                    <a href="#"><img src="../../images/workshop/instagram.png"></a>
-	                    <a href="#"><img src="../../images/workshop/twitter.png"></a>
+
+
+
 	                </div>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
 	            <div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
+	                <!-- <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button style="color: #e67e22;">♥ 스토어 찜하기</button>
-	                </div>
+	                </div> -->
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_IntroduceChange.html'">공방소개</button>
+	                    <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button  type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
@@ -60,7 +61,7 @@
 	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
 	                </div>
 	            </div>
-	            <div class="workshop_sellerSite_sidemenu_line_bg">
+	            <!-- <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_info">
@@ -79,7 +80,7 @@
 	                    <p>구매후기</p>
 	                    <p>0개</p>
 	                </div>
-	            </div>
+	            </div> -->
 	        </div>
 	        <div class="workshop_sellerSite_content">
 	            <div class="sellerSite_ex_title">
@@ -87,41 +88,14 @@
 	            </div>
 	            <div class="sellerSite_ex_contentMain">
 	                <div class="sellerSite_ex_content00">
-	                    <p>체험 스토어 : 비트 공방</p>
+	                    
 	                </div>
 	                <div class="sellerSite_ex_content01">
-	                    <a href="#"><img src="../../images/workshop/seller_ex_detail_sub00.png"></a>
-	                    <p>(건대) 일상탈출 정신수양 카드지갑 만들기</p>
-	                    <p>인원:1명</p>
+	                    
+	                    
+	                    
 	                </div>
-	                <div class="sellerSite_ex_title">
-	                    <p>체험자 정보</p>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이름</p>
-	                        <input type="text" placeholder="이름을 입력해주세요.">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이메일</p>
-	                        <input type="email" placeholder="sung@test.com">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name01">
-	                        <p>휴대전화</p>
-	                        <select>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                        </select>
-	                        <input type="text">
-	                        <input type="text">
-	                    </div>
-	                </div>
+	                
 	                <div class="sellerSite_ex_subcontent_btn">
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">신청하기</button>
 	                </div>
@@ -141,6 +115,22 @@
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
+    <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
+    
+    <script>
+    $.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
+        $("<p>체험 스토어 : " + data[0].wsnm + "</p>"
+        ).appendTo(".sellerSite_ex_content00");
+    });
+    $.getJSON(serverRoot + "/json/wsav/sellerSiteList", (data) => {
+        $("<a href='#'>" +
+              "<img src='../../images/workshop/" + data[0].path + "' style='width: 120px; height:95px;'>" +
+          "</a>" +
+          "<p>" + data[0].acnm + "</p>" +
+          "<p>인원:1명</p>"
+        ).appendTo(".sellerSite_ex_content01");
+    });
+    </script>
 </body>
 
 </html>

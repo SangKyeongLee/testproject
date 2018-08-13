@@ -18,6 +18,7 @@ public interface MemberService {
     boolean isSearchPassword(String id);  // 비밀번호 찾기 메뉴에서 이메일을 찾았는지 여부
     int changePassword(int no, String password); // 비밀번호 찾으면 바로 변경
     int memberNumber(String id); // 해당 아이디의 회원번호를 추출하는 것
+    int updateBphoto(Member member);
 }
 
 

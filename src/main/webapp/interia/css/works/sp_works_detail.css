@@ -57,6 +57,12 @@ a:hover {text-decoration: none; color: #333;}
     padding: 0.7em;
 }
 
+.ib-pd-cont-rows textarea{
+    height:100px;
+    resize: none;
+    outline-color: #ffc001;
+}
+
 .ib-pd-cont-rows p:nth-child(1) {
     font-weight: bold;
 }

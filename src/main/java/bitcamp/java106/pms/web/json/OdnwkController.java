@@ -49,18 +49,33 @@ public class OdnwkController {
         return odnwkService.list(no);
     }
     
+    @RequestMapping("listSellerSite")
+    public Object listSellerSite() {        
+        return odnwkService.listSellerSite();
+    }
+    
+    @RequestMapping("revList")
+    public Object revList(int no) {        
+        return odnwkService.revList(no);
+    }
+    
     @RequestMapping("revGet")
     public Object revGet(int no) {        
         return odnwkService.revGet(no);
     }
     
+    @RequestMapping("revGetList")
+    public Object revGetList(int no) {        
+        return odnwkService.revGetList(no);
+    }
+    
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
-    public void update(Odnwk odnwk, MultipartFile files) throws Exception {
+    public Object update(Odnwk odnwk, MultipartFile files) throws Exception {
         
         HashMap<String,Object> jsonData = new HashMap<>();
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/mypage/review");
         
         String filename = UUID.randomUUID().toString();
         jsonData.put("filename", filename);
@@ -82,6 +97,42 @@ public class OdnwkController {
         }
         
         odnwkService.update(odnwk, filename);
+        
+        jsonData.put("status", "success");
+        return jsonData;
+    }
+    
+    @RequestMapping("updateMod")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public Object updateMod(Odnwk odnwk, MultipartFile files) throws Exception {
+        
+        HashMap<String,Object> jsonData = new HashMap<>();
+        
+        String filesDir = sc.getRealPath("/files/mypage/review");
+        
+        String filename = UUID.randomUUID().toString();
+        jsonData.put("filename", filename);
+        jsonData.put("filesize", files.getSize());
+        jsonData.put("originname", files.getOriginalFilename());
+        try {
+            File path = new File(filesDir + "/" + filename);
+            files.transferTo(path);
+            
+            // 써네일 이미지 생성
+            String thumbnailPath = path.getCanonicalPath() + "_200x200";
+            Thumbnails.of(path)
+                      .size(200, 200)
+                      .outputFormat("jpg")
+                      .toFile(new File(thumbnailPath));
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        odnwkService.updateMod(odnwk, filename);
+        
+        jsonData.put("status", "success");
+        return jsonData;
     }
     
     @RequestMapping("{no}")

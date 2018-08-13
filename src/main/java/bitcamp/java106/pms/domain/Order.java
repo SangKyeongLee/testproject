@@ -26,6 +26,11 @@ public class Order implements Serializable {
     private String proState;
     private String proContext;
     
+    //데이터 컨트롤
+    private Odnwk odnwk;
+    private Works works;
+    
+    
     
     @Override
     public String toString() {
@@ -36,6 +41,20 @@ public class Order implements Serializable {
                 + ", claimContext=" + claimContext + ", proState=" + proState + ", proContext=" + proContext + "]";
     }
     
+    
+    
+    public Works getWorks() {
+        return works;
+    }
+    public void setWorks(Works works) {
+        this.works = works;
+    }
+    public Odnwk getOdnwk() {
+        return odnwk;
+    }
+    public void setOdnwk(Odnwk odnwk) {
+        this.odnwk = odnwk;
+    }
     public int getNo() {
         return no;
     }

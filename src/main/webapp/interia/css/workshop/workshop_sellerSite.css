@@ -6,14 +6,17 @@ dl,ul,ol,menu,li {list-style:none}
     border: 0 !important;
 }
 .workshop_sellerSite_bg {
+	position: relative;
     width: 1200px;
-    height: 2000px;
+    height: 3100px;
     margin: 0 auto;
     margin-top: 7.5em;
 }
 .workshop_sellerSite_sidemenu {
+	position: sticky;
+	top:60px;
     width: 300px;
-    height: 960px;
+    height: 750px;
     float: left;
     background-color: #fff;
     border: 1px solid #d9d9d9;
@@ -43,7 +46,7 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .workshop_sellerSite_sidemenu_imgtext {
     width: 100%;
-    height: 120px;
+    height: 90px;
 }
 .workshop_sellerSite_sidemenu_imgtext h1{
     font-size: 1.5rem;
@@ -140,13 +143,12 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .workshop_sellerSite_content {
     width: 900px;
-    height: 1200px;
+    height: 1300px;
     float: left;
 }
 .workshop_sellerSite_content_visual {
     width: 100%;
     height: 300px;
-    background: url('../../images/workshop/sellerSiteVisual.png') no-repeat 50% 50%;
 }
 .workshop_sellerSite_content_subContent {
     width: 880px;
@@ -167,6 +169,16 @@ dl,ul,ol,menu,li {list-style:none}
     height: 500px;
     float: left;
 }
+#snsbanner00_img {
+    width: 280px;
+    height: 410px;
+    margin: 0 auto;
+}
+/* #instafeed img{
+	width:100%;
+	height:410px;
+} */
+
 .workshop_sellerSite_content_subContent_snsbanner {
     width: 300px;
     height: 500px;
@@ -207,26 +219,7 @@ dl,ul,ol,menu,li {list-style:none}
     font-size: 0.8rem;
     margin: 0 0 0 0;
 }
-.snsbanner00_title_02 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 30px;
-    height: 80px;
-    float: right;
-    font-size: 1em;
-}
-.snsbanner00_content {
-    width: 280px;
-    height: 180px;
-    font-size: 0.75rem;
-    margin:0 auto;
-}
-.snsbanner00_img {
-    width: 280px;
-    height: 220px;
-    margin: 0 auto;
-}
+
 .sellerSite_ex {
     width: 100%;
     height: 300px;
@@ -252,15 +245,11 @@ dl,ul,ol,menu,li {list-style:none}
     font-size: 0.8rem;
 }
 .sellerSite_ex_text_bg p:nth-child(1) {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 2.5em;
-}
-.sellerSite_ex_text_bg p:nth-child(2) {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 2em;
 }
-.sellerSite_ex_text_bg p:nth-child(3) {
+.sellerSite_ex_text_bg p:nth-child(2) {
     margin-top: 0.9em;
     color: #444;
 }
@@ -398,14 +387,14 @@ dl,ul,ol,menu,li {list-style:none}
 .sellerSite_review_bg_content_text p:nth-child(2){
     font-size: 0.8rem;
     margin-top: 0.5em;
-    color: #666;
+    color: #000;
 }
 .sellerSite_review_bg_content_text p:nth-child(3){
     position: absolute;
     bottom: 0;
     font-size: 0.9rem;
     margin-top: 5.5em;
-    color: #666;
+    color: #888;
 }
 .sellerSite_notice {
     width: 440px;
@@ -504,6 +493,8 @@ dl,ul,ol,menu,li {list-style:none}
 
 /* sellerSite_introduceChange*/
 .sellerSite_intro_title{
+	display: flex;
+	justify-content: space-between;
     width: 880px;
     height: 40px;
     float: right;
@@ -512,23 +503,35 @@ dl,ul,ol,menu,li {list-style:none}
     font-weight: bold;
     margin-top: 2em;
 }
+.sellerSite_intro_title a{
+    font-weight: normal;
+    font-size: 0.825rem;
+    margin-top: 0.4em;
+    color: #666;
+}
 .sellerSite_intro_Change {
     width: 880px;
     height: 600px;
     float: right;
     margin-top: 1.5em;
 }
-.sellerSite_intro_Change_box1 {
+.sellerSite_intro_box1 {
+    display: flex;
+    width: 430px;
+    height: 800px;
+    float: left;
+}
+#sellerSite_intro_Change_box1 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 430px;
     height: 600px;
     float: left;
-    border: 1px solid #a9a9a9
-        ;
+    border: 1px solid #a9a9a9;
     box-sizing: border-box;
 }
+/*
 .sellerSite_intro_Change_box1 label { 
     padding: 0.5em 2em; 
     color: #fff; 
@@ -542,6 +545,12 @@ dl,ul,ol,menu,li {list-style:none}
     margin: -1px; 
     overflow: hidden; 
     border: 0; 
+}
+*/
+.sellerSite_intro_box2 {
+    width: 430px;
+    height: 800px;
+    float: right;
 }
 .sellerSite_intro_Change_box2 {
     width: 430px;
@@ -618,10 +627,16 @@ dl,ul,ol,menu,li {list-style:none}
     float: left;
     margin-top: 2em;
 }
+.sellerSite_product_list01_con00_bg {
+	display:flex;
+	justify-content: center;
+	width: 220px;
+    height: 250px;
+    float: left;
+}
 .sellerSite_product_list01_con00 {
     width: 210px;
     height: 250px;
-    float: left;
 }
 .sellerSite_product_list01_con00_img {
     width: 100%;
@@ -636,6 +651,7 @@ dl,ul,ol,menu,li {list-style:none}
     font-weight: bold;
     color: #e67e22;
     font-size: 1.25rem;
+    margin-right:0.25em;
 }
 .sellerSite_product_list01_con00_text p:nth-child(3) {
     display: inline-block;
@@ -731,7 +747,9 @@ dl,ul,ol,menu,li {list-style:none}
     margin: 0 auto;
     margin-top: 1em;
 }
-
+#instafeed img {
+    margin: 0 5px 10px 5px;
+}
 /*sellerSite_ex*/
 .sellerSite_ex_title{
     display: flex;
@@ -756,6 +774,14 @@ dl,ul,ol,menu,li {list-style:none}
     height: 1200px;
     float: right;
     margin-top: 2em;
+}
+.sellerSite_ex_grid_con00_bg {
+	display:flex;
+	justify-content: center;
+	width: 440px;
+    height: 500px;
+    float: left;
+    margin-bottom:1em;
 }
 .sellerSite_ex_grid_con00 {
     width: 430px;
@@ -783,32 +809,27 @@ dl,ul,ol,menu,li {list-style:none}
     margin: 0 auto;
 }
 .sellerSite_ex_grid_con00_text p:nth-child(1) {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #555;
-    padding-top: 1em;
+    margin-top: 1em;
 }
 .sellerSite_ex_grid_con00_text p:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     font-weight: bold;
     margin-top: 0.2em;
 }
 .sellerSite_ex_grid_con00_text p:nth-child(3) {
     font-size: 0.8rem;
-    font-weight: bold;
-    margin-top: 0.2em;
-}
-.sellerSite_ex_grid_con00_text p:nth-child(4) {
-    font-size: 0.8rem;
     margin-top: 0.75em;
 }
-.sellerSite_ex_grid_con00_text p:nth-child(5) {
+.sellerSite_ex_grid_con00_text p:nth-child(4) {
     display: inline-block;
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 0.625em;
+    margin-right:0.25em;
 }
-.sellerSite_ex_grid_con00_text p:nth-child(6) {
+.sellerSite_ex_grid_con00_text p:nth-child(5) {
     display: inline-block;
     font-size: 0.8rem;
     color: #888;
@@ -956,7 +977,7 @@ dl,ul,ol,menu,li {list-style:none}
 .seller_ex_detail_text h1{
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: 0.25em;
+    margin-top: 1em;
     margin-bottom: 0.5em;
 }
 .seller_ex_detail_text_detail {
@@ -1039,10 +1060,10 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .sellerSite_ex_detail_infor {
     width: 100%;
-    height: 350px;
     float: left;
     margin-top: 2em;
     font-size: 0.8rem;
+    margin-bottom:1.5em;
 }
 #seller_ex_detail_map {
     width: 100%;
@@ -1081,7 +1102,7 @@ dl,ul,ol,menu,li {list-style:none}
     margin-bottom: 3em;
 }
 .sellerSite_ex_content01 p:nth-child(2){
-    margin-left: -23em;
+    margin-left: -33em;
 }
 .sellerSite_ex_subcontent {
     width: 100%;
@@ -1129,7 +1150,6 @@ dl,ul,ol,menu,li {list-style:none}
     float: left;
     border-top: 2px solid #ccc;
     box-sizing: border-box;
-    margin-top: 5em;
 }
 .sellerSite_ex_subcontent_btn button {
     width: 350px;
@@ -1157,14 +1177,12 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .con {
     width: 430px;
-    height: 150px;
     float: left;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     box-sizing: border-box;
     margin-bottom: 2em;
 }
 .review_content_00 {
-    height: 500px;
     border: 1px solid rgba(0,0,0,0.2);
     box-sizing: border-box;
 }
@@ -1184,7 +1202,6 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .review_content_00_text {
     width: 400px;
-    height: 300px;
     margin: 0 auto;
 }
 .review_content_00_text p:nth-child(1) {
@@ -1199,19 +1216,17 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .review_content_00_subtext {
     width: 100%;
-    height: 170px;
     margin-top: 1em;
 }
 .subtext_00 {
     width: 100%;
-    height: 85px;
     background-color: #dddcdc;
 }
 .subtext_00_star {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 30px;
+    height:30px;
 }
 .subtext_00_star img{
     margin-right: 0.3em
@@ -1219,10 +1234,11 @@ dl,ul,ol,menu,li {list-style:none}
 .subtext_00_star img:nth-child(1){
     margin-left: 0.5em;
 }
-.subtext_00_star p{
+.subtext_00_star h4{
     margin-right: 0.3em;
+    margin-left: 0.5em;
     color: #888;
-    
+    font-size:1rem;
 }
 .subtext_00_text {
     width: 100%;
@@ -1243,3 +1259,5 @@ dl,ul,ol,menu,li {list-style:none}
     font-weight: bold;
     font-size: 0.825rem;
 }
+
+

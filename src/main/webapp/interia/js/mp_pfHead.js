@@ -40,15 +40,3 @@ $(document).ready(function() {
 
 
 
-// 팔로잉 팔로우 버튼 누르면 전환
-/*$(".mp-following-btn>button").click (function(){
-	$("button").toggleClass("important");
-});
-
-$(".mp-following-btn>button").click(function(){
-	$("button").toggleClass("blue");
-});
-*/
-
-
-

@@ -29,7 +29,6 @@ header {
    height:120px;
    margin: 0 auto;
    box-sizing: border-box;
-   overflow: hidden;
    transition: height 0.5s;
 }
 .header_logo {

@@ -14,6 +14,7 @@
     "blueimp-file-upload": "^9.22.0",
     "bootstrap": "^4.1.1",
     "bxslider": "^4.2.13",
+    "cropit": "^0.5.1",
     "dropzone": "^5.5.1",
     "fine-uploader": "^5.16.2",
     "fontawesome": "^4.7.2",

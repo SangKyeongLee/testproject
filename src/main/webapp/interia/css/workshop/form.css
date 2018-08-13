@@ -157,7 +157,7 @@ a:active, a:hover {text-decoration:none;}
 
 .form_mainForm div > select{
 	float: left;
-	width:100px;
+	width:200px;
 	height:30px;
 	padding: 0.4em;
 	margin: 1.125em 0;

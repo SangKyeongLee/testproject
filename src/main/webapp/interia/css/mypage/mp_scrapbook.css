@@ -1,6 +1,6 @@
 /**** 제목 ***/
 .ib-mp-titl {
-	padding: 0 1em 1em 1em;
+    padding: 0 1em 1em 1em;
     font-weight: bold;
     font-size: 1.1em;
 }
@@ -8,15 +8,15 @@
     margin-bottom: 0;
 }
 .ib-mp-pnum {
-	color: #ffc001;
+    color: #ffc001;
 }
 
  .ib-mp-margin {
- 	margin-bottom: 5.625em;
+    margin-bottom: 5.625em;
  }
  .ib-mp-margin:last-child {
     padding-top: 1.5em;
- 	border-top: 3px solid #000;
+    border-top: 3px solid #000;
  }
 .mp-nav>ul>li>p {
     margin: 0;
@@ -25,38 +25,38 @@
 
 /**** 스크랩 박스 ****/
 .ib-mp-scrap {
-	margin: 0 auto;
-	margin-bottom: 1.875em;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-column-gap: 16px;
-	grid-row-gap: 30px;
+    margin: 0 auto;
+    margin-bottom: 1.875em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
 }
 
 /**** 제품 ****/
 .ib-mp-pscrap {
-	position: relative;
-	width: 247px;
+    position: relative;
+    width: 247px;
     overflow: hidden;
 }
 .ib-mp-pscrap:hover .ib-mp-small {
-	color: #5D5D5D;
+    color: #5D5D5D;
 }
 .ib-mp-pscrap:hover .ib-mp-ptitl, .ib-mp-bord {
-	color: black;
+    color: black;
 }
 .ib-mp-pscrap:hover .ib-mp-pinfo > p {
-	color: black;
+    color: black;
 }
 .ib-mp-pimg {
-	width:247px; 
-	height:247px; 
-	overflow: hidden;
-	margin-bottom: 0.625em;
+    width:247px; 
+    height:247px; 
+    overflow: hidden;
+    margin-bottom: 0.625em;
 }
 .ib-mp-pimg img {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 .ib-mp-pimg img {
   transform: scale(1);
@@ -74,108 +74,94 @@
   -o-transform: scale(1.05);
 }
 .ib-mp-pinfo > p {
-	margin: 0.3125em 0;
+    margin: 0.3125em 0;
 }
 .ib-mp-small {
-	font-size: 0.75em;
-	color: #5D5D5D;
+    font-size: 0.75em;
+    color: #5D5D5D;
 }
 .ib-mp-ptitl {
-	word-break: break-all;
-	font-size: 0.875em;
+    word-break: break-all;
+    font-size: 0.875em;
 }
 .ib-mp-bord {
-	font-weight: bold;
-	font-size: 1.25em;
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 
 /**** 공방 ****/
 .ib-mp-wscrap {
-	position: relative;
-	width: 247px;
-	height: 350px;
+    position: relative;
+    width: 247px;
+    height: 350px;
     overflow: hidden;
     border-radius: 0.2em;
     transition: box-shadow 0.4s ease;
 }
 .ib-mp-wscrap:hover {
-	box-shadow: 1px 1px #343855, -1px -1px #343855;
+    box-shadow: 1px 1px #343855, -1px -1px #343855;
 }
 .ib-mp-wbanner {
-	position: absolute;
-	width: 255px; 
-	height: 150px; 
-	overflow: hidden;
+    position: absolute;
+    width: 255px; 
+    height: 130px; 
+    overflow: hidden;
 }
 .ib-mp-wbanner img {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 .ib-mp-wprofile {
-	position: absolute;
-	border: 2px solid #fff;
-	border-radius: 50%;
-	width: 85px; height: 85px;
-	z-index: 1;
-	left: 33%;
-	top: 26%;
-	overflow: hidden;
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    z-index: 1;
+    left: 35%;
+    top: 21%;
+    overflow: hidden;
 }
 .ib-mp-wprofile img {
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 .ib-mp-wbottom {
-	position: absolute;
-	width: 100%;
-	height: 160px;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .ib-mp-wtitl {
-	font-size: 0.875em;
-	font-weight: bold;
-	text-align: center;
-	cursor: pointer;
-	margin-bottom: .5em;
+    font-size: 0.875em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: .8em;
 }
 .ib-mp-wintro {
-	color: #474747;
-	text-align: center;
-	margin-bottom: 0;
+    color: #5D5D5D;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: .8em;
+    padding: 0 2em;
 }
 .ib-mp-wbtns {
-	position: absolute;
-	width: 100%;
-	bottom: 0.3px;
-	display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0.3px;
+    display: flex;
 }
-.ib-mp-wbtns button:first-child {
-	flex: 1;
-	background: #fff;
-	color: #343855;
-	border: #343855 solid 2px;
-	cursor: pointer;
-}
-.ib-mp-wbtns button:first-child:focus {
-	outline: none;
-}
-.ib-mp-wbtns button:last-child {
-	padding: 0.4em 0.9375em;
-	flex: 3;
-	color: white;
-	background: #343855;
-	border: #343855;
-	cursor: pointer;
-}
-.ib-mp-wbtns button:last-child:focus {
-	outline: none;
-}
-.fa-bookmark {
-	font-size: 1.25em;
-	padding-top: 0.3125em;
+.ib-mp-wbtns button {
+    flex: 1;
+    background: #fff;
+    color: white;
+    background: #343855;
+    border: #343855;
+    cursor: pointer;
+    padding: 0.4em 0.9375em;
 }

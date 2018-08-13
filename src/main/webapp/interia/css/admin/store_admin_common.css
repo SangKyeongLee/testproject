@@ -759,8 +759,16 @@ th label {
 
 /* //fileUpload */
 
-#fileupload {
+#fileupload{
     display: none;
+}
+
+#fileupload1{
+    display: none;
+}
+
+#fileupload2{
+ 	display: none;	
 }
 #ad-images-div {
     margin-top:15px;
@@ -1026,6 +1034,9 @@ textarea {
     margin-right: 5px;
 }
 
+.tag-editor{
+	width:80%;
+}
 /***** 작품관리 End*****/
 
 /***** 판매관리 *****/

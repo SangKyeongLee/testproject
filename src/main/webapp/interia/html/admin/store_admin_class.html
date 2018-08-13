@@ -294,6 +294,7 @@ $('#ad-class-addForm').click(function(e, action) {
 	} else {
 		$('#fileupload').fileupload('option', 'url', '../../../json/wsav/add');
 		$('.modal-title').text("체험등록");
+		$('#updBtn').attr("id","addBtn");
 		$('#addBtn').text("등록하기");
 		
 	}
@@ -335,6 +336,10 @@ $('#fileupload').fileupload({
 			} catch (err) { }
 		}
 		
+		$('#addBtn').off('click');
+		
+		$('#updBtn').off('click');
+		
 		$('#updBtn').click(function () {
 			data.formData = {
 				workshopNo: userNo,
@@ -349,6 +354,8 @@ $('#fileupload').fileupload({
 				content: $(accnt).val(),
 				no:$(wsano).val()
 			};
+			console.log(data);
+			
 			data.submit();
 		});
 		
@@ -364,11 +371,13 @@ $('#fileupload').fileupload({
 				prepareCont: $(mtrls).val(),
 				price: $(apric).val(),
 				content: $(accnt).val()
-
-			};
+			};    
+			console.log(data);
 			data.submit();
 		});
+		
 	},
+	
 	done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 		console.log('done()...');
 		console.log(data.result);
@@ -382,7 +391,7 @@ $('#fileupload').fileupload({
      $.get("../../../json/wsav/adminDelete", {"wsano": no}, () => {
     	 
      });
-/*      location.reload(); */
+/*      location.reload(); */  
 }
 
 /*미리보기 삭제 이벤트*/

@@ -95,6 +95,11 @@ public class WsavController {
         return wsavService.list(no);
     }
     
+    @RequestMapping("sellerSiteList")
+    public Object sellerSiteList() {        
+        return wsavService.sellerSiteList();
+    }
+    
     @RequestMapping("adminList")
     public Object adminList(int no) {
         return wsavService.adminList(no);

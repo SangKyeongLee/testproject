@@ -18,6 +18,8 @@
     <result column="zcode" property="zipCode"/>
     <result column="baddr" property="baseAdd"/>
     <result column="daddr" property="detailAdd"/>
+    <result column="mppho" property="profilePhoto"/>
+    <result column="mbpho" property="bannerPhoto"/>
   </resultMap>
   
   <!-- 회원 전체 리스트 출력 -->
@@ -98,6 +100,13 @@
   <select id="selectOneNumber" parameterType="String" resultType="int">
     select memno from INTR_MEMBER where id=#{id}
   </select>
+  
+    <!-- 비밀번호 변경 관련 문법 -->
+  <update id="updateBphoto" parameterType="Member">
+    update INTR_MEMBER set 
+        mbpho=#{bannerPhoto}
+    where memno=#{no}
+  </update>
   
 </mapper>
 

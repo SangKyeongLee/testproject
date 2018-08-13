@@ -275,9 +275,6 @@ a:active, a:hover {text-decoration:none;}
     margin-top: 1.5em;
 }
 .fc_category_storeList00_2_title p:nth-child(2) {
-    margin-top: 0.25em;
-}
-.fc_category_storeList00_2_title p:nth-child(3) {
     font-size: 0.8rem;
     text-align: center;
     margin-top: 1.125em;
@@ -325,6 +322,7 @@ a:active, a:hover {text-decoration:none;}
     font-weight: bold;
     background-color: #888; 
 }
+
 .fc_category_storeList_view a{
     color: #fff;
 }

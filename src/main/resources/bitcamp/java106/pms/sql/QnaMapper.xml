@@ -33,7 +33,7 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-select qno, name, iqct, qrtdt, wtitl, abnm, abvl, path, wsnm from INTR_MEMBER mem
+select qno, name, iqct, qrtdt, wtitl, abvl, path, wsnm from INTR_MEMBER mem
 inner join INTR_QNA qna on mem.memno = qna.memno
 inner join INTR_WORKS wks on qna.wno = wks.wno
 inner join INTR_WRKSHP wkp on wks.memno = wkp.memno

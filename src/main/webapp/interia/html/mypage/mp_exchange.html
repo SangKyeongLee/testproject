@@ -35,7 +35,6 @@
 							<ul>
 								<li><a href="mp_post.html">사진</a></li>
 								<li><a href="mp_like.html">좋아요</a></li>
-								<li><a href="mp_scrapbook.html">스크랩</a></li>
 							</ul>
 						</nav>
 					</li>
@@ -44,7 +43,6 @@
 						<nav class="mp-bar3" id="submenus">
 							<ul>
 								<li class="mp-current2"><a href="mp_delivery_list.html">주문/배송 내용</a></li>
-								<li><a href="mp_production_list.html">제작 신청 내역</a></li>
 								<li><a href="mp_cancel_list.html">취소/환불 내역</a></li>
 							</ul>
 						</nav>
@@ -78,7 +76,7 @@
 		<div class="ib-conbox">
 		<section class="ib-mp-whole">
 			<div class="ib-mp-titl">
-				<h4>교환 신청</h4>
+				<h4>클레임 신청</h4>
 			</div><!--타이틀-->
 
 			<section class="ib-mp-dbox">
@@ -124,17 +122,15 @@
 
 			<section class="ib-mp-dbox">
 				<div class="ib-mp-dsubtitl">
-					<p>교환 사유</p>
+					<p>신청 사유</p>
 				</div><!--타이틀-->
 
 				<div class="ib-mp-exchage">
 					<select class="form-control ib-mp-select2" required>
 						<option value="" class="ib-mp-gray" disabled selected>사유를 선택하세요</option>
-						<option value="상품에 결함이 있음">상품에 결함이 있음</option>
-						<option value="다른 상품이 배송됨">다른 상품이 배송됨</option>
-						<option value="구성품/부속품이 누락됨">구성품/부속품이 누락됨</option>
-						<option value="색상/사이즈 변경">색상/사이즈 변경</option>
-						<option value="기타">기타</option>
+						<option value="교환 신청">교환</option>
+						<option value="환불 신청">환불</option>
+						<option value="취소 신청">취소</option>
 					</select>
 					<textarea class="form-control" rows="3"></textarea>
 				</div><!--원상품 회수지 정보-->
@@ -195,7 +191,7 @@
 				
 				<div class="ib-mp-btns">
 					<button type="button" class="btn btn-outline-secondary" onclick="location.href='mp_delivery_done.html'">취소</button>
-					<button type="button" class="btn btn-dark" onclick="location.href='mp_delivery_list.html'">교환 신청</button>
+					<button type="button" class="btn btn-dark" onclick="location.href='mp_delivery_list.html'">클레임 신청</button>
 				</div>
 			</section>
 

@@ -44,6 +44,16 @@ inner join INTR_WRKSHP ws on wsa.memno = ws.memno
 inner join INTR_WKACP wkp on wsa.memno = wkp.wsano
 WHERE mem.MEMNO = #{value}
   </select>
+  
+  
+  <!-- 공방 판매자 사이트 메인부분의 체험 -->
+    <select id="selectSellerSiteList" resultType="Map" parameterType="map">
+    select wsa.wsano, acnm, minno, maxno, TIMESTAMPDIFF(minute, avst, avet) as time, apric, accnt, path
+    from INTR_WSAV wsa
+    inner join INTR_WRKSHP wrk on wsa.memno = wrk.memno
+    inner join INTR_WKACP wka on wsa.wsano = wka.wsano
+  </select>
+  
   <!-- 공방관리자 공방체험 list -->
   <select id="selectAdminList"
   		  resultType="Map"

@@ -72,12 +72,14 @@ a,a:hover {color: #000; text-decoration: none}
 }
 
 .ib-mp-pur-bbox-left {
-	flex: 2;
+	flex: 1;
 	padding-right: 3em; 
 }
 
 .ib-mp-pur-bbox-right {
-	flex-basis: 180px;
+	flex-basis: 100px;
+	height: 100px;
+	overflow: hidden;
 }
 
 .ib-mp-pur-bbox-right img {
@@ -144,4 +146,17 @@ a,a:hover {color: #000; text-decoration: none}
 
 .texResize {
 	resize: none;
+}
+
+/*#imgBox>img {
+	width: 100%;
+}*/
+
+#purchaseList, #pur_content {
+	padding-bottom: 3em;
+}
+
+.mp-pur-link {
+	flex: 6;
+	display: flex;
 }

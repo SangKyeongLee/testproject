@@ -10,9 +10,13 @@ public interface OdnwkService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 
     // 업무 용어를 사용하라!
     List<Odnwk> list(int no);
+    List<Odnwk> listSellerSite();
+    List<Odnwk> revList(int no);
     Odnwk get(int no);
     List<Odnwk> revGet(int no);
+    List<Odnwk> revGetList(int no);
     int add(Odnwk odnwk);
     int update(Odnwk odnwk, String filename);
+    int updateMod(Odnwk odnwk, String filename);
     int delete(int no, int wsano);
 }

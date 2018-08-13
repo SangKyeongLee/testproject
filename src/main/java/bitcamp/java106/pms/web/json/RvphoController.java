@@ -39,9 +39,8 @@ public class RvphoController {
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
-    public void delete(@RequestParam("no") int no,
-                       @RequestParam("wsano") int wsano) throws Exception {
-        rvphoService.delete(no, wsano);
+    public void delete(int no) throws Exception {
+        rvphoService.delete(no);
     }
     
     @RequestMapping("list")

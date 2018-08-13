@@ -79,7 +79,7 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                         <label for="col-sm-2 control-label" class="col-sm-2 control-label">받는분 </label>
-                        <input id="sp-recipient" type="text" class="col-sm-4 sp-input-height" value="임꺽정"> <br>
+                        <input id="sp-recipient" type="text" class="col-sm-4 sp-input-height"> <br>
                     </div>
                 </div>
 
@@ -103,16 +103,16 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                         <label for="sp-delivery-phone" class="col-sm-2 control-label">휴대전화</label>
-                        <input id="sp-delivery-phone" type="text" value="010" class="sp-input-phone sp-input-height"> &nbsp; - &nbsp;
-                        <input id="sp-delivery-phone" type="text" value="1111" class="sp-input-phone sp-input-height">&nbsp; - &nbsp;
-                        <input id="sp-delivery-phone" type="text" value="1111" class="sp-input-phone sp-input-height"> <br>
+                        <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height"> &nbsp; - &nbsp;
+                        <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height">&nbsp; - &nbsp;
+                        <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height"> <br>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-10">
                         <label for="sp-delivery-memo" class="col-sm-2 control-label">배송 메모 </label>
-                        <input type="text" id="sp-delivery-memo" class="col-sm-8 sp-input-height" placeholder="배송메모를 작성해 주세요"> <br>
+                        <input type="text" id="sp-delivery-memo" class="col-sm-8 sp-input-height" placeholder="ex) 부재시 경비실에  맡겨주세요"> <br>
                     </div>
                 </div>
             </div>
@@ -128,32 +128,31 @@
             <script src="../../js/sp_daum_add.js"></script>
 
                 <!-- 여기는 주문자 정보 폼 -->
-                <h5 class="sp-title sp-title-sub sp-margin-top" style="">주문자 정보</h5>
-                <!-- < class="sp-contour"> 구분선 -->
+                <h5 class="sp-title sp-title-sub sp-margin-top">주문자 정보</h5>
                 <div id="" class="sp-form-botton">
                     <div class="form-group">
                         <div class="col-sm-10">
                             <label for="sp-order-name" class="col-sm-2 control-label">이름 </label>
-                            <input id="sp-order-name" type="text" value="홍길동" class="col-sm-2 sp-input-height"> <br>
+                            <input id="sp-order-name" type="text" class="col-sm-2 sp-input-height"> <br>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-10">
                             <label for="sp-emails" class="col-sm-2 control-label">이메일 </label>
-                            <input id="sp-emails" type="text" value="hong123" class="col sp-input-email sp-input-height"> @
-                            <input id="sp-emails" type="text" value="naver.com" class="col sp-input-email sp-input-height"> <br>
+                            <input id="sp-emails" type="text" class="col sp-input-email sp-input-height"> @
+                            <input id="sp-emails" type="text" class="col sp-input-email sp-input-height"> <br>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-10">
                             <label for="sp-order-phone" class="col-sm-2 control-label">휴대전화 </label>
-                            <input id="sp-delivery-phone" type="text" value="010" class="sp-input-phone sp-input-height"> &nbsp; - &nbsp;
-                            <input id="sp-delivery-phone" type="text" value="1111" class="sp-input-phone sp-input-height">&nbsp; - &nbsp;
-                            <input id="sp-delivery-phone" type="text" value="1111" class="sp-input-phone sp-input-height"> <br>
+                            <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height"> &nbsp; - &nbsp;
+                            <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height">&nbsp; - &nbsp;
+                            <input id="sp-delivery-phone" type="text" class="sp-input-phone sp-input-height"> <br>
                             <div style="margin-top:0.625em">
-                                <input type="checkbox" class="" style="margin-left:7.1875em;"> sms 수신동의 <span class="sp-sms-agree">(배송 정보를 SMS로 보내드립니다.)</span>
+                                <input type="checkbox" style="margin-left:7.1875em;"> sms 수신동의 <span class="sp-sms-agree">(배송 정보를 SMS로 보내드립니다.)</span>
                             </div>
                         </div>
                     </div>
@@ -164,7 +163,7 @@
                 <table class="table sp-table-sub">
                     <tr class="sp-table-pay-infomation">
                         <th class="table-secondary sp-table-left sp-table-pay-information-th ">총 상품금액</th>
-                        <td class="sp-table-right">xxxxx 원</td>
+                        <td class="sp-table-right"> <span id="All-Price">xxxxx</span> 원</td>
                     </tr>
                     <tr class="sp-table-pay-infomation">
                         <th class="table-secondary sp-table-pay-information-th sp-table-left">할인 쿠폰</th>
@@ -172,18 +171,21 @@
                     </tr>
                     <tr class="sp-table-pay-infomation">
                         <th class="table-secondary sp-table-pay-information-th sp-table-left">배송비</th>
-                        <td class="sp-table-right">xxxx 원</td>
+                        <td class="sp-table-right"> <span id="All-Delivery">xxxx</span> 원</td>
                     </tr>
                     <tr class="sp-table-pay-infomation">
                         <th class="table-secondary sp-table-pay-information-th sp-table-left">총 결제금액</th>
-                        <td class="sp-table-right"><span style="color:#ffc001">xxxxx 원</span></td>
+                        <td class="sp-table-right"><span style="color:#ffc001"> <span id="All-Order">10000</span> 원</span></td>
                     </tr>
                     <tr class="sp-table-pay-infomation">
                         <th class="table-secondary sp-table-pay-information-th sp-table-left">결제 수단</th>
                         <td class="sp-table-right">
+                            <!-- 
                             <input type="radio" name="chk_pay" value="카드 결제"> 카드 결제&nbsp;&nbsp;
                             <input type="radio" name="chk_pay" value="무통장 입금"> 무통장 입금&nbsp;&nbsp;
-                            <input type="radio" name="chk_pay" value="휴대폰"> 휴대폰 <br>
+                            <input type="radio" name="chk_pay" value="휴대폰"> 휴대폰 &nbsp;&nbsp;<br>
+                            -->
+                            <input id="pay-apply" type="radio" name="chk_pay" value="카카오페이"> 카카오페이<br>
                             <input type="checkbox" name="agree"> 결제 진행 필수사항 동의<br>
                             <p class="sp-sms-agree">개인정보 제 3자 제공 및 결제대행 서비스 표준 이용약관 보기></p>
                         </td>
@@ -191,7 +193,7 @@
                 </table><br><br>
 
                 <!-- 완료 시 결제하기 -->
-                <p class="sp-privacy"><input align="center" type="submit" class="btn sp-submit-button btn-lg" value="결제하기"></p>
+                <p class="sp-privacy"><input id="kakatest" align="center" class="btn sp-submit-button btn-lg" value="결제하기"></p>
         </form>
 
 
@@ -204,7 +206,37 @@
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
-
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+    
+    <script>
+    // 카카오 페이 결제 기능
+    var IMP = window.IMP; // 생략가능
+    IMP.init('imp56682020'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+    
+    $("#kakatest").click(() => {
+    	IMP.request_pay({
+            pg : 'kakao', // version 1.1.0부터 지원.
+            pay_method : 'phone',
+            merchant_uid : 'merchant_' + new Date().getTime(), // 주문 발생시간
+            name : '주문명:결제테스트', // 상풍명
+            amount : $("#All-Order").text()  // 총 주문 가격
+            //m_redirect_url : '../main/index.html'
+        }, function(rsp) {
+            if ( rsp.success ) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;
+                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                msg += '결제 금액 : ' + rsp.paid_amount;
+                msg += '카드 승인번호 : ' + rsp.apply_num;
+                //location.href = "../main/index.html";
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+            }
+            alert(msg);
+        });
+    });
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,6 @@ $("#btnChangePwd").click(() => {
 	} else {
 		var data = {
 			// 잠시 id로 이용하여 get방식으로 저장했다. (차후에 다른거로 대처한다)
-			id : location.href.split("?")[1].split("=")[1],
 			password : $("#fPwdComfirm").val()
 		}
 		$.post(serverRoot + "/json/auth/searchPasswordChange", data, () => {

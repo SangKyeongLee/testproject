@@ -44,20 +44,20 @@
         <!-- 조금 있다가 핸들바로 처리 예정 -->
         <div class="ib-pd-img">
             <img id="main-image" src="" width="100%">
-            <div class="ib-pd-img-c1">
-                <img src="../../images/works/works_detail/product.jpg" width="100%">
-                <img src="../../images/works/works_detail/product.jpg" width="100%">
+            <div class="ib-pd-img-c1" id="fHandlebar-image">
+                <img id="sub-image1" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                <img id="sub-image2" src="../../images/works/works_detail/temp_image.jpg" width="100%">
                 <div class="ib-pd-img-c1">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
+                    <img id="sub-image3" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image4" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image5" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image6" src="../../images/works/works_detail/temp_image.jpg" width="100%">
                 </div>
                 <div class="ib-pd-img-c1">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
-                    <img src="../../images/works/works_detail/product.jpg" width="100%">
+                    <img id="sub-image7" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image8" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image9" src="../../images/works/works_detail/temp_image.jpg" width="100%">
+                    <img id="sub-image10" src="../../images/works/works_detail/temp_image.jpg" width="100%">
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="ib-pd-cont-rows">
                     <p>배송비</p>
-                    <p><span id="fDeliveryPrice"></span> 원</p>
+                    <p id="fDeliveryPrice">(가격)</p>
                 </div>
                 <div class="ib-pd-cont-rows">
                     <p>기타사항</p>
@@ -81,34 +81,12 @@
             <div>
                 <div class="ib-pd-cont-rows">
                     <p>상품 옵션 선택</p>
-                    <!-- 속성 값 -->
-                    <select class="form-control" id="fAttributeValue">
-                    <!-- <option>1</option>
-                    <option>2</option>
-                    <option>3</option> -->
-                </select>
-                </div>
-                <div class="ib-pd-cont-rows">
-                    <p></p>
-                    <!-- 속성명 -->
-                    <select class="form-control" id="fAttributeName">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+                    <!-- 속성 내용 -->
+                    <textarea id="fOptionValue" rows="10"></textarea>
                 </div>
             </div>
         </div>
-        
-        <!-- 속성값 -->
-         
-        <script id="tr-template" type="text/x-handlebars-template">
-        {{#each select}}
-        <option>{{data.abvl}}</option>
-        {{/each}}
-        </script>
-        
-        
+    </div>
        
         <!-- ib-pd-cont -->
 
@@ -131,9 +109,9 @@
         <div class="ib-pd-btbox">
             <div class="ib-pd-btlist">
                 <div class="btn ib-pd-btn-sdark"><i class="fa fa-heart" style="font-size:24px; line-height: inherit;"></i></div>
-                <a href="sp_bascket.html"><div class="btn ib-pd-btn ib-pd-btn-dark">장바구니 담기</div></a>
+                <a class="btn-basket" href=""><div class="btn ib-pd-btn ib-pd-btn-dark">장바구니 담기</div></a>
                 <!-- <a href="sp_commissioned.html"><div class="btn ib-pd-btn ib-pd-btn-gary">제작 의뢰 하기</div></a> -->
-                <a href="sp_purchase.html"><div class="btn ib-pd-btn ib-pd-btn-yellow">구매하기</div></a>
+                <a class="btn-purchased" href=""><div class="btn ib-pd-btn ib-pd-btn-yellow">구매하기</div></a>
             </div>
         </div>
         <!-- ib-pd-btbox -->
@@ -761,9 +739,9 @@
 
     <div class="ib-pd-foot">
         <div class="ib-container ib-ft-right">
-            <a class="btn ib-ft-btn" href="shopping_bascket.html">장바구니 담기</a>
+            <a class="btn ib-ft-btn btn-basket" href="">장바구니 담기</a>
             <!-- <a class="btn ib-ft-btn ft-btn-gray" href="sp_commissioned.html">제작 의뢰 하기</a> -->
-            <a class="btn ib-ft-btn ft-btn-yellow" href="sp_purchase.html">구매하기</a>
+            <a class="btn ib-ft-btn ft-btn-yellow btn-purchased">구매하기</a>
         </div>
     </div>
     <!-- 하단 고정 바 -->

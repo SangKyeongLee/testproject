@@ -17,6 +17,7 @@ public interface MemberDao {
     int selectSearchPassword(String id); // 여기는 아이디 검색이 일치하면 값 증가
     int updatePassword(Map<String, Object> params); // 비밀번호 변경 버튼 클릭
     int selectOneNumber(String id); // 아이디를 통해 회원번호 값 추출
+    int updateBphoto(Member member);
 }
 
 

@@ -11,6 +11,7 @@ public interface WsavService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 
     // 업무 용어를 사용하라!
     List<Wsav> list(int no);
+    List<Wsav> sellerSiteList();
     List<Wsav> adminList(int no);
     Wsav get(int no);
     void add(Wsav wsav, ArrayList<Wkacp> activityPhotos);
