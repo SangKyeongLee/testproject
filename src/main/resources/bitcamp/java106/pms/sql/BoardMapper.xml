@@ -21,6 +21,12 @@
     <result column="nknm" property="nickname"/>
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
+    
+    <result column="pox" property="poX"/>
+    <result column="poy" property="poY"/>
+    <result column="addr" property="address"/>
+    <result column="prnm" property="product"/>
+    <result column="lno" property="lno"/>
   </resultMap>
   
   <!-- SQL 문 id를 설정할 때 SQL문을 사용하는 메서드 이름과 같게하면
@@ -59,7 +65,7 @@
     LEFT OUTER JOIN INTR_MEMBER m 
     ON b.MEMNO = m.MEMNO 
     WHERE b.BNO = #{value}
-    ORDER BY b.CMCTT DESC
+    ORDER BY b.CNO DESC
   </select>
   
   <select id="hashtagList" parameterType="int" resultMap="BoardMap">
@@ -72,6 +78,51 @@
     WHERE bo.BNO = #{value}
   </select>
   
+  <select id="isLike" parameterType="int" resultType="Map">
+    SELECT m.MEMNO, l.BNO 
+    FROM INTR_MEMBER m 
+    INNER JOIN INTR_LKMB l 
+    ON m.MEMNO = l.MEMNO 
+    WHERE m.MEMNO = #{value}
+  </select>
+  
+  <select id="isLikeOne" parameterType="map" resultType="Map">
+    SELECT * FROM `INTR_LKMB` WHERE BNO = #{no} AND MEMNO = #{memNo}
+  </select>
+  
+  <insert id="addLike" parameterType="map">
+    INSERT INTO `INTR_LKMB` (`LNO`, `BNO`, `MEMNO`) VALUES (NULL, #{no}, #{memNo});
+  </insert>
+  
+  <delete id="deleteLike" parameterType="map">
+    DELETE FROM `INTR_LKMB` WHERE BNO = #{no} AND MEMNO = #{memNo}
+  </delete>
+  
+  <insert id="addcomment" parameterType="map">
+    INSERT INTO `INTR_BCMMT` (`CNO`, `BNO`, `CMCTT`, `CRTDT`, `MEMNO`) 
+    VALUES (NULL, #{no}, now(), #{cmmt}, #{memNo})
+  </insert>
+  
+  <select id="isWriter" parameterType="map" resultMap="BoardMap">
+    SELECT BNO FROM `INTR_BOARD` WHERE BNO = #{no} AND MEMNO = #{memNo}
+  </select>
+  
+  <select id="selectLink" parameterType="int" resultType="Map">
+    SELECT * FROM `INTR_BRLK` WHERE BNO = #{no}
+  </select>
+  
+  <delete id="deleteLink" parameterType="int">
+    DELETE FROM `INTR_BRLK` WHERE `INTR_BRLK`.`LNO` = #{no}
+  </delete>
+  
+  <insert id="addLink" parameterType="Board">
+    INSERT INTO `INTR_BRLK` (`LNO`, `BNO`, `POX`, `POY`, `PRNM`, `ADDR`)
+    VALUES (NULL, #{no}, #{poX}, #{poY}, #{product}, #{address})
+  </insert>
+  
+  <select id="selectLinkOne" resultMap="BoardMap">
+    SELECT * FROM `INTR_BRLK` ORDER BY LNO DESC LIMIT 1
+  </select>
 </mapper>
 
 

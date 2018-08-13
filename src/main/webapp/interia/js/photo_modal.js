@@ -1,16 +1,19 @@
 var grid_a = $("grid-photo");
 
-
+var bno = 0;
 
 
 function mkmodal(no) {
+	bno = no;
 	$.getJSON("../../../json/board/"+no, (data) => {
 
 	$('<div class="modal fade multi-step" id="myModal" role="dialog">'+
 		'<div class="photo-detail modal-dialog">'+
 			'<div class="modal-body photo-modal-body step-1" data-step="1">'+
 				'<div class="photo-img-box">'+
-					'<img src="../../images/sns/'+ data.path +'" alt="">'+
+					'<div id="linkadded">'+
+					   '<img src="../../images/sns/'+ data.path +'" alt="">'+
+					'</div>'+
 				'</div>'+
 				'<div class="photo-container-box">'+
 					'<div class="photo-detail-header">'+
@@ -32,20 +35,16 @@ function mkmodal(no) {
 						'</div>'+
 						'<div class="photo-comment"></div>'+
 					'</div>'+
-					'<div class="photo-box-like">'+
-						'<a class="material-icons border-like" id="like_off" href="#">favorite_border</a>'+
-						'<a class="material-icons border-like" id="like_on" href="#" style="display:none">favorite</a>'+
-					'</div>'+
+					'<div class="photo-box-like"></div>'+
 					'<div class="photo-box-likecount">'+
-						'<span>좋아요'+ data.count +'개</span>'+
+						'<span>좋아요</span><span>'+ data.count +'</span><span>개</span>'+
 					'</div>'+
 					'<div class="photo-box-date">'+
 						'<span>'+ data.createDate +'</span>'+
 					'</div>'+
 					'<div class="photo-box-write">'+
-						'<form class="photo-write-form" action="" method="">'+
-							'<textarea class="photo-write-textarea" aria-label="댓글 달기..."'+
-								'placeholder="댓글 달기..." autocorrect="off" autocomplete="off"></textarea>'+
+						'<form class="photo-write-form" id="photo-sns-comment-form" action="" method="">'+
+							'<textarea id="photo-sns-message-area" class="photo-write-textarea" aria-label="댓글 달기..." placeholder="댓글 달기..." autocorrect="off" autocomplete="off"></textarea>'+
 						'</form>'+
 					'</div>'+
 				'</div>'+
@@ -69,21 +68,49 @@ function mkmodal(no) {
 					'</div>'+
 					'<div class="photo-box-content photo-link-box">'+
 						'<div class="photo-content">'+
-							'<span class="prod-link-titl">제품 링크 등록</span> '+
-							'<span>사진 속의 제품을 클릭하여 제품 판매 링크를 달아보세요.</span>'+
+							'<span class="prod-link-titl">제품 링크 설정</span> '+
+							'<span>게시물의 사진 속 제품의 위치를 클릭하여 제품 이름과 구매링크를 추가하실 수 있습니다. </span>'+
+							'<p>링크가 올바르지 못할 경우 게시물이 무단으로 수정 될 수 있습니다.</p>'+
 						'</div>'+
 					'</div>'+
 					'<div class="prod-link-btn">'+
-						'<a href="#" class="prod-link-cancel" onclick="sendEvent(\'#myModal\', 1)">취소하기</a>'+ 
-						'<a href="#" class="prod-link-ok" onclick="sendEvent(\'#myModal\', 1)">등록하기</a>'+
+						/*'<a href="#" class="prod-link-cancel" onclick="sendEvent(\'#myModal\', 1)">취소하기</a>'+*/ 
+						'<a href="#" class="prod-link-ok" onclick="sendEvent(\'#myModal\', 1)">링크 설정 완료</a>'+
 					'</div>'+
 				'</div>'+
 			'</div>'+
-			'<div class="modal-footer photo-prod-link-box">'+
-				'<button type="button" class="photo-prod-link btn step step-1" data-step="1" onclick="sendEvent(\'#myModal\', 2)">제품 링크 등록</button>'+
-			'</div>'+
+			'<div class="modal-footer photo-prod-link-box"></div>'+
 		'</div>'+
 	   '</div>').appendTo(".modal_box");
+	
+	$.getJSON("../../../json/board/isWriter"+no, (data) => {
+		if (data != null) { 
+			$('<button type="button" class="photo-prod-link btn step step-1" data-step="1"'+
+					' onclick="sendEvent(\'#myModal\', 2)">제품 링크 등록</button>').appendTo(".photo-prod-link-box");
+		}
+	});
+	
+	$(".prod-link-ok").on("click", function() {
+		$.getJSON("../../../json/board/selectLink"+no, (data) => {
+			$("#linkadded div").remove();
+			for (let item of data) {
+				$('<div class="link_input'+ item.LNO +'" style="display: block; position: absolute; top: '+ item.POY +'px; left: '+ item.POX +'px;">'+
+					'<div class="link_atag" onclick="linkbox('+ item.LNO +')"></div>'+
+					'<div class="link_atag_box'+ item.LNO +' link_view_box" style="display:none">'+
+						'<div id="new1">'+
+							'<div class="link_view_span">'+
+								'<span style="font-weight:bold; font-size:14px">상품명: </span>'+ item.PRNM +'<span></span></div>'+
+							'<div class="link_view_a">'+
+								'<a href="'+ item.ADDR +'" class="new1">등록 링크로 이동하기 &gt;</a></div>'+
+							'<div class="link_view_btn">'+
+							'<button type="button" name="button" class="btn btn-warning btn-sm" onclick="cancel('+ item.LNO +')">닫기</button>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				  '</div>').appendTo('#linkadded');
+			}
+		});
+	});
 	
 	$.getJSON("../../../json/board/comment"+no, (data) => {
 		var photo_comment = $(".photo-comment");
@@ -95,10 +122,99 @@ function mkmodal(no) {
 		}
 	});
 	
+	$('#photo-sns-comment-form').keydown(function(e) {
+		var cmmt = $("#photo-sns-message-area").val();
+		var key = e.which;
+		if (key == 13) {
+			$.getJSON("../../../json/board/addcmmt/"+ no +"/"+ cmmt, (data) => {
+				console.log("댓글전송완료");
+			}).done(function() {
+				$.getJSON("../../../json/board/comment"+no, (data) => {
+					var photo_comment = $(".photo-comment");
+					photo_comment.empty();
+					for (var item of data) {
+					$('<div class="photo-comments-piece">'+
+						'<span class="comment-userId">'+ item.nickname +'</span>'+ 
+						'<span class="comment-content">'+ item.comments +'</span>'+
+					'</div>').appendTo(photo_comment);
+					}
+				});
+				$("#photo-sns-message-area").val('');
+			}).fail(function() {
+				alert("로그인이 필요한 서비스입니다.");
+				$("#photo-sns-message-area").val('');
+			});
+		}
+	});
+	
+	
 	$.getJSON("../../../json/board/hashtag"+no, (data) => {
 		var hashtag = $(".pt-hashtag");
 		for (var item of data) {
 		$('<a href="#">#'+ item.hashtag +' </a>').appendTo(hashtag);
+		}
+	});
+	$.getJSON("../../../json/board/islikeone"+no, (data) => {
+		if (data.length > 0) {
+			$('<a class="material-icons border-like" id="like_on" href="#">favorite</a>').appendTo(".photo-box-like");
+			$('<a class="material-icons border-like" id="like_off" href="#" style="display:none">favorite_border</a>').appendTo(".photo-box-like");
+		} else {
+			$('<a class="material-icons border-like" id="like_on" href="#" style="display:none">favorite</a>').appendTo(".photo-box-like");
+			$('<a class="material-icons border-like" id="like_off" href="#">favorite_border</a>').appendTo(".photo-box-like");
+		}
+		
+		$("#like_off").on("click", function() {
+			$.getJSON("../../../json/board/addlike"+no, (data) => {
+				$(".photo-box-likecount").children()[1].textContent = parseInt($(".photo-box-likecount").children()[1].textContent)+1;
+				$(this).css("display","none");
+				$("#like_on").css("display","flex");
+			});
+		});
+		$("#like_on").on("click", function() {
+			$.getJSON("../../../json/board/deletelike"+no, (data) => {
+				$(".photo-box-likecount").children()[1].textContent = parseInt($(".photo-box-likecount").children()[1].textContent)-1;
+				$(this).css("display","none");
+				$("#like_off").css("display","flex");
+			});
+		});
+	}).fail(function() {
+		$('<a class="material-icons border-like" id="like_off" href="#">favorite_border</a>').appendTo(".photo-box-like");
+		$("#like_off").on("click", function() {
+			alert("로그인이 필요한 서비스입니다.");
+		});
+	});	
+	
+	$.getJSON("../../../json/board/selectLink"+no, (data) => {
+		for (let item of data) {
+		$('<div class="link_input'+ item.LNO +'" style="display: block; position: absolute; top: '+ item.POY +'px; left: '+ item.POX +'px;">'+
+			'<div class="link_atag" onclick="linkbox('+ item.LNO +')"></div>'+
+			'<div class="link_atag_box'+ item.LNO +' link_view_box" style="display:none">'+
+				'<div id="new1">'+
+					'<div class="link_view_span">'+
+						'<span style="font-weight:bold; font-size:14px">상품명: </span>'+ item.PRNM +'<span></span></div>'+
+					'<div class="link_view_a">'+
+						'<a href="'+ item.ADDR +'" class="new1">등록 링크로 이동하기 &gt;</a></div>'+
+					'<div class="link_view_btn">'+
+					'<button type="button" name="button" class="btn btn-warning btn-sm" onclick="cancel('+ item.LNO +')">닫기</button>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		  '</div>').appendTo('#linkadded');
+		$('<div class="link_input'+ item.LNO +'" style="display: block; position: absolute; top: '+ item.POY +'px; left: '+ item.POX +'px;">'+
+				'<div class="link_atag" onclick="linkbox('+ item.LNO +')"></div>'+
+				'<div class="link_atag_box'+ item.LNO +' link_view_box" style="display:none">'+
+					'<div id="new1">'+
+						'<div class="link_view_span">'+
+							'<span style="font-weight:bold; font-size:14px">상품명: </span>'+ item.PRNM +'<span></span></div>'+
+						'<div class="link_view_a">'+
+							'<a href="'+ item.ADDR +'" class="new1">등록 링크로 이동하기 &gt;</a></div>'+
+						'<div class="link_view_btn">'+
+						'<button type="button" name="button" class="btn btn-secondary btn-sm" onclick="remove('+ item.LNO +')">삭제</button>'+
+						'<button type="button" name="button" class="btn btn-warning btn-sm" onclick="cancel('+ item.LNO +')">닫기</button>'+
+						'</div>'+
+					'</div>'+
+				'</div>'+
+			  '</div>').appendTo('#linkadd');
 		}
 	});
 	
@@ -112,6 +228,7 @@ function mkmodal(no) {
 	$(".modal").on("click",function(e){
 	    if(e.target == this) {
 	    	$("#myModal").remove();
+	    	location.reload();
 	    } else {
 	    	
 	    }
@@ -120,40 +237,14 @@ function mkmodal(no) {
 	$.getScript('../../js/multi-step-modal.js');
 	$.getScript('../../js/link_add_modal.js'); 
 	$("#myModal").modal();
-	
-
-		$("#like_off").on("click", function() {
-		  $(this).css("display","none");
-		  $("#like_on").css("display","flex");
-		});
-		$("#like_on").on("click", function() {
-		  $(this).css("display","none");
-		  $("#like_off").css("display","flex");
-		});
+		
 	});
-	
-
-	
-	
 	
 };
 
 
 
 
-/*
-var comments = [
-	{userid: "소박한식탁", content: "너무 아름다운거 같아요. 딱 제 스타일이에요!"},
-	{userid: "푸짐한식탁", content: "깔끔하니 좋은데요!"},
-	{userid: "오늘의집", content: "정말 오늘하루 보내고 싶은 곳이네요!"},
-	{userid: "위르겐클롭", content: "너무 비어보인다는 것과 심플하다고 하는건 보는 사람의 시각차이일뿐이에요."},
-	{userid: "스티븐제라드", content: "정말 만들기 힘드셨을것 같아요! 정말 멋지네요!"},
-	{userid: "스펀지밥", content: "아쉽긴 뭐가 아쉬워요! 이런걸 보고 심플하다 하는거에요!"},
-	{userid: "깐깐징어", content: "뭔가 아쉬운거같아요.."},
-	{userid: "뚱이", content: "아쉬운거 없이 완벽해요!"},
-	{userid: "브루노마스", content: "wow!! so beautiful place!!"},
-	{userid: "저녁이있는삶", content: "하루를 마무리하고 쉬기 좋은 집 같아요~!"}
-]*/
 
 
 

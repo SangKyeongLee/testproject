@@ -32,7 +32,27 @@ public class BoardServiceImpl implements BoardService {
         
         return boardDao.selectList(params);
     }
-
+    @Override
+    public int addLike(int no, int memNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("no", no);
+        params.put("memNo",memNo);
+        return boardDao.addLike(params);
+    }
+    @Override
+    public int deleteLike(int no, int memNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("no", no);
+        params.put("memNo",memNo);
+        return boardDao.deleteLike(params);
+    }
+    @Override
+    public List<Board> isLikeOne(int no, int memNo) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("no", no);
+        params.put("memNo", memNo);
+        return boardDao.isLikeOne(params);
+    }
     @Override
     public Board get(int no) {
         return boardDao.selectOne(no);
@@ -53,5 +73,49 @@ public class BoardServiceImpl implements BoardService {
         System.out.println("Service.selectListInMain");
         return mainDao.selectListInMain();
     }
-    
+
+    @Override
+    public List<Board> isLike(int no) {
+        return boardDao.isLike(no);
+    }
+
+    @Override
+    public int addcomment(int no, String cmmt, int memNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("no", no);
+        params.put("cmmt",cmmt);
+        params.put("memNo",memNo);
+
+        return boardDao.addcomment(params);
+    }
+
+    @Override
+    public Board isWriter(int no, int memNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("no", no);
+        params.put("memNo", memNo);
+        
+        return boardDao.isWriter(params);
+    }
+
+    @Override
+    public List<Board> selectLink(int no) {
+        return boardDao.selectLink(no);
+    }
+
+    @Override
+    public int deleteLink(int no) {
+        return boardDao.deleteLink(no);
+    }
+
+    @Override
+    public int addLink(Board board) {
+        return boardDao.addLink(board);
+    }
+
+    @Override
+    public Board selectLinkOne() {
+        return boardDao.selectLinkOne();
+    }
+
 }
