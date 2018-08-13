@@ -2,9 +2,10 @@ var bt_sns_slider = $('.bt-sns-slider');
 
 $.getJSON("../../../json/main/listmain", (data) => {
 	
+console.log("게시물: " + data);
 for (var item of data) {
 	$('<div class="bt-sns-slider-piece">'+
-			'<a class="sns-img-piece" href="#">' + 
+			'<a class="sns-img-piece" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">' + 
 			'<img src="../../images/sns/'+ item.path +'" alt="">'+
 			'</a>' +
 			'<div class="sns-cont-piece">' +
