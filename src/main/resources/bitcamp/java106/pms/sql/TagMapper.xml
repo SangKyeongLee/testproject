@@ -48,6 +48,14 @@
 	    insert into INTR_WTMACH(htno, wno) 
 	    values(#{hashTagNo},#{worksMatchNo});
   </insert>
+  
+  <!-- 게시판 및 해시 태그 매칭 -->
+    <insert id="boardMatchInsert" parameterType="Tag"
+          useGeneratedKeys="true" keyColumn="htno" keyProperty="htno">
+        insert into INTR_BTMACH(htno, bno) 
+        values(#{hashTagNo},#{boardMatchNo});
+        
+  </insert>
 <!-- 매칭 테이블에서 row 삭제 -->
 <delete id="deleteRelation" parameterType="int">
     delete from INTR_WTMACH WHERE wno=#{value};

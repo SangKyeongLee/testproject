@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -27,6 +28,16 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<Workshop> storelist(String title) {
         return searchDao.storeList(title);
+    }
+    
+    @Override
+    public List<Works> workslist(String title, int startNo, int pageNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("title", title);
+        params.put("startNo", (startNo - 1) * pageNo);
+        params.put("pageNo", pageNo);
+        
+        return searchDao.worksList(params);
     }
     
     @Override

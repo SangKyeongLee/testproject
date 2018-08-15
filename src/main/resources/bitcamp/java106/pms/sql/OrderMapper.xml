@@ -19,8 +19,10 @@
     <result column="tamnt" property="totalCost"/>
     <result column="odate" property="orderDate"/>
     <result column="odstt" property="orderState"/>
+    <result column="reicv" property="receiver"/>
     <result column="dlmemo" property="devMemo"/>
     <result column="curir" property="curir"/>
+    <result column="deldt" property="deliDate"/>
     <result column="zcode" property="post"/>
     <result column="baddr" property="abseAddr"/>
     <result column="daddr" property="detailAddr"/>
@@ -44,6 +46,44 @@
        스프링 프레임워크와 연동할 때 DAO객체를 자동생성하고 
        그 메서드를 자동생성할 때 사용할 수 있다.
   -->
+ <select id="adList" 
+          resultType="Map" 
+          parameterType="int">
+SELECT odn.wono, odn.odno, ord.odate, ord.odstt, odn.crqst, odn.cldte, wo.wtitl, mem.nknm
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{value}
+</select>
+  
+ <select id="adGet" 
+          resultType="Map" 
+          parameterType="int">
+select ord.odno, odn.wono, ord.odstt, mem.name, odn.ostor, wo.wtitl, odn.crqst, mem.id, 
+	wo.price * odn.ostor as ptPrice, wk.abvl, ord.deldt, ord.curir, ord.ivno, 
+	ord.reicv, ord.baddr, ord.daddr, ord.zcode, ord.dlmemo 
+from INTR_ORDER as ord 
+inner JOIN INTR_MEMBER as mem 
+on ord.memno = mem.memno 
+inner join INTR_ODNWK as odn 
+on ord.odno = odn.odno 
+inner join INTR_WORKS as wo 
+on odn.wno = wo.wno 
+inner join INTR_WKOT as wk 
+on wo.wno = wk.wno 
+where odn.wono = #{value} 
+  </select>
+
+  <update id="adUpdate" parameterType="Order">
+    update `INTR_ORDER` 
+   	set curir= #{curir}, ivno= #{ivno}, deldt= #{deliDate}, odstt=#{orderState}
+   	WHERE odno = #{no}
+  </update>
+  
  <!--  <select id="selectList" 
           resultType="Map" 
           parameterType="map">

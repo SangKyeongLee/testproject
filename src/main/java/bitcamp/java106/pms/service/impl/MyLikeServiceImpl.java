@@ -32,5 +32,10 @@ public class MyLikeServiceImpl implements MyLikeService {
     public Board commentCount(int no) {
         return myLikeDao.commentCount(no);
     }
+
+    @Override
+    public int mpLikeCnt(int no) {
+        return myLikeDao.totalLikeCount(no);
+    }
     
 }

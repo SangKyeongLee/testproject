@@ -3,35 +3,53 @@ package bitcamp.java106.pms.domain;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int no;
-    private int memberNo;
-    private String methodPay;
-    private int devCost;
-    private int totalCost;
-    private Date orderDate;
-    private String orderState;
-    private String devMemo;
-    private String curir;
-    private String post;
-    private String baseAddr;
-    private String detailAddr;
-    private String ivno;
-    private Date claimDate;
-    private String claimRequest;
-    private String claimContext;
-    private String proState;
-    private String proContext;
-    
+    private int no; //주문번호
+    private int memberNo; //회원번호
+    private String methodPay; //결재수단
+    private int devCost; //배송비
+    private int totalCost; //총금액
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date orderDate; //주문일
+    private String orderState; //주문상태
+    private String receiver; //수취인
+    private String devMemo; //배송메모
+    private String curir;//택배사
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date deliDate;//상품발송일
+    private String post;//우편번호
+    private String baseAddr;//기본주소
+    private String detailAddr;//상세주소
+    private String ivno;//송장번호
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date claimDate;//클레임요청일
+    private String claimRequest;//클레임 상태
+    private String claimContext;//클레임 사유
+    private String proState;//처리상태
+    private String proContext;//처리사유
     //데이터 컨트롤
     private Odnwk odnwk;
     private Works works;
     
     
     
+    public String getReceiver() {
+        return receiver;
+    }
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+    public Date getDeliDate() {
+        return deliDate;
+    }
+    public void setDeliDate(Date deliDate) {
+        this.deliDate = deliDate;
+    }
     @Override
     public String toString() {
         return "Order [no=" + no + ", memberNo=" + memberNo + ", methodPay=" + methodPay + ", devCost=" + devCost

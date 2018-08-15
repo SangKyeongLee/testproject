@@ -1,72 +1,121 @@
 "use strict"
 var userNo;
-var adWorksData = $('.ad-works-data');
-var adWorksEnrollBtn = $('.ad-works-enroll');
-var adWorksWrapperTemplateSrc = $('#ad-works-template').html();
-var adWorksWrapperTemplate = Handlebars.compile(adWorksWrapperTemplateSrc);
+var adOrderData = $('.ad-order-data');
+var adOrderWrapperTemplateSrc = $('#ad-order-template').html();
+var adOrderWrapperTemplate = Handlebars.compile(adOrderWrapperTemplateSrc);
 
-$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
-	//공방번호(사용자번호(PK))
-	userNo = data.no;
-	
 	/* list */
-	$.getJSON(serverRoot + "/json/order/adList",{"no":userNo}, (data) => {
-		console.log(userNo);
+	$.getJSON(serverRoot + "/json/order/adList", (data) => {
 		console.log(data);
 		for (var item of data) {
-			var rdate = new Date(item.registeredDate);
-			item.ryear = rdate.getFullYear();
-			item.rmonth = rdate.getMonth() + 1;
-			item.rday = rdate.getDate();
+			var orderDate = new Date(item.odate); 
+			var date = new Date(orderDate); 
+			var year = date.getFullYear();
+			var month =(1+date.getMonth());
+			month = month >= 10 ? month:'0' + month;
+			var day = date.getDate();
+			day = day >= 10 ? day:'0' + day;
 			
-			var modifiedDate = item.modifiedDate;
-			if(modifiedDate !== null && modifiedDate !== '') {
-				var mdate = new Date(modifiedDate);
-				item.myear = mdate.getFullYear();
-				item.mmonth= mdate.getMonth() + 1
-				item.mdate= mdate.getDate();
+			item.oyear = year;
+			item.omonth = month;
+			item.oday = day;
+			
+			var claimDate = item.cldte;
+			if( !isNaN(claimDate)) {
+				var cdate = new Date(claimDate);
+				var date = new Date(cdate);
+				var year = date.getFullYear();
+				var month =(1+date.getMonth());
+				month = month >= 10 ? month:'0' + month;
+				var day = date.getDate();
+				day = day >= 10 ? day:'0' + day;
+				
+				item.cyear = year;
+				item.cmonth= month;
+				item.cday= day;
 				}
 			else {
+				item.cyear="";
+				item.cmonth="";
+				item.cday="";
 			}
 		}
-		$(adWorksWrapperTemplate({list: data})).appendTo(adWorksData);
+		$(adOrderWrapperTemplate({list: data})).appendTo(adOrderData);
 		});
-	
-	$.getJSON(serverRoot + "/json/works/currentState",{"no":userNo}, (data) => {
+
+adOrderData.on('click', '.ad-order-update', function(e) {
+	var no = $(e.target).attr('data-wono');
+	$.getJSON(serverRoot + "/json/order/adView/" + no, (data) => {
 		console.log(data);
-		$(totalCnt).text(data.totalCnt);
-        $(sellCnt).text(data.sellCnt);
-        $(waitCnt).text(data.waitCnt);
-        $(outCnt).text(data.outCnt);
+		if(data.baddr !== undefined && data.daddr !== undefined && data.zcode !== undefined) {
+			var baddr = data.baddr;
+			var daddr = data.baddr;
+			var zcode = data.baddr;
+			var addr = '(' + zcode +') ' + baddr + ' ' + daddr;
+		}
+		
+		var deliveryDate = data.deldt;
+		var date;
+		if( !isNaN(deliveryDate)) {
+			var ddate = new Date(deliveryDate);
+			var date = getFormatDate(ddate);
+			}
+
+		
+		$(odno).val(data.odno);
+		$(wono).val(data.wono);
+		$(odstt).val(data.odstt).prop("selected", true);
+		$(ostor).val(data.ostor);
+		$(wtitl).val(data.wtitl);
+		$(crqst).val(data.crqst);
+		$(orname).val(data.name);
+		$(orid).val(data.id);
+		$(ptPrice).val(data.ptPrice);
+		$(abvl).val(data.abvl);
+		$(deldt).val(date);
+		$(curir).val(data.curir);
+		$(ivno).val(data.ivno);
+		$(reicv).val(data.reicv);
+		$(dlmemo).val(data.dlmemo);
+		if(addr !== undefined) {
+			$(addr).val(data.addr);
+		}
+		
 	});
 });
 
-adWorksData.on('click', '.ad-works-update', function(e) {
-	var no = $(e.target).attr('data-worksNo');
-	$.getJSON(serverRoot + "/json/works/adView/" + no, (data) => {
-		console.log(data);
-		$(wno).val(data.worksNumber);
-		$('#tname').tagEditor({
-			initialTags: data.worksCategory,
-		    delimiter: ', ', /* space and comma */
-		    maxLength: 10,
-			placeholder: 'Enter tags ...'
-		});
-		$(tname).val(data.worksCategory);
-		$(wtitl).val(data.title);
-		$(wrtdt).val(data.registeredDate);
-		$(price).val(data.price);
-		$(alstk).val(data.capacity);
-		$(slst).val(data.salesStatus).prop("selected", true);
-		$(abvl).val(data.option.attributeValue);
-		$(pddt).val(data.productDetail);
-	});
+function getFormatDate(date) {
+	var year = date.getFullYear();
+	var month =(1+date.getMonth());
+	month = month >= 10 ? month:'0' + month;
+	var day = date.getDate();
+	day = day >= 10 ? day:'0' + day;
+	return  year + '-' + month + '-' + day;
+
+}
+
+
+$('#updBtn').click(function () {
+	var param = {
+			no: $(odno).val(),
+			orderState: $('#odstt option:selected').val(),
+			deliDate: $(deldt).val(),
+			curir: $(curir).val(),
+			ivno: $(ivno).val()
+	}
 	
-	adWorksEnrollBtn.trigger('click', ['update']);
+    $.ajax({
+    	url: serverRoot + "/json/order/adUpdate", 
+    	type:"post",
+    	data: param,
+    	success: function(data){
+    		console.log(data);
+        }
+});
 });
 
 
-
+/*
 $('#ad-wors-addForm').click(function(e, action) {
 	if (action === 'update') {
 		console.log(action);
@@ -81,7 +130,7 @@ $('#ad-wors-addForm').click(function(e, action) {
 		$('#updBtn').attr("id","addBtn");
 		$('#addBtn').text("등록하기");
 		$('#tname').tagEditor({
-		    delimiter: ', ', /* space and comma */
+		    delimiter: ', ',  space and comma 
 		    maxLength: 10,
 			placeholder: 'Enter tags ...'
 		});
@@ -183,21 +232,5 @@ $('#fileupload1').fileupload({
 		console.log(data.result);
 	}
 });
-/*delete*/
-function worksdel(no) {
-    if (window.confirm("삭제하시겠습니까?") == false) 
-    	return;
-    $.get("../../../json/works/delete", {"wno": no}, () => {
-   	 
-    });
-/*      location.reload(); */  
-}
-
-/*미리보기 삭제 이벤트*/
-function delImg(event) {
-	var wrapperDiv = $(event.currentTarget);
-	wrapperDiv.remove();
-	var fileIndex = wrapperDiv.attr('data-file-index');
-	imgFiles.splice(fileIndex, 1);
-}
+*/
 

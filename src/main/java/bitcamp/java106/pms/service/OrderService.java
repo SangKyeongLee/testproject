@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import bitcamp.java106.pms.domain.Odnwk;
 import bitcamp.java106.pms.domain.Order;
+import bitcamp.java106.pms.domain.Wsav;
 
 public interface OrderService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 
@@ -17,6 +18,6 @@ public interface OrderService {
     
     //관리자 전용
     int adUpdate(Order order);
-    Order adGet(int no);
-    Object adList(int no);
+    Object adGet(int no);
+    List<Object> adList(int no);
 }

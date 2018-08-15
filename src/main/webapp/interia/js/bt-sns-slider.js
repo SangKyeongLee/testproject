@@ -6,7 +6,7 @@ console.log("게시물: " + data);
 for (var item of data) {
 	$('<div class="bt-sns-slider-piece">'+
 			'<a class="sns-img-piece" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">' + 
-			'<img src="../../images/sns/'+ item.path +'" class="bt-sns-img" alt="">'+
+			'<img src="../../../files/board/'+ item.path +'_1000x1000.jpg" class="bt-sns-img"  alt="">'+
 			'</a>' +
 			'<div class="sns-cont-piece">' +
 			'<div class="sns-cont-profile">' +
@@ -31,6 +31,7 @@ for (var item of data) {
 		moveSlides: 1
 	});
 });
+
 //이미지 가로세로 정렬
 window.onload = function() {
 	var divs = document.querySelectorAll('.sns-img-piece');
@@ -55,4 +56,3 @@ window.onload = function() {
 		}
 	}
 }
-

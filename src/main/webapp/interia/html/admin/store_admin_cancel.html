@@ -521,157 +521,135 @@
         </button>
                         </div>
                         <form>
-                            <div class="modal-body">
-                                <div class="ad-modal-contentgap">
-                                    <b>주문상세정보</b>
-                                    <div class="ad-modal-content-collapse ad-orderDetail">
-                                        <div class="ad-orderDetail-menu">
-                                            <div class="ad-modal-orderinfo">
-                                                상품주문번호
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                상품주문상태
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자명
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                주문수량
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                옵션정보
-                                            </div>
-                                        </div>
-                                        <div class="ad-modal-info-data">
-                                            <div class="ad-modal-orderinfo">
-                                                상품주문번호 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                <select>
-                                                    <option>입금대기중</option>
-                                                    <option>결제완료</option>
-                                                    <option>배송준비중</option>
-                                                    <option>배송중</option>
-                                                    <option>배송완료</option>
-                                                </select>
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자명 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                주문수량 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                옵션정보 data
-                                            </div>
-                                        </div>
-                                        <div class="ad-orderDetail-menu">
-                                            <div class="ad-modal-orderinfo">
-                                                상품명
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                클레임
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자ID
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                금액
-                                            </div>
-                                        </div>
-                                        <div class="ad-modal-info-data">
-                                            <div class="ad-modal-orderinfo">
-                                                상품명 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                클레임 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자ID data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                금액 data
-                                            </div>
-                                        </div>
-                                    </div>
+							<div class="modal-body">
+								<div class="ad-modal-contentgap">
+									<b>주문상세정보</b>
+									<input id="odno" type="text" style="display:none;">
+									<div class="ad-modal-content-collapse ad-orderDetail">
+										<div class="ad-orderDetail-menu">
+											<div class="ad-modal-orderinfo">상품주문번호</div>
+											<div class="ad-modal-orderinfo">상품주문상태</div>
+											<div class="ad-modal-orderinfo">구매자명</div>
+											<div class="ad-modal-orderinfo">주문수량</div>
+										</div>
+										<div class="ad-modal-info-data">
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+													id="wono" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<select 
+													id="odstt">
+													<option value="결제완료">결제완료</option>
+													<option value="배송준비중">배송준비중</option>
+													<option value="배송중">배송중</option>
+													<option value="배송완료">배송완료</option>
+												</select>
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+													id="orname" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+													id="ostor" class="ad-order-form-input">
+											</div>
 
-                                </div>
-                                <div class="ad-modal-contentgap">
-                                    <b>배송정보</b>
-                                    <div class="ad-modal-content-collapse ad-orderDetail">
-                                        <div class="ad-orderDetail-menu">
-                                            <div class="ad-modal-orderinfo">
-                                                상품발송일
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                택배사
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                송장번호
-                                            </div>
-                                        </div>
-                                        <div class="ad-modal-info-data">
-                                            <div class="ad-modal-orderinfo">
-                                                상품발송일 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                택배사 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                송장번호 data
-                                            </div>
+										</div>
+										<div class="ad-orderDetail-menu">
+											<div class="ad-modal-orderinfo">상품명</div>
+											<div class="ad-modal-orderinfo">클레임</div>
+											<div class="ad-modal-orderinfo">구매자ID</div>
+											<div class="ad-modal-orderinfo">금액</div>
+										</div>
+										<div class="ad-modal-info-data">
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="wtitl" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="crqst" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="orid" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="ptPrice" class="ad-order-form-input">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div style="display:flex; margin-left: 48px; margin-bottom:15px;">
+								<div class="ad-orderDetail-menu" style=" width:110px;">
+									<div class="ad-modal-orderinfo">옵션정보</div>
+								</div>
+								<div class="ad-modal-info-data">
+									<div class="ad-modal-orderinfo">
+										<textarea id="abvl" class="ad-order-optView"></textarea>
+									</div>
+								</div>
+								</div>
+								<div class="ad-modal-contentgap">
+									<b>배송정보</b>
+									<div class="ad-modal-content-collapse ad-orderDetail">
+										<div class="ad-orderDetail-menu">
+											<div class="ad-modal-orderinfo">상품발송일</div>
+											<div class="ad-modal-orderinfo">택배사</div>
+											<div class="ad-modal-orderinfo">송장번호</div>
+										</div>
+										<div class="ad-modal-info-data" style="width:80%;">
+											<div class="ad-modal-orderinfo">
+												<input type="date" 
+												id="deldt" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="curir" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="ivno" class="ad-order-form-input">
+											</div>
 
-                                        </div>
-                                    </div>
+										</div>
+									</div>
 
-                                </div>
-                                <div class="ad-modal-contentgap">
-                                    <b>배송지 정보</b>
-                                    <div class="ad-modal-content-collapse ad-orderDetail">
-                                        <div class="ad-orderDetail-menu">
-                                            <div class="ad-modal-orderinfo">
-                                                수취인명
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                연락처1
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                연락처2
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                배송지
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                배송메모
-                                            </div>
-                                        </div>
-                                        <div class="ad-modal-info-data">
-                                            <div class="ad-modal-orderinfo">
-                                                수취인명 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                연락처1 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                연락처2 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                배송지 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                배송메모 data
-                                            </div>
-                                        </div>
+								</div>
+								<div class="ad-modal-contentgap">
+									<b>배송지 정보</b>
+									<div class="ad-modal-content-collapse ad-orderDetail">
+										<div class="ad-orderDetail-menu">
+											<div class="ad-modal-orderinfo">수취인명</div>
+											<div class="ad-modal-orderinfo">배송지</div>
+											<div class="ad-modal-orderinfo">배송메모</div>
+										</div>
+										<div class="ad-modal-info-data">
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="reicv" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="addr" class="ad-order-form-input">
+											</div>
+											<div class="ad-modal-orderinfo">
+												<input type="text" 
+												id="dlmemo" class="ad-order-form-input">
+											</div>
+										</div>
+									</div>
+								</div>
 
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                                <button type="button" class="ad-btn ad-btn-color1">정보 수정하기</button>
-                            </div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">닫기</button>
+								<button type="button" id="updBtn" class="ad-btn ad-btn-color1">정보
+									수정하기</button>
+							</div>
                         </form>
                     </div>
                 </div>

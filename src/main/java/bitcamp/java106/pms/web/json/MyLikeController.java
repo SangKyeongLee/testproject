@@ -22,10 +22,6 @@ public class MyLikeController {
     @RequestMapping("list")
     public Object myLikeList(HttpSession session) throws Exception {
         Member member = (Member)session.getAttribute("loginUser");
-        if(member == null) {
-            System.out.println("notLogined");
-            return "notLogined";
-        };
         
         return myLikeService.myLikeList(member.getNo());
     }
@@ -38,5 +34,12 @@ public class MyLikeController {
     @RequestMapping("commentCount{no}")
     public Object commentCount(@PathVariable int no) throws Exception {
         return myLikeService.commentCount(no);
+    }
+    
+    @RequestMapping("mpLikeCnt")
+    public int mpLikeCnt(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        return myLikeService.mpLikeCnt(userNo);
     }
 }

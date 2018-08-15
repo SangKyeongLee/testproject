@@ -248,9 +248,16 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		console.log(data);
 		for (var item of data) {
 			var date = new Date(item.actdt);
-			item.year = date.getFullYear();
-			item.month = date.getMonth() + 1;
-			item.day = date.getDate();
+			var year = date.getFullYear();
+			var month =(1+date.getMonth());
+			month = month >= 10 ? month:'0' + month;
+			var day = date.getDate();
+			day = day >= 10 ? day:'0' + day;
+			
+			item.year = year;
+			item.month = month;
+			item.day = day;
+			
 			var str = item.time.split(":");
 			item.hour = str[0];
 			item.minute = str[1];

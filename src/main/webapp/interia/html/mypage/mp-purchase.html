@@ -137,7 +137,7 @@
 			var uno = data.no;
 			$.getJSON("../../../json/odnwk/revList",{"no": uno}, (data) => {
 				for (var i = 0; i < data.length; i++) {
-					if (data[i].qctt != "") {
+					if (data[i].qctt != null || data[i].qctt != "") {
 						$(`<form>
 							<div class="ib-mp-purchasebox">
 								<div class="ib-mp-pur-tbox">
@@ -174,11 +174,11 @@
 				var count1 = 0;
 				var count2 = 0;
 				for (var i = 0; i < data.length; i++) {
-					if (data[i].qctt == "") {
+					if (data[i].qctt == null) {
 						count1++;
 						console.log(count1);
 					}
-					if (data[i].qctt != "") {
+					if (data[i].qctt != "" && data[i].qctt != null) {
 						count2++;
 						console.log(count2);
 					}

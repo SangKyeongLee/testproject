@@ -91,8 +91,10 @@ public class WorksController {
     
     // 여기는 제품 리스틀 간단히 보여주는걸 의미
     @RequestMapping("list")
-    public Object list() {       
-        return worksService.list();
+    public Object list(
+            @RequestParam("startNo") int startNo,
+            @RequestParam("pageNo") int pageNo) {       
+        return worksService.list(startNo, pageNo);
     }
     
     @RequestMapping("listSellerSite")

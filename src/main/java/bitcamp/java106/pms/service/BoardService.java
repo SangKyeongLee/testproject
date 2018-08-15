@@ -20,4 +20,7 @@ public interface BoardService {
     int deleteLink(int no);
     int addLink(Board board);
     Board selectLinkOne();
+    void add(Board board);
+    List<Board> mpboard(int userNo);
+    int mpBoardCnt(int userNo);
 }

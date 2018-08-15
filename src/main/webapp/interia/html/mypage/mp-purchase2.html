@@ -118,7 +118,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		for (var i = 0; i < data.length; i++) {
 			console.log("리스트: " + data[i].wono);
 			console.log(data[i].qctt);
-			if (data[i].qctt == "") {
+			if (data[i].qctt == null || data[i].qctt == "") {
 				$("<form>" +
 					"<div class='ib-mp-purchasebox'>" +
 						"<div class='ib-mp-pur-tbox'>" +
@@ -146,11 +146,11 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		var count1 = 0;
 		var count2 = 0;
 		for (var i = 0; i < data.length; i++) {
-			if (data[i].qctt == "") {
+			if (data[i].qctt == null) {
 				count1++;
 				console.log(count1);
 			}
-			if (data[i].qctt != "") {
+			if (data[i].qctt != "" && data[i].qctt != null) {
 				count2++;
 				console.log(count2);
 			}

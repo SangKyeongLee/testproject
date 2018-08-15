@@ -49,6 +49,19 @@ public class OdnwkController {
         return odnwkService.list(no);
     }
     
+    @RequestMapping("revCount")
+    public Object revCount(int no) {        
+        return odnwkService.revCount(no);
+    }
+    
+    @RequestMapping("revDetail")
+    public Object revDetail(
+            @RequestParam("wno") int wno,
+            @RequestParam("startNo") int startNo,
+            @RequestParam("pageNo") int pageNo) {        
+        return odnwkService.revDetail(wno, startNo, pageNo);
+    }
+    
     @RequestMapping("listSellerSite")
     public Object listSellerSite() {        
         return odnwkService.listSellerSite();

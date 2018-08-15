@@ -7,7 +7,7 @@ import bitcamp.java106.pms.domain.Works;
 
 public interface WorksDao {
     int delete(int no) ;
-    List<Works> selectList();
+    List<Works> selectList(HashMap<String, Object> params);
     List<Works> selectListSellerSite();
     int insert(Works works);
     int update(Works works);

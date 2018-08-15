@@ -20,4 +20,9 @@ public interface BoardDao {
     int deleteLink(int no);
     int addLink(Board board);
     Board selectLinkOne();
+    void insert(Board board);
+    Board selectRecent();
+    List<Board> selectMyBoard(int no); // 마이페이지 게시물페이지(게시물 번호, 사진)
+    int totalBoardCount(int no);
+    
 }

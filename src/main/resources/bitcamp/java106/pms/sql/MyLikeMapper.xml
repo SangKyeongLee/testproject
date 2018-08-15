@@ -27,4 +27,8 @@
       SELECT bo.BNO, COUNT(bc.BNO) AS cnt FROM INTR_BOARD bo LEFT OUTER JOIN INTR_BCMMT bc ON bo.BNO = bc.BNO WHERE bo.BNO = #{value} GROUP BY BNO
   </select>
   
+  <select id="totalLikeCount" parameterType="int" resultType="int">
+      SELECT COUNT(*) FROM INTR_LKMB WHERE MEMNO = #{no}
+  </select>
+  
 </mapper>

@@ -16,4 +16,6 @@ public interface OdnwkDao {
     Odnwk selectOne(int no);
     List<Odnwk> selectRevOne(int no);
     List<Odnwk> selectRevListOne(int no);
+    List<Odnwk> selectRevCount(int no);
+    List<Odnwk> selectRevdetail(Map<String,Object> params);
 }

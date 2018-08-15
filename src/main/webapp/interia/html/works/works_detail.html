@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
        
         <!-- ib-pd-cont -->
 
@@ -109,23 +109,23 @@
         <div class="ib-pd-btbox">
             <div class="ib-pd-btlist">
                 <div class="btn ib-pd-btn-sdark"><i class="fa fa-heart" style="font-size:24px; line-height: inherit;"></i></div>
-                <a class="btn-basket" href=""><div class="btn ib-pd-btn ib-pd-btn-dark">장바구니 담기</div></a>
+                <a id="btn-basket" href=""><div class="btn ib-pd-btn ib-pd-btn-dark">장바구니 담기</div></a>
                 <!-- <a href="sp_commissioned.html"><div class="btn ib-pd-btn ib-pd-btn-gary">제작 의뢰 하기</div></a> -->
-                <a class="btn-purchased" href=""><div class="btn ib-pd-btn ib-pd-btn-yellow">구매하기</div></a>
+                <a id="btn-purchased" href=""><div class="btn ib-pd-btn ib-pd-btn-yellow">구매하기</div></a>
             </div>
         </div>
         <!-- ib-pd-btbox -->
 
         <ul class="ib-pd-tab row sticky-top">
             <li class="col ib-pd-tab-line" onclick="fnMove('1')"><a>상품정보</a></li>
-            <li class="col ib-pd-tab-box" onclick="fnMove('2')"><a>리뷰(365)</a></li>
-            <li class="col ib-pd-tab-box" onclick="fnMove('3')"><a>문의(35)</a></li>
+            <li class="col ib-pd-tab-box" onclick="fnMove('2')"><a>리뷰</a></li>
+            <li class="col ib-pd-tab-box" onclick="fnMove('3')"><a>문의</a></li>
             <li class="col ib-pd-tab-box" onclick="fnMove('4')"><a>배송/교환/환불</a></li>
         </ul>
         <!-- ib-pd-tab -->
 
         <section id="produ1">
-            <div class="ib-pd-detail">
+            <!-- <div class="ib-pd-detail">
                 <h4>제품 사용기</h4>
                 <div class="ib-pd-detail-box">
                     <div class="pro_bxslider">
@@ -197,12 +197,15 @@
 
                     </div>
                 </div>
+            </div> -->
+            <div class="ib-pd-detailImg">
+                <img src="../../images/works/works_detail/works_product_img01.png">
             </div>
         </section>
         <!-- ib-pd-detail -->
 
         <!-- bxsilder -->
-        <script>
+        <!-- <script>
         $(function(){
           $('.pro_bxslider').bxSlider({
             mode: 'horizontal',
@@ -211,107 +214,41 @@
             pager: false
           });
         });
-        </script>
-
+        </script> -->
+        
         <section>
             <section id="produ2">
-                <h4>리뷰<span class="sp-font-yellow"> 76</span></h4>
-                <br>
+                <h4>리뷰</h4>
                 <section>
-                    <h6>76 명의 구매 만족도</h6>
-                    <div class="sp-star-score">
-                        <div class="sp-stars">
-                            <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                            <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                            <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                            <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                            <span><img src="../../images/works/works_detail/like_icon_empty.png"></span>
-                        </div>
-                        <div class="sp-score">
-                            <p>4.08 <span class="sp-font-gray">/ 5</span></p>
-                        </div>
-                    </div>
-                    <h6>76 명의 리뷰</h6>
                     <div class="sp-buttons">
-                        <div>
-                            <input type="button" class="btn sp-current" value="베스트 리뷰 순">
-                            <input type="button" class="btn" value="최근 리뷰 순">
-                        </div>
-                        <button type="button" class="sp-btn-normal" data-toggle="modal" data-target="#revModalLong"> + 리뷰 쓰기</button>
+                        <!-- <button type="button" class="sp-btn-normal" data-toggle="modal" data-target="#revModalLong"> + 리뷰 쓰기</button> -->
 
                     </div>
-                </section><br>
+                </section>
 
                 <section>
-                    <a class="sp-riviews-box" data-toggle="modal" data-target="#detailModalLong">
+                    <!-- <a class="sp-riviews-box" data-toggle="modal" data-target="#detailModalLong"> -->
                         <article class="sp-riviews">
-                            <div>
-                                <h5>[비트 공방] FLENCE 460 사이드 테이블_2colors</h5>
-                                <p class="sp-report">신고</p>
-                            </div>
-                            <div class="sp-cont">
-                                <div class="sp-left-cont">
-                                    <div>제품: 01.FIXA 3단 선반 / 색상-실버 그레이_997.00</div>
-                                    <div>
-                                        <span class="sp-stars2">
-                                    <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                                        <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                                        <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                                        <span><img src="../../images/works/works_detail/like_icon_full.png"></span>
-                                        <span><img src="../../images/works/works_detail/like_icon_empty.png"></span>
-                                        </span>
-                                        <small class="sp-font-gray">
-                                    <span>비트짱짱</span>
-                                     | 
-                                    <sapn>2018.06.14</sapn>
-                                     | 
-                                    <sapn>INTERIA 리뷰</sapn>
-                                </small>
-                                    </div>
-                                    <div class="sp-rev-cont">조립하기 뻑뻑해서 좀 힘들었는데 반대로 생각해보면 그만큼 기둥이 잘 안빠진다는거니까 튼튼한것같아요 근데 선반을 브라운으로 시켰는데 다 조립하고보니까 베이지로 왔네용..ㅎ 너무 힘들게 해서 안바꾸고 그냥 쓰려구요 대신에 서랍만 따로 주문가능한가요?
-                                    </div>
-                                    <div><small class="sp-font-yellow">5 명이 이 리뷰를 좋아합니다.</small></div>
-                                </div>
-                                <div class="sp-right-cont">
-                                    <img class="sp-rev-img" src="../../images/works/works_detail/img.PNG" alt="Generic placeholder image">
-                                </div>
-                            </div>
+                            
                         </article>
-                    </a>
+                    <!-- </a> -->
                 </section>
                 <!--구매 후기 -->
             </section>
             <br>
-
+            <!-- <div id="paging"></div> -->
             <nav class="sp-nav">
-                <ul>
-                    <li><strong>&lt;&nbsp;</strong></li>
-                    <li class="sp-current">1</li>
-                    <li class="sp-not-current">2</li>
-                    <li class="sp-not-current">3</li>
-                    <li class="sp-not-current">4</li>
-                    <li class="sp-not-current">5</li>
-                    <li class="sp-not-current">6</li>
-                    <li class="sp-not-current">7</li>
-                    <li class="sp-not-current">8</li>
-                    <li class="sp-not-current">9</li>
-                    <li class="sp-not-current">10</li>
-                    <li><strong>&nbsp;&gt;</strong></li>
-                </ul>
+                <div id="paging"></div>
             </nav>
             <!-- 번호 목록 -->
 
             <br><br>
 
             <section id="produ3" class="sp-ask-all">
-                <h4>문의<span class="sp-font-yellow"> 33</span></h4>
+                <h4>문의</h4>
                 <button type="button" class="sp-btn-normal" data-toggle="modal" data-target="#qnaModalLong"> 문의하기</button>
                 <div>
                     <small>
-                <span>구매</span>
-                |
-                <span>반품</span>
-                |
                 <span class="sp-font-yellow">답변완료</span>
                 </small>
                 </div>
@@ -347,11 +284,6 @@
                     <li class="sp-not-current">3</li>
                     <li class="sp-not-current">4</li>
                     <li class="sp-not-current">5</li>
-                    <li class="sp-not-current">6</li>
-                    <li class="sp-not-current">7</li>
-                    <li class="sp-not-current">8</li>
-                    <li class="sp-not-current">9</li>
-                    <li class="sp-not-current">10</li>
                     <li><strong>&nbsp;&gt;</strong></li>
                 </ul>
             </nav>
@@ -460,7 +392,7 @@
 
             <br><br>
 
-            <section class="sp-pdt-recomm">
+            <!-- <section class="sp-pdt-recomm">
                 <div class="sp-pdt-header">
                     <h4>같이 보면 좋은 상품</h4>
                 </div>
@@ -562,11 +494,11 @@
                         </div>
                     </a>
                 </div>
-            </section>
+            </section> -->
         </section>
 
         <!-- bxsilder -->
-        <script>
+        <!-- <script>
         $(function(){
           $('.pdt_bxslider').bxSlider({
             mode: 'horizontal',
@@ -575,7 +507,7 @@
             pager: false
           });
         });
-        </script>
+        </script> -->
 
         <!-- 리뷰 Modal -->
         <div class="modal fade" id="revModalLong" tabindex="-1" role="dialog" aria-labelledby="revModalLongTitle" aria-hidden="true">
@@ -731,6 +663,7 @@
         <!-- 상품 detail Modal -->
 
     </div>
+    </div>
     <!-- ib-container -->
 
     <footer id="footer">
@@ -739,15 +672,16 @@
 
     <div class="ib-pd-foot">
         <div class="ib-container ib-ft-right">
-            <a class="btn ib-ft-btn btn-basket" href="">장바구니 담기</a>
+            <a id="btn-basket" class="btn ib-ft-btn" href="">장바구니 담기</a>
             <!-- <a class="btn ib-ft-btn ft-btn-gray" href="sp_commissioned.html">제작 의뢰 하기</a> -->
-            <a class="btn ib-ft-btn ft-btn-yellow btn-purchased">구매하기</a>
+            <a id="btn-purchased" class="btn ib-ft-btn ft-btn-yellow">구매하기</a>
         </div>
     </div>
     <!-- 하단 고정 바 -->
     
     <script src="../../js/common.js"></script>
     <script src="../../js/works_detail.js"></script>
+    <script src="../../js/works_detail_rev.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 </body>

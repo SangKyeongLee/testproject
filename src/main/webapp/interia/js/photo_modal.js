@@ -12,7 +12,7 @@ function mkmodal(no) {
 			'<div class="modal-body photo-modal-body step-1" data-step="1">'+
 				'<div class="photo-img-box">'+
 					'<div id="linkadded">'+
-					   '<img src="../../images/sns/'+ data.path +'" alt="">'+
+					   '<img src="../../../files/board/'+ data.path +'" alt="">'+
 					'</div>'+
 				'</div>'+
 				'<div class="photo-container-box">'+
@@ -53,7 +53,7 @@ function mkmodal(no) {
 			'<div class="modal-body photo-modal-body step-2" data-step="2">'+
 				'<div class="photo-img-box">'+
 				    '<div id="linkadd">'+
-					   '<img src="../../images/sns/'+ data.path +'" alt="">'+
+					   '<img src="../../../files/board/'+ data.path +'" alt="">'+
 					'</div>'+
 				'</div>'+
 				'<div class="photo-container-box">'+

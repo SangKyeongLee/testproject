@@ -8,4 +8,5 @@ public interface MyLikeDao {
     List<Board> selectList(int no);
     Board likeCount(int no);
     Board commentCount(int no);
+    int totalLikeCount(int no);
 }

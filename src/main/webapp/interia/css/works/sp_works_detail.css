@@ -442,11 +442,13 @@ h5 {cursor: pointer;}
     height: 19px;
 }
 .sp-right-cont {
+    width: 100px;
+    height: 100px;
     overflow: hidden;
     float: right;
 }
 .sp-rev-img { /* img 태그 - bootstrap */
-    width: 100px; height: 100px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -631,4 +633,18 @@ ol > li {font-size: 0.8125em;}
 
 .sp-riviews-box {
     cursor: pointer;
+}
+
+
+.ib-pd-detailImg {
+    padding: 2em 0 2em 0;
+}
+
+.ib-pd-detailImg img {
+    width: 100%;
+}
+
+.sp-rev-box {
+    border-bottom: 1px solid #ccc;
+    margin-top: 1em; 
 }

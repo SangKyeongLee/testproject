@@ -8,4 +8,5 @@ public interface MyLikeService {
     List<Board> myLikeList(int no);
     Board likeCount(int no);
     Board commentCount(int no);
+    int mpLikeCnt(int userNo);
 }

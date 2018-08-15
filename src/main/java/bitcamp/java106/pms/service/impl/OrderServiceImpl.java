@@ -55,12 +55,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order adGet(int no) {
+    public Object adGet(int no) {
         return orderDao.adGet(no);
     }
 
     @Override
-    public Object adList(int no) {
+    public List<Object> adList(int no) {
         return orderDao.adList(no); 
     }
     

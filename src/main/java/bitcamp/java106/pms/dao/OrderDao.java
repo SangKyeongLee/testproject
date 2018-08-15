@@ -20,8 +20,8 @@ public interface OrderDao {
     //관리자 전용
     int adUpdate(Order order);
     
-    Order adGet(int no);
+    Object adGet(int no);
 
-    Object adList(int no);
+    List<Object> adList(int no);
 
 }

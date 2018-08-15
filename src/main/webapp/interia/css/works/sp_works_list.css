@@ -61,8 +61,8 @@ option {
     display:flex;
     justify-content: flex-end;
     align-content: center;
-    width: 30%;
-
+    width: 100%;
+    padding: 0.5em 0 0.5em 0;
 }
 .form-control {
     border-bottom-right-radius: 0;
@@ -156,3 +156,6 @@ option {
     
 
 
+#more_sbtn {
+    display: none;
+}

@@ -51,6 +51,7 @@
     
     where wp.mipt = "y" <!-- 메인 사진일 경우 -->
     order by w.WNO desc
+    limit #{startNo}, #{pageNo}
   </select>
   
   <!-- 제품 등록 -->

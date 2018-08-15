@@ -19,24 +19,24 @@ function resize(obj) {
 
 
 // tag
-$('#demo1').tagEditor({
+$('#tname').tagEditor({
     placeholder: '태그 입력',
     forceLowercase: false,
 });
 
 
-
+// fileupload
 $('#fileupload-post').fileupload({
-	  url: '../../../json/board/upload1',
+	  url: '../../../json/board/add',
 	  dataType: 'json',
 	  sequentialUploads: true,
 	  singleFileUploads: false,
 	  autoUpload: false,
 	  disableImageResize: /Android(?!.*Chrome)|Opera/
 	        .test(window.navigator && navigator.userAgent),
-//	  previewMaxWidth: 440,
-//	  previewMaxHeight: 350,
-	  //previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
+	  previewMaxWidth: 440,
+	  previewMaxHeight: 350,
+	  previewCrop: true,      // 미리보기 이미지를 출력할 때 원본에서 지정된 크기로 자르기
 	  processalways: function(e, data) {
 	      console.log('fileuploadprocessalways()...');
 	      console.log(data.files);
@@ -46,26 +46,28 @@ $('#fileupload-post').fileupload({
 			    if (data.files[i].preview.toDataURL) {
 			      $("<img>")
 			      .attr('src', data.files[i].preview.toDataURL())
-			      .css({'width': '440px','height': '350px'}).appendTo(imagesDiv);
+			      .css({'width': '438px','height': '349px','border-radius': '3px'}).appendTo(imagesDiv);
 			      $(".mp-inner-icon").css("display","none");
-			      $(".mp-inner-icon>p").text("사진 바꾸기");
+			      $('<div class="mp-postwrite-cover">' +
+	                  '<div class="mp-inner-icon">' +
+	                      '<i class="far fa-image"></i>' +
+	                      '<p>사진 업로드</p>' +
+	                  '</div>' +
+                  '</div>').appendTo(".mp-select-pic");
 			    }
 			  } catch (err) {}
 	      };
 	    
 	      $('.mp-post-btn').click(function() {
-	    	  var tags = $('#demo1').tagEditor('getTags')[0].tags;
+	    	  var tags = $('#tname').tagEditor('getTags')[0].tags;
 	    	  console.log(tags);
 	    	  data.formData = {
 	    			  boardhashtag: tags,
-	    			  content: $(".form-control").var(),
+	    			  content: $("#boctt").val(),
 	    	  };
 	          data.submit();
+	          console.log(data);
 	      });
-	  },
-	  done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
-	    console.log('done()...');
-	    console.log(data.result);
 	  }
 });
 

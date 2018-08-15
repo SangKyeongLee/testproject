@@ -3,8 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 
-  namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
+<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
      따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
      유지보수할 때 알아보기 쉽다.
      단순히 알아보기 쉬울 뿐만 아니라 
@@ -22,6 +21,7 @@
     <result column="nknm" property="nickname"/>
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
+    <result column="cmtCnt" property="commtCnt"/>
     
     <result column="pox" property="poX"/>
     <result column="poy" property="poY"/>
@@ -124,6 +124,33 @@
   <select id="selectLinkOne" resultMap="BoardMap">
     SELECT * FROM `INTR_BRLK` ORDER BY LNO DESC LIMIT 1
   </select>
+  
+   <insert id="insert" parameterType="Board">
+    INSERT INTO `INTR_BOARD`
+    (`MEMNO`, `BRTDT`, `BOCTT`, `PATH`) 
+    VALUES (#{memno},now(),#{content},#{path});
+  </insert>
+  
+  <select id="selectRecent" resultMap="BoardMap">
+    select bno from INTR_BOARD order by bno desc limit 1 
+  </select>
+  
+  <select id="selectMyBoard" resultMap="BoardMap">
+    SELECT b.BNO, COUNT(l.LNO) cnt, COUNT(c.CNO) cmtCnt, b.PATH
+    FROM INTR_BOARD b 
+        LEFT OUTER JOIN INTR_LKMB l 
+        ON b.BNO = l.BNO 
+        LEFT OUTER JOIN INTR_BCMMT c 
+        ON b.BNO = c.BNO 
+    WHERE b.memno = #{bno}
+    GROUP BY b.BNO
+    ORDER BY b.BNO DESC
+  </select>
+  
+  <select id="totalBoardCount" parameterType="int" resultType="int">
+    SELECT COUNT(*) FROM INTR_BOARD WHERE MEMNO = #{no}
+  </select>
+  
 </mapper>
 
 

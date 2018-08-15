@@ -40,8 +40,11 @@ public class WorksServiceImpl implements WorksService {
     }
     
     @Override
-    public List<Works> list() {
-        return worksDao.selectList();
+    public List<Works> list(int startNo, int pageNo) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startNo", (startNo - 1) * pageNo);
+        params.put("pageNo", pageNo);
+        return worksDao.selectList(params);
     }
     
     @Override

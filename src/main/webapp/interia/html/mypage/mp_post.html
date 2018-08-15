@@ -142,86 +142,25 @@
     <div class="ib-container mp_side">
         <div class="ib-conbox">
         <div class="ib-mp-titl">
-            <p>게시물 <span class="ib-mp-pnum">1<span></p>
+            <p>게시물 </p>
         </div>
 
         <section>
             <div class="ib-mp-pgroup">
-
                 <a data-toggle="modal" data-target="#postWriteModal">
                     <div class="ib-mp-postadd">
                         <div><i class="fas fa-plus-circle"></i>&nbsp;게시물 추가</div>
                     </div>
                 </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
-                <a href="#" title="">
-                    <div class="ib-mp-post">
-                        <img src="../../images/mypage/sero.jpg" alt="게시물">
-                        <div class="ib-mp-icons">
-                            <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>
-                        </div><!--아이콘-->
-                    </div>  
-                </a>
-
             </div>
         </section><!--게시물-->
+            
+            
         </div>
         <!-- scrollerbar_underMenu -->
         <section id="mp_underBar"></section>
     </div>
 
-    
     <!-- postwrite modal -->
     <div class="modal fade" id="postWriteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -232,14 +171,17 @@
                         <div class="mp-inner-icon">
                             <i class="far fa-image"></i>
                             <p>사진 업로드</p>
-                            <input id="fileupload-post" type="file">
+                            <input 
+                            id="fileupload-post" type="file" name="files" >
                         </div>
                     </div>
                     <div>
-                        <textarea class="form-control" placeholder="이미지에 대한 설명을 입력해 주세요." style="border: none; box-shadow: none;" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                        <textarea 
+                        id="boctt" class="form-control" placeholder="이미지에 대한 설명을 입력해 주세요." style="border: none; box-shadow: none;" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                     </div>
                     <div>
-                        <textarea id="demo1"></textarea>
+                        <textarea 
+                        id="tname"></textarea>
                         <!-- <div id="mp-post-hashtag" class="mp-post-put" placeholder="태그입력" contenteditable="true" data-text="#"></div> -->
                     </div>
                     <!-- <input type="hidden" id="mp-hashtag-input" name="mp-post-hash" value="" onkeyup="onChange()"> -->
@@ -255,6 +197,7 @@
     <footer id="footer">
     
     </footer>
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
 	<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
@@ -263,7 +206,7 @@
 	<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
-	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/cropit/dist/jquery.cropit.js"></script>
     <script src="../../js/jquery.caret.min.js"></script>
@@ -275,5 +218,6 @@
     <script src="../../js/mp_banner.js"></script>
     <script src="../../js/mp_profile.js"></script>
     <script src="../../js/mp_postwrite.js"></script>
+    <script src="../../js/mp_post.js"></script>
 </body>
 </html>
