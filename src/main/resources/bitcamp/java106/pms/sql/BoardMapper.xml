@@ -3,7 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
+<!-- 
+  namespace 이름은 SQL을 찾을 때 사용하는 그룹명이다.
      따라서 SQL 문을 사용하는 DAO 클래스 이름과 같게 하면
      유지보수할 때 알아보기 쉽다.
      단순히 알아보기 쉬울 뿐만 아니라 

@@ -1,1 +1,1 @@
-var serverRoot = "http://interia.java106.com:8888/interior";
+var serverRoot = "http://localhost:8888/testproject";
