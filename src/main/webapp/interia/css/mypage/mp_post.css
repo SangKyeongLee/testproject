@@ -86,3 +86,22 @@
 .ib-mp-icons i{
 	font-size: 1.3125em;
 }
+
+/**** 등록확인 모달 ****/
+.ib-mp-regist {
+    left: 50%; 
+    transform:translateX(-50%);
+	position: absolute;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 9999999;
+    background: #343855;
+    align-content: center;
+    padding: 1em 15em;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+    display: none;
+    transition: all .5s ease;
+}

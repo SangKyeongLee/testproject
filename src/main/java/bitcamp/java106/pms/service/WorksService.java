@@ -20,10 +20,12 @@ public interface WorksService {
     Object getWorksPhotoOption(int worksNumber); // 작품, 옵션, 사진 가져오는 메소드
     List<Works> adminList(int no);
     Object getCurrentState(int no); 
-    int addBuscket(int worksNumber, int memberNumber, int optionNumber); // 여기는 장바구니 담는 용도
+    int addBuscket(int worksNumber, int no, String optionValue);; // 여기는 장바구니 담는 용도
     List<Object> getBuscketList(int buyerNumber); // 여기는 해당 공방 안에 있는 각 장바구니의 제품을 출력
     List<Object> viewBuscketWorkshopList(int buyerNumber); // 장바구니안에 있는 공방명 출력
     Works adGet(int no);
+    int buscketDelete(int buyerNumber, int worksNumber);
+    int buscketAllDelete(int buyerNumber);
 }
 
 //ver 53 - 인터페이스 추가

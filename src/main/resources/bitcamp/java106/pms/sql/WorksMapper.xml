@@ -156,6 +156,20 @@ SET MEMNO= #{workshopNumber},
     inner join INTR_WPHO wp on wor.wno = wp.wno
   </select>
 
+  <!-- 장바구니 선택 제거 -->
+  <delete id="buscketRemove" parameterType="int">
+    DELETE FROM `INTR_SPBK` WHERE memno=#{buyerNumber} and wno=#{worksNumber};
+  </delete>
+  
+  <!-- 장바구니 회원별로 전체 제거 -->
+  <delete id="buscketAllRemove" parameterType="int">
+    DELETE FROM `INTR_SPBK` WHERE memno=#{buyerNumber};
+  </delete>
+  
+  <!-- 재고 수량 조정 -->
+  <update id="capacityUpdate" parameterType="Map">
+    UPDATE INTR_WORKS SET ALSTK = (ALSTK - #{capacity}) WHERE WNO= #{worksNumber};
+  </update>
 </mapper>
 
 

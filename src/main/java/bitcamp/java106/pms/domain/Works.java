@@ -3,6 +3,7 @@ package bitcamp.java106.pms.domain;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -32,6 +33,18 @@ public class Works implements Serializable {
     
     
     
+    @Override
+    public String toString() {
+        return "Works [worksNumber=" + worksNumber + ", workshopNumber="
+                + workshopNumber + ", title=" + title + ", price=" + price
+                + ", registeredDate=" + registeredDate + ", modifiedDate="
+                + modifiedDate + ", capacity=" + capacity + ", salesStatus="
+                + salesStatus + ", productDetail=" + productDetail
+                + ", deliveryPrice=" + deliveryPrice + ", photo=" + photo
+                + ", option=" + option + ", worksCategory="
+                + Arrays.toString(worksCategory) + ", worksPhotos="
+                + worksPhotos + ", worksTags=" + worksTags + "]";
+    }
     public ArrayList<WorksPhoto> getWorksPhoto() {
         return worksPhotos;
     }

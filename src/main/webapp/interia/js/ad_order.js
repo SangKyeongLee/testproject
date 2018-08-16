@@ -4,67 +4,67 @@ var adOrderData = $('.ad-order-data');
 var adOrderWrapperTemplateSrc = $('#ad-order-template').html();
 var adOrderWrapperTemplate = Handlebars.compile(adOrderWrapperTemplateSrc);
 
-	/* list */
-	$.getJSON(serverRoot + "/json/order/adList", (data) => {
-		console.log(data);
-		for (var item of data) {
-			var orderDate = new Date(item.odate); 
-			var date = new Date(orderDate); 
+/* list */
+$.getJSON(serverRoot + "/json/order/adList", (data) => {
+	console.log(data);
+	for (var item of data) {
+		var orderDate = new Date(item.odate); 
+		var date = new Date(orderDate); 
+		var year = date.getFullYear();
+		var month =(1+date.getMonth());
+		month = month >= 10 ? month:'0' + month;
+		var day = date.getDate();
+		day = day >= 10 ? day:'0' + day;
+		
+		item.oyear = year;
+		item.omonth = month;
+		item.oday = day;
+		
+		var claimDate = item.cldte;
+		if( !isNaN(claimDate)) {
+			var cdate = new Date(claimDate);
+			var date = new Date(cdate);
 			var year = date.getFullYear();
 			var month =(1+date.getMonth());
 			month = month >= 10 ? month:'0' + month;
 			var day = date.getDate();
 			day = day >= 10 ? day:'0' + day;
 			
-			item.oyear = year;
-			item.omonth = month;
-			item.oday = day;
-			
-			var claimDate = item.cldte;
-			if( !isNaN(claimDate)) {
-				var cdate = new Date(claimDate);
-				var date = new Date(cdate);
-				var year = date.getFullYear();
-				var month =(1+date.getMonth());
-				month = month >= 10 ? month:'0' + month;
-				var day = date.getDate();
-				day = day >= 10 ? day:'0' + day;
-				
-				item.cyear = year;
-				item.cmonth= month;
-				item.cday= day;
-				}
-			else {
-				item.cyear="";
-				item.cmonth="";
-				item.cday="";
+			item.cyear = year;
+			item.cmonth= month;
+			item.cday= day;
+			}
+		else {
+			item.cyear="";
+			item.cmonth="";
+			item.cday="";
 			}
 		}
 		$(adOrderWrapperTemplate({list: data})).appendTo(adOrderData);
 		});
 
 adOrderData.on('click', '.ad-order-update', function(e) {
-	var no = $(e.target).attr('data-wono');
-	$.getJSON(serverRoot + "/json/order/adView/" + no, (data) => {
-		console.log(data);
-		if(data.baddr !== undefined && data.daddr !== undefined && data.zcode !== undefined) {
-			var baddr = data.baddr;
-			var daddr = data.baddr;
-			var zcode = data.baddr;
-			var addr = '(' + zcode +') ' + baddr + ' ' + daddr;
+var no = $(e.target).attr('data-wono');
+$.getJSON(serverRoot + "/json/order/adView/" + no, (data) => {
+	console.log(data);
+	if(data.baddr !== undefined && data.daddr !== undefined && data.zcode !== undefined) {
+		var baddr = data.baddr;
+		var daddr = data.baddr;
+		var zcode = data.baddr;
+		var addr = '(' + zcode +') ' + baddr + ' ' + daddr;
+	}
+	
+	var deliveryDate = data.deldt;
+	var date;
+	if( !isNaN(deliveryDate)) {
+		var ddate = new Date(deliveryDate);
+		var date = getFormatDate(ddate);
 		}
-		
-		var deliveryDate = data.deldt;
-		var date;
-		if( !isNaN(deliveryDate)) {
-			var ddate = new Date(deliveryDate);
-			var date = getFormatDate(ddate);
-			}
 
-		
-		$(odno).val(data.odno);
-		$(wono).val(data.wono);
-		$(odstt).val(data.odstt).prop("selected", true);
+	
+	$(odno).val(data.odno);
+	$(wono).val(data.wono);
+	$(odstt).val(data.odstt).prop("selected", true);
 		$(ostor).val(data.ostor);
 		$(wtitl).val(data.wtitl);
 		$(crqst).val(data.crqst);
@@ -88,31 +88,33 @@ function getFormatDate(date) {
 	var year = date.getFullYear();
 	var month =(1+date.getMonth());
 	month = month >= 10 ? month:'0' + month;
-	var day = date.getDate();
-	day = day >= 10 ? day:'0' + day;
-	return  year + '-' + month + '-' + day;
+var day = date.getDate();
+day = day >= 10 ? day:'0' + day;
+return  year + '-' + month + '-' + day;
 
 }
 
 
 $('#updBtn').click(function () {
-	var param = {
-			no: $(odno).val(),
-			orderState: $('#odstt option:selected').val(),
-			deliDate: $(deldt).val(),
-			curir: $(curir).val(),
-			ivno: $(ivno).val()
-	}
-	
-    $.ajax({
-    	url: serverRoot + "/json/order/adUpdate", 
-    	type:"post",
+var param = {
+		no: $(odno).val(),
+		orderState: $('#odstt option:selected').val(),
+		deliDate: $(deldt).val(),
+		curir: $(curir).val(),
+		ivno: $(ivno).val()
+}
+
+$.ajax({
+	url: serverRoot + "/json/order/adUpdate", 
+	type:"post",
     	data: param,
     	success: function(data){
     		console.log(data);
         }
 });
 });
+
+
 
 
 /*

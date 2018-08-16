@@ -147,3 +147,13 @@ $(function() {
 	});
 	
 });
+
+
+// 사용자 정보 가져오기(배너,프로필,아이디)
+$getJSON(serverRoot + "/json/member/memberInfo", (data) => {
+	console.log(data);
+
+}
+
+
+

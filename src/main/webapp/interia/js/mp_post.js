@@ -1,6 +1,5 @@
 // 게시물 개수
 $.getJSON(serverRoot + "/json/board/mpBoardCnt", (data) => {
-	console.log(data);
 	$('<span class="ib-mp-pnum">' + data + '<span>').appendTo(".ib-mp-titl > p");
 });
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import bitcamp.java106.pms.dao.OdnwkDao;
 import bitcamp.java106.pms.dao.RvphoDao;
+import bitcamp.java106.pms.dao.WorksDao;
 import bitcamp.java106.pms.domain.Odnwk;
 import bitcamp.java106.pms.domain.Rvpho;
 import bitcamp.java106.pms.service.OdnwkService;
@@ -17,10 +18,13 @@ public class OdnwkServiceImpl implements OdnwkService {
     
     OdnwkDao odnwkDao;
     RvphoDao rvphoDao;
+    WorksDao worksDao;
     
-    public OdnwkServiceImpl(OdnwkDao odnwkDao, RvphoDao rvphoDao) {
+    public OdnwkServiceImpl(OdnwkDao odnwkDao, RvphoDao rvphoDao,
+            WorksDao worksDao) {
         this.odnwkDao = odnwkDao;
         this.rvphoDao = rvphoDao;
+        this.worksDao = worksDao;
     }
     
     @Override
@@ -70,6 +74,17 @@ public class OdnwkServiceImpl implements OdnwkService {
     
     @Override
     public int add(Odnwk odnwk) {
+        System.out.println("주문 로더 실행");
+        // 먼저 재고 수량을 조절한다.
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("worksNumber", odnwk.getWorksNo());
+        
+        params.put("capacity", odnwk.getOderStore());
+        System.out.println(params.get("worksNumber"));
+        System.out.println(params.get("capacity"));
+        worksDao.capacityUpdate(params);
+        System.out.println("주문 로더 성공");
+        // 이후 추가
         return odnwkDao.insert(odnwk);
     }
     

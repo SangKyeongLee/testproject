@@ -1,6 +1,7 @@
 package bitcamp.java106.pms.web.json;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,18 +33,25 @@ public class BoardController {
     }
     
     @RequestMapping("add")
-    public void add(Board board, MultipartFile[] files, HttpSession session) {
+    public Object add(Board board, MultipartFile[] files, HttpSession session) {
         Member member = (Member)session.getAttribute("loginUser");
         int userNo = member.getNo();
         
         board.setMemno(userNo);
         
+        HashMap<String,Object> jsonData = new HashMap<>();
+        
+        MultipartFile file = files[0];
+        
         String filesDir = sc.getRealPath("/files/board");
         String filename = UUID.randomUUID().toString();
+        jsonData.put("filename", filename);
+        jsonData.put("filesize", file.getSize());
+        jsonData.put("originname", file.getOriginalFilename());
         
         try {
             File path = new File(filesDir + "/" + filename);
-            files[0].transferTo(path);
+            file.transferTo(path);
             System.out.println(path);
             
             Thumbnails.of(path)
@@ -68,6 +76,9 @@ public class BoardController {
         board.setPath(filename);
         
         boardService.add(board);
+        
+        jsonData.put("status", "success");
+        return jsonData;
     }
     
     @RequestMapping("mpboard")

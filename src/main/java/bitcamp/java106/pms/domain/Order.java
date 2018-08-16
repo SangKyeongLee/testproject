@@ -32,12 +32,21 @@ public class Order implements Serializable {
     private String claimContext;//클레임 사유
     private String proState;//처리상태
     private String proContext;//처리사유
+    
+    private String[] chkArr; // 주문리스트에서 체크박스 선택
+    
     //데이터 컨트롤
     private Odnwk odnwk;
     private Works works;
     
     
     
+    public String[] getChkArr() {
+        return chkArr;
+    }
+    public void setChkArr(String[] chkArr) {
+        this.chkArr = chkArr;
+    }
     public String getReceiver() {
         return receiver;
     }
@@ -52,11 +61,16 @@ public class Order implements Serializable {
     }
     @Override
     public String toString() {
-        return "Order [no=" + no + ", memberNo=" + memberNo + ", methodPay=" + methodPay + ", devCost=" + devCost
-                + ", totalCost=" + totalCost + ", orderDate=" + orderDate + ", orderState=" + orderState + ", devMemo="
-                + devMemo + ", curir=" + curir + ", post=" + post + ", baseAddr=" + baseAddr + ", detailAddr="
-                + detailAddr + ", ivno=" + ivno + ", claimDate=" + claimDate + ", claimRequest=" + claimRequest
-                + ", claimContext=" + claimContext + ", proState=" + proState + ", proContext=" + proContext + "]";
+        return "Order [no=" + no + ", memberNo=" + memberNo + ", methodPay="
+                + methodPay + ", devCost=" + devCost + ", totalCost="
+                + totalCost + ", orderDate=" + orderDate + ", orderState="
+                + orderState + ", receiver=" + receiver + ", devMemo=" + devMemo
+                + ", curir=" + curir + ", deliDate=" + deliDate + ", post="
+                + post + ", baseAddr=" + baseAddr + ", detailAddr=" + detailAddr
+                + ", ivno=" + ivno + ", claimDate=" + claimDate
+                + ", claimRequest=" + claimRequest + ", claimContext="
+                + claimContext + ", proState=" + proState + ", proContext="
+                + proContext + ", odnwk=" + odnwk + ", works=" + works + "]";
     }
     
     
@@ -181,6 +195,7 @@ public class Order implements Serializable {
     public void setProContext(String proContext) {
         this.proContext = proContext;
     }
+
     
     
 }

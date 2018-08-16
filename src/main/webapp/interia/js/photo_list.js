@@ -35,7 +35,7 @@ $.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
 					var divs = $('<div class="grid-item">' +
 							'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
 							'<div class="grid-photo">'+
-							'<img  src="../../../files/board/'+ item.path +'_1000x1000.jpg" alt="">'+
+							'<img  src="../../images/sns/'+ item.path +'" alt="">'+
 							'</div>'+
 							'</a>'+
 							'<div class="grid-photo-cont">'+
@@ -58,7 +58,7 @@ $.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
 			var divs = $('<div class="grid-item">' +
 					'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
 					'<div class="grid-photo">'+
-					'<img  src="../../../files/board/'+ item.path +'_1000x1000.jpg" alt="">'+
+					'<img  src="../../images/sns/'+ item.path +'" alt="">'+
 					'</div>'+
 					'</a>'+
 					'<div class="grid-photo-cont">'+
@@ -106,7 +106,7 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 					var divs = $('<div class="grid-item">' +
 							'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
 							'<div class="grid-photo">'+
-							'<img  src="../../../files/board/'+ item.path +'_1000x1000.jpg" alt="">'+
+							'<img  src="../../images/sns/'+ item.path +'" alt="">'+
 							'</div>'+
 							'</a>'+
 							'<div class="grid-photo-cont">'+
@@ -129,7 +129,7 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 			var divs = $('<div class="grid-item">' +
 					'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
 					'<div class="grid-photo">'+
-					'<img  src="../../../files/board/'+ item.path +'_1000x1000.jpg" alt="">'+
+					'<img  src="../../images/sns/'+ item.path +'" alt="">'+
 					'</div>'+
 					'</a>'+
 					'<div class="grid-photo-cont">'+

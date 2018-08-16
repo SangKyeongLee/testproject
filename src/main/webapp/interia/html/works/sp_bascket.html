@@ -57,17 +57,19 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
 		var fixDeliveryPrice = 0; // 고정 배송비
 		if (deliveryPrice === "y" || deliveryPrice === "Y") {
 			allDeliveryPrice += 2500;
-			$("#temp-all-delivery-price" + workshopNumber).val(allDeliveryPrice);
-			
-			if (allDeliveryPrice > 0) {
+			//$("#temp-all-delivery-price" + workshopNumber).val(allDeliveryPrice);
+			$("#all-delivery-price" + workshopNumber).text(allDeliveryPrice);
+            $("#all-delivery-price" + workshopNumber).val(allDeliveryPrice);
+		/* 	if (allDeliveryPrice > 0) {
 				fixDeliveryPrice = 2500;
 				$("#all-delivery-price" + workshopNumber).text(fixDeliveryPrice);
 				$("#all-delivery-price" + workshopNumber).val(fixDeliveryPrice);
-			}
+			} */
 		} 
 		
 		// 3) 총 결제 금액
-		var allPrice = allProductPrice + fixDeliveryPrice;
+		//var allPrice = allProductPrice + fixDeliveryPrice;
+		var allPrice = allProductPrice + allDeliveryPrice;
         $("#all-order-price" + workshopNumber).text(allPrice);
         $("#all-order-price" + workshopNumber).val(allPrice);
         
@@ -81,7 +83,8 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
 		
         // 5) 최종 값
         workshopAllProductPrice += allProductPrice;
-        workshopDeliveryPrice += fixDeliveryPrice;
+        //workshopDeliveryPrice += fixDeliveryPrice;
+        workshopDeliveryPrice += allDeliveryPrice;
         workshopAllOrderPrice += allPrice;
         $("#all-product-price").text(workshopAllProductPrice);
         $("#all-delivery-price").text(workshopDeliveryPrice);
@@ -93,21 +96,24 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
         $("#all-product-price" + workshopNumber).text(allProductPrice);
         
         // 2) 배송비 여부 -> 여기서 배송비가 존재한 제품을 취소하면, 다시 원위치로 
-        var allDeliveryPrice = parseInt($("#temp-all-delivery-price" + workshopNumber).val());
+        //var allDeliveryPrice = parseInt($("#temp-all-delivery-price" + workshopNumber).val());
+        var allDeliveryPrice = parseInt($("#all-delivery-price" + workshopNumber).val());
         var fixDeliveryPrice = 0; // 고정 배송비
         var tempDeliveryPrice = 0; // 이건 최종적으로 합한 배송비 값을 넣기위한 용도
         
         
         if (deliveryPrice === "y" || deliveryPrice === "Y") {
-            allDeliveryPrice -= 2500;
-            $("#temp-all-delivery-price" + workshopNumber).val(allDeliveryPrice);
-            
-            // 각 공방별로 제품별 각 배송비가 한개라도 존재 하지 않을 시
+        	tempDeliveryPrice = allDeliveryPrice; // 배송비 관련해서
+        	allDeliveryPrice -= 2500;
+            //$("#temp-all-delivery-price" + workshopNumber).val(allDeliveryPrice);
+            $("#all-delivery-price" + workshopNumber).text(allDeliveryPrice);
+            $("#all-delivery-price" + workshopNumber).val(allDeliveryPrice);
+           /*  // 각 공방별로 제품별 각 배송비가 한개라도 존재 하지 않을 시
             if(allDeliveryPrice == 0) {
             	tempDeliveryPrice = 2500;
                 $("#all-delivery-price" + workshopNumber).text(fixDeliveryPrice);
                 $("#all-delivery-price" + workshopNumber).val(fixDeliveryPrice);
-            }
+            } */
         } 
          
          // 3) 총 결제 금액
@@ -127,9 +133,10 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
          // 기존의 판매값을 전체상품금액을 넣는다.
          // 기존의 배달비용은 임시로 지정하여 2500원이 0원이 될시를 대비하여 따로 변수 선언해서 사용
          // 기존의 총 가격  = 기존 판매값 + 기존 배달배용
-        workshopAllProductPrice -= selectProductPrice;
-        workshopDeliveryPrice -= tempDeliveryPrice;
-        workshopAllOrderPrice -= (selectProductPrice + tempDeliveryPrice);
+         workshopAllProductPrice -= selectProductPrice;
+         workshopDeliveryPrice -= tempDeliveryPrice;
+         //workshopAllOrderPrice -= (selectProductPrice + tempDeliveryPrice);
+         workshopAllOrderPrice -= (selectProductPrice + tempDeliveryPrice);
          $("#all-product-price").text(workshopAllProductPrice);
          $("#all-delivery-price").text(workshopDeliveryPrice);
          $("#all-order-price").text(workshopAllOrderPrice);
@@ -157,8 +164,7 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
 	<!-- sp-sb-header1 -->
 	<div class="sp-sb-option1">
 		<div class="sp-sb-option2">
-			<a href="#">전체 선택</a> &ensp;|&ensp; <a href="#">선택 삭제</a>
-		</div>
+			<a href="#">전체 선택</a> &ensp;|&ensp; <a id="delete-bascket" href="">선택 삭제</a>
 	</div>
 
 
@@ -184,7 +190,7 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
 					<p><span id="all-order-price">0</span> 원</p>
 				</div>
 				<div id="submit-purchase" class="sp-sb-payment">
-					<p>결제하기</p>
+					<p>전체 장바구니 결제하기</p>
 				</div>
 			</div>
 		</div>
@@ -221,7 +227,7 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
                 {{#each product}}
                 <div class="sp-sb-sproduct ">
                     <div class="sp-sb-check">
-                        <input class="select-checkbox" type="checkbox" onClick="selectPurchaseCheckbox(this, {{worksNumber}}, {{workshopNumber}}, '{{deliveryPrice}}', {{price}}, {{capacity}});" style="width: 20px; height: 20px;">
+                        <input id="select-checkbox{{worksNumber}}" type="checkbox" onClick="selectPurchaseCheckbox(this, {{worksNumber}}, {{workshopNumber}}, '{{deliveryPrice}}', {{price}}, {{capacity}});" style="width: 20px; height: 20px;">
                     </div>
                     <div class="sp-sb-img">
                         <div class="sp-sb-putimg">
@@ -240,7 +246,7 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
                         </div>
                         <div class="sp-sb-info-delivery">
                             {{!-- 배송비 여부 --}}
-                            <p>{{resultDelivery}}</p>
+                            <p id="delivery{{worksNumber}}">{{resultDelivery}}</p>
                         </div>
                     </div>
                     <div class="sp-sb-qty">

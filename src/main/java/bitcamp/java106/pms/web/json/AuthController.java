@@ -73,7 +73,7 @@ public class AuthController {
                 member.setName((String)userInfo.get("name"));
                 member.setPassword("1111");
                 member.setNickname((String)userInfo.get("name"));
-                member.setPhoneNumber("-");
+                member.setPhoneNumber("01011111111");
                 memberService.add(member);
             }
             
@@ -117,13 +117,13 @@ public class AuthController {
             // 이메일로 회원 정보를 찾는다.
             Member member = memberService.get(no);
             if (member == null) {
-                // 회원 정보가 없으면 페이스북 회원 정보를 등록한다.
+                // 회원 정보가 없으면 카카오톡 회원 정보를 등록한다.
                 member = new Member();
                 member.setId((String)koResponse.get("kaccount_email"));
                 member.setName((String)((Map)koResponse.get("properties")).get("nickname"));
                 member.setPassword("1111");
                 member.setNickname((String)((Map)koResponse.get("properties")).get("nickname"));
-                member.setPhoneNumber("-");
+                member.setPhoneNumber("01011111111");
                 memberService.add(member);
             }
 

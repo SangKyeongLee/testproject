@@ -64,7 +64,7 @@ where wo.MEMNO =#{value}
           resultType="Map" 
           parameterType="int">
 select ord.odno, odn.wono, ord.odstt, mem.name, odn.ostor, wo.wtitl, odn.crqst, mem.id, 
-	wo.price * odn.ostor as ptPrice, wk.abvl, ord.deldt, ord.curir, ord.ivno, 
+	wo.price * odn.ostor as ptPrice, wk.abvl, odn.cndtl, ord.deldt, ord.curir, ord.ivno, 
 	ord.reicv, ord.baddr, ord.daddr, ord.zcode, ord.dlmemo 
 from INTR_ORDER as ord 
 inner JOIN INTR_MEMBER as mem 
@@ -79,10 +79,167 @@ where odn.wono = #{value}
   </select>
 
   <update id="adUpdate" parameterType="Order">
-    update `INTR_ORDER` 
+    update INTR_ORDER 
    	set curir= #{curir}, ivno= #{ivno}, deldt= #{deliDate}, odstt=#{orderState}
    	WHERE odno = #{no}
   </update>
+
+ <select id="returnList" 
+          resultType="Map" 
+          parameterType="int">
+SELECT odn.wono, odn.odno, ord.odate, ord.odstt, odn.prstt, odn.cldte, wo.wtitl, mem.nknm
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{value} and odn.CRQST ='교환' OR odn.CRQST ='환불'
+</select>
+
+ <select id="cancelList" 
+          resultType="Map" 
+          parameterType="int">
+SELECT odn.wono, odn.odno, ord.odate, ord.odstt, odn.prstt, odn.cldte, wo.wtitl, mem.nknm
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{value} and odn.CRQST ='취소'
+</select>
+
+<select id="getReturnState" 
+          resultType="Map" 
+          parameterType="int">
+select 
+SUM(if(odn.prstt='환불신청',1,0))+SUM(if(odn.prstt='교환신청',1,0)) as reqClaim,
+SUM(if(odn.prstt='환불완료',1,0))+SUM(if(odn.prstt='교환완료',1,0)) as finClaim,
+SUM(if(odn.prstt='환불철회',1,0))+SUM(if(odn.prstt='교환철회',1,0)) as rejClaim
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{value}
+  </select>
+  
+<select id="getCancelState" 
+          resultType="Map" 
+          parameterType="int">
+select 
+SUM(if(odn.prstt='취소신청',1,0)) as reqCancel,
+SUM(if(odn.prstt='취소완료',1,0)) as finCancel,
+SUM(if(odn.prstt='취소철회',1,0)) as rejCancel
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{value}
+  </select>
+  
+  <select id="selectStatus" parameterType="int" resultType="String">
+    select crqst 
+    from INTR_ODNWK 
+    where wono=#{value}
+  </select>
+  
+  <update id="finClaim" parameterType="map">
+    update INTR_ODNWK 
+   	set prstt= #{prstt}
+   	WHERE wono = #{wono}
+  </update>
+  
+  <update id="finCancel" parameterType="map">
+    update INTR_ODNWK 
+   	set prstt= #{prstt}
+   	WHERE wono = #{wono}
+  </update>
+  
+    <update id="chngExchange" parameterType="map">
+    update INTR_ODNWK 
+   	set prstt= #{prstt}, crqst= #{crqst}
+   	WHERE wono = #{wono}
+  </update>
+  
+<update id="chngReturn" parameterType="map">
+  update INTR_ODNWK 
+ 	set prstt= #{prstt}, crqst= #{crqst}
+ 	WHERE wono = #{wono}
+</update>
+
+<select id="rejSelectList" 
+         resultType="Map" 
+         parameterType="map">
+SELECT odn.wono, odn.odno, wo.wtitl, wo.price * odn.ostor as ptPrice
+from INTR_ODNWK as odn
+inner join INTR_WORKS as wo
+on wo.wno = odn.WNO
+inner join INTR_ORDER as ord
+on ord.odno = odn.ODNO
+inner join INTR_MEMBER as mem
+on mem.MEMNO = ord.MEMNO
+where wo.MEMNO =#{memno} and ord.ODNO=#{odno}  and (odn.CRQST ='교환' OR odn.CRQST ='환불')
+</select>
+
+<update id="updateClaimReject" parameterType="map">
+  update INTR_ODNWK 
+ 	set prstt= #{prstt}, prdtl= #{prdtl}
+ 	WHERE wono = #{wono}
+</update>
+
+<select id="getOrderNo" 
+         resultType="int" 
+         parameterType="int">
+SELECT odno
+from INTR_ODNWK
+where wono = #{value}
+</select>
+
+<update id="updateCancelReject" parameterType="map">
+ 	UPDATE INTR_ODNWK odn
+INNER JOIN INTR_ORDER ord ON ord.odno = odn.odno
+SET ord.curir= #{curir},
+    ord.ivno = #{ivno},
+    ord.deldt = #{deldt},
+    ord.odstt = #{odstt},
+    odn.prstt = #{prstt}
+WHERE odn.wono= #{wono};
+ 	
+</update>
+
+  <select id="selectOne" parameterType="int" resultMap="OrderMap">
+    select *
+    from INTR_ORDER 
+    where odno=#{value}
+  </select>
+  
+  <insert id="insert" parameterType="Order"
+          useGeneratedKeys="true" keyColumn="odno" keyProperty="no">
+    insert into INTR_ORDER(odno, memno, mopay, dcost, tamnt,
+            odate, odstt, dlmemo, zcode, baddr, daddr) 
+    values(#{no}, #{memberNo}, #{methodPay}, #{devCost}, #{totalCost},
+            now(), #{orderState}, #{devMemo}, #{post}, #{baseAddr}, #{detailAddr})
+  </insert>
+  
+  <select id="selectList" resultMap="OrderMap" parameterType="int">
+        SELECT * FROM INTR_ORDER where no = #{value}
+  </select>
+  
+  <!-- 여기는 주문번호만 전체 조회하는 용도 
+       <물론 이건 insert 작업 전 주문번호가 중복 되지 않기를 방지를 하기 위해>
+  -->
+  <select id="selectOrderNumberList" resultType="int">
+        SELECT odno FROM INTR_ORDER
+  </select>
   
  <!--  <select id="selectList" 
           resultType="Map" 

@@ -34,17 +34,17 @@
 					<div class="ad-claim">
 						<div class="ad-claim-status ad-claim-request">
 							<p>
-								클레임요청&ensp;<span>N</span>&ensp;건
+								클레임요청&ensp;<span id="reqClaim"></span>&ensp;건
 							</p>
 						</div>
 						<div class="ad-claim-status ad-claim-finish">
 							<p>
-								클레임완료&ensp;<span>N</span>&ensp;건
+								클레임완료&ensp;<span id="finClaim"></span>&ensp;건
 							</p>
 						</div>
 						<div class="ad-claim-status ad-claim-withdraw">
 							<p>
-								클레임철회&ensp;<span>N</span>&ensp;건
+								클레임철회&ensp;<span id="rejClaim"></span>&ensp;건
 							</p>
 						</div>
 					</div>
@@ -120,11 +120,11 @@
 					<div class="ad-table-btn">
 						<span style="font-size: 18px; font-weight: bold;">클레임처리
 							&ensp;| &ensp;</span>
-						<button type="button" class="ad-btn ad-btn-color1">클레임완료</button>
-						<button type="button" class="ad-btn ad-btn-color2"
-							data-toggle="modal" data-target="#returnRejectModal">클레임철회</button>
-						<button type="button" class="ad-btn ad-btn-color1">교환으로변경</button>
-						<button type="button" class="ad-btn ad-btn-color1">환불로변경</button>
+						<button type="button" id="finClaimBtn" class="ad-btn ad-btn-color1">클레임완료</button>
+						<button type="button" id="rejClaimBtn" class="ad-btn ad-btn-color2"
+							data-toggle="modal" data-target="#claimRejectModal">클레임철회</button>
+						<button type="button" id="chngToExchangeBtn" class="ad-btn ad-btn-color1">교환으로변경</button>
+						<button type="button" id="chngToReturnBtn" class="ad-btn ad-btn-color1">환불로변경</button>
 					</div>
 					<table cellspacing="0" border="1" summary="명단관리  리스트"
 						class="frt_tbl_type"
@@ -132,26 +132,28 @@
 						<caption>명단관리 리스트</caption>
 						<colgroup>
 							<col width="30" />
-							<col width="*" />
-							<col width="*" />
-							<col width="*" />
-							<col width="*" />
-							<col width="*" />
-							<col width="*" />
-
+							<col width="100" />
+							<col width="100" />
+							<col width="100" />
+							<col width="100" />
+							<col width="100" />
+							<col width="100" />
+   							<col width="100" />
+   							<col width="100" />
+   							<col width="12"/>
 						</colgroup>
 						<thead>
 							<tr>
-								<th scope="col"><input type="checkbox" name="" id='chk_all'
+								<th scope="col"><input type="checkbox" name="chk_all" id='chk_all'
 									value="" onclick="" /><label for="chk_all">선택</label></th>
 								<th scope="cols">상품주문번호</th>
 								<th scope="cols">주문번호</th>
 								<th scope="cols">주문일시</th>
 								<th scope="cols">주문상태</th>
-								<th scope="cols">클레임</th>
+								<th scope="cols">클레임상태</th>
 								<th scope="cols">클레임요청일</th>
 								<th scope="cols">상품명</th>
-								<th scope="cols">구매자ID</th>
+								<th scope="cols">구매자 닉네임</th>
 							</tr>
 						</thead>
 					</table>
@@ -163,328 +165,17 @@
 							<caption>명단관리 리스트</caption>
 							<colgroup>
 								<col width="30" />
-								<col width="*" />
-								<col width="*" />
-								<col width="*" />
-								<col width="*" />
-								<col width="*" />
-								<col width="*" />
-
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
+								<col width="100" />
 							</colgroup>
-							<tbody>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num " data-toggle="modal"
-										data-target="#orderDetailModal"><a href="#">12345678</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-								</tr>
+							<tbody class="ad-return-data">
+															
 							</tbody>
 						</table>
 					</div>
@@ -492,14 +183,14 @@
 				</div>
 			</div>
 
-			<!-- returnRejectModal -->
-			<div class="modal fade" id="returnRejectModal" tabindex="-1"
-				role="dialog" aria-labelledby="returnRejectModalTitle"
+			<!-- claimRejectModal -->
+			<div class="modal fade" id="claimRejectModal" tabindex="-1"
+				role="dialog" aria-labelledby="claimRejectModalTitle"
 				aria-hidden="true" style="z-index: 10800;">
 				<div class="modal-dialog modal-dialog-centered " role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="returnRejectModalTitle">
+							<h5 class="modal-title" id="claimRejectModalTitle">
 								<b>클레임철회</b>
 							</h5>
 							<button type="button" class="close" data-dismiss="modal"
@@ -510,16 +201,17 @@
 						<form>
 							<div class="modal-body">
 								<div class="ad-modal-contentgap">
-									<b>상품주문 선택</b><span>(주문번호: XXXXXX)</span>
+									<b>상품주문 선택</b>(주문번호: <span id="odno"></span>)
 								</div>
 								<table cellspacing="0" border="1" summary="명단관리  리스트"
 									class="frt_tbl_type" style="padding-right: 15px;">
 									<caption>명단관리 리스트</caption>
 									<colgroup>
 										<col width="30" />
-										<col width="*" />
-										<col width="*" />
-										<col width="*" />
+										<col width="60" />
+										<col width="60" />
+										<col width="60" />
+										<col width="10" />
 									</colgroup>
 									<thead>
 										<tr>
@@ -544,62 +236,21 @@
 											<col width="*" />
 											<col width="*" />
 										</colgroup>
-										<tbody>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>
-										</tbody>
+										<tbody class="ad-claimReject-data">
+														
+										</tbody>	
 									</table>
 								</div>
 								<div class="ad-modal-contentgap">
 									<b>클레임 철회 사유 상세</b>
 								</div>
-								<textarea cols="50" rows="8"></textarea>
+								<textarea cols="50" rows="8" id="prdtl"></textarea>
 
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">닫기</button>
-								<button type="button" class="ad-btn ad-btn-color1">클레임철회</button>
+								<button type="button" id="updRejectBtn" class="ad-btn ad-btn-color1">클레임철회</button>
 							</div>
 						</form>
 					</div>
@@ -685,11 +336,11 @@
 								</div>
 								<div style="display:flex; margin-left: 48px; margin-bottom:15px;">
 								<div class="ad-orderDetail-menu" style=" width:110px;">
-									<div class="ad-modal-orderinfo">옵션정보</div>
+									<div class="ad-modal-orderinfo">클레임 사유</div>
 								</div>
 								<div class="ad-modal-info-data">
 									<div class="ad-modal-orderinfo">
-										<textarea id="abvl" class="ad-order-optView"></textarea>
+										<textarea id="cndtl" class="ad-order-optView"></textarea>
 									</div>
 								</div>
 								</div>
@@ -760,12 +411,45 @@
 		<!-- ad-main-content-->
 	</div>
 	<!--ad-main-wrapper-->
+	<script id="ad-return-template" type="text/x-handlebars-template">
+{{#each list}}
+ <tr>
+     <td class="frm"><input type="checkbox" id="chk{memno}}" name="chk" value="{{wono}}" /></td>
+      <td class="num ad-order-update" data-wono="{{wono}}" data-toggle="modal"
+		data-target="#orderDetailModal">{{wono}}</td>
+      <td class="title">{{odno}}</td>
+      <td class="date">{{oyear}}-{{omonth}}-{{oday}}</td>
+      <td class="writer">{{odstt}}</td>
+      <td class="writer">{{prstt}}</td>
+      <td class="writer">{{cyear}}-{{cmonth}}-{{cday}}</td>
+      <td class="writer">{{wtitl}}</td>
+      <td class="writer">{{nknm}}</td>
+
+</tr>
+{{/each}}
+</script>
+
+	<script id="ad-claimReject-template" type="text/x-handlebars-template">
+{{#each list}}
+<tr>
+	<td class="frm"><input type="checkbox" class="chk"
+		name="mchk" value="{{wono}}" /></td>
+	<td class="num">{{wono}}</td>
+	<td class="title">{{wtitl}}</td>
+	<td class="date">{{ptPrice}}</td>
+</tr>	
+{{/each}}
+</script>
+
+
 	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
 	<script src="../../js/common.js"></script>
 	<script src="../../js/ad_header.js"></script>
 	<script src="../../js/ad_admin.js"></script>
+	<script src="../../js/ad_return.js"></script>
 </body>
 
 </html>

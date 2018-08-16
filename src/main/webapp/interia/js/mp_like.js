@@ -1,8 +1,14 @@
+// 좋아요한 게시물 개수
+$.getJSON(serverRoot + "/json/mylike/mpLikeCnt", (data) => {
+	$('<span class="ib-mp-pnum">' + data + '<span>').appendTo(".ib-mp-titl > p");
+});
+
+
 $.getJSON("../../../json/mylike/list", (data) => {
 	for (let item of data) {
 		$('<a onclick="mkmodal('+ item.BNO +')" href="#myModal" data-toggle="modal">'+
 			'<div class="ib-mp-post">'+
-				'<img src="../../images/sns/'+ item.PATH +'" class="ib-mp-postimage" alt="게시물">'+
+				'<img src="../../../files/board/'+ item.PATH +'_1000x1000.jpg" class="ib-mp-postimage" alt="게시물">'+
 				'<div class="ib-mp-icons post_like_count'+ item.BNO +'"></div>'+
 			'</div>'+	
 		  '</a>').appendTo('.ib-mp-pgroup');
@@ -38,27 +44,8 @@ window.onload = function() {
 			img.style.cssText = 'width: 100%; height: auto; margin-left: 0;';
 		}
 	}
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

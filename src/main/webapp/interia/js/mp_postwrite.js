@@ -51,7 +51,7 @@ $('#fileupload-post').fileupload({
 			      $('<div class="mp-postwrite-cover">' +
 	                  '<div class="mp-inner-icon">' +
 	                      '<i class="far fa-image"></i>' +
-	                      '<p>사진 업로드</p>' +
+	                      '<p>사진 바꾸기</p>' +
 	                  '</div>' +
                   '</div>').appendTo(".mp-select-pic");
 			    }
@@ -66,10 +66,21 @@ $('#fileupload-post').fileupload({
 	    			  content: $("#boctt").val(),
 	    	  };
 	          data.submit();
-	          console.log(data);
 	      });
+	  },
+	  done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+		  $('#postWriteModal').modal('hide');
+          location.href = "mp_post.html";
 	  }
 });
+
+//// 모달 초기화
+//$(document).ready(function(){
+//	$('#postWriteModal').on('hide.bs.modal', function (e) { 
+//		$("#boctt").value='';
+//		$('#tname').value='';
+//	});
+//});
 
 
 

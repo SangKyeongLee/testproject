@@ -18,6 +18,13 @@ $(document).ready(function(){
 		if ( $("#tname") > 0 ) {
 			$('#tname').tagEditor('destroy');
 		}
+		if( $('#ad-claimRejectForm') > 0) {
+			var template = $('#ad-claimRejectForm');
+			var children = $('#ad-claimRejectForm').children();
+			if(template.children().length > 0) {
+				children.remove();
+			}
+		}
 	});
 });
 
